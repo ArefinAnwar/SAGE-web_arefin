@@ -1,0 +1,35 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 800 400"
+  preserveAspectRatio="xMidYMid slice"
+>
+  <!-- Background Circle -->
+  <circle cx="400" cy="200" r="150" fill="#34d399" opacity="0.2" />
+  <circle cx="400" cy="200" r="120" fill="#38b2ac" opacity="0.4" />
+
+  <!-- Brain Wave -->
+  <path
+    d="M 150 200 Q 200 100, 250 200 T 350 200 T 450 200 T 550 200 Q 600 300, 650 200"
+    fill="none"
+    stroke="url(#gradient)"
+    stroke-width="6"
+    stroke-linecap="round"
+  />
+
+  <!-- AI Circuit -->
+  <line x1="400" y1="200" x2="400" y2="100" stroke="#38b2ac" stroke-width="4" />
+  <circle cx="400" cy="100" r="8" fill="#34d399" />
+  <line x1="400" y1="200" x2="450" y2="300" stroke="#38b2ac" stroke-width="4" />
+  <circle cx="450" cy="300" r="8" fill="#34d399" />
+  <line x1="400" y1="200" x2="350" y2="300" stroke="#38b2ac" stroke-width="4" />
+  <circle cx="350" cy="300" r="8" fill="#34d399" />
+
+  <!-- Gradient for Brain Wave -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38b2ac" />
+      <stop offset="50%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#38b2ac" />
+    </linearGradient>
+  </defs>
+</svg>
