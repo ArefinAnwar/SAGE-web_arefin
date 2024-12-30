@@ -1,5 +1,7 @@
 'use client'
 import ShimmerButton from "@/components/ui/shimmer-button";
+import Head from "next/head";
+
 import { useState } from "react";
 import Image from "next/image";
 import { DotPattern } from "@/components/ui/dot-pattern";
@@ -69,7 +71,9 @@ export default function BuySage() {
 
     return (
         <div className="flex flex-col h-fit pb-10 md:pb-0 md:h-screen items-center justify-center overflow-y-scroll bg-slate-900 scroll-smooth">
-            <h1
+           <Head>
+        <title>SAGE - A Hope</title>
+      </Head> <h1
                 className="text-[3rem] px-2  md:text-6xl mt-4 font-bold text-center text-emerald-300"
                 style={{
                     textShadow: "4px 0px 1px #ffffff",

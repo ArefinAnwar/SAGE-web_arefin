@@ -1,6 +1,7 @@
-
-'use client'
+"use client";
 import Image from "next/image";
+import Head from "next/head";
+
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Typewriter } from "react-simple-typewriter";

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 import { Typewriter } from "react-simple-typewriter";
 import ScrollProgress from "@/components/ui/scroll-progress";
 import { useRef, useEffect } from 'react';
@@ -81,7 +82,7 @@ export default function Home() {
       className="relative h-screen items-center justify-center overflow-y-scroll bg-slate-900 scroll-smooth"
       style={{ scrollSnapType: 'y mandatory' }}
     >
-
+       
       <div className="absolute inset-0 ">
         {Array.from({ length: 30 }).map((_, i) => (
           <div
