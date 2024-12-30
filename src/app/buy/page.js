@@ -1,12 +1,14 @@
 'use client'
 import ShimmerButton from "@/components/ui/shimmer-button";
 import Head from "next/head";
-
+import AnimatedShinyText from "@/components/ui/animated-shiny-text";
+import SparklesText from "@/components/ui/sparkles-text";
 import { useState } from "react";
 import Image from "next/image";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import emailjs from "emailjs-com";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 
 export default function BuySage() {
@@ -71,9 +73,9 @@ export default function BuySage() {
 
     return (
         <div className="flex flex-col h-fit pb-10 md:pb-0 md:h-screen items-center justify-center overflow-y-scroll bg-slate-900 scroll-smooth">
-           <Head>
-        <title>SAGE - A Hope</title>
-      </Head> <h1
+            <Head>
+                <title>SAGE - A Hope</title>
+            </Head> <h1
                 className="text-[3rem] px-2  md:text-6xl mt-4 font-bold text-center text-emerald-300"
                 style={{
                     textShadow: "4px 0px 1px #ffffff",
@@ -118,7 +120,7 @@ export default function BuySage() {
                             <div className="flex  flex-col w-full h-full">
                                 <h1 className="text-white mb-4 font-medium text-4xl underline decoration-emerald-400">SAGE CAP</h1>
                                 <p className="text-slate-200 mb-2 text-sm">A smart, portable Cap to predict seizures before they happen. Lightweight, accurate, and user-friendly, it keeps you prepared and connected.</p>
-                                <p className="text-white font-semibold text-2xl md:text-lg">Price: <span className="font-medium text-emerald-300">270$</span></p>
+                                <p className="text-white font-semibold text-2xl md:text-lg">Price: <span className="font-medium text-emerald-300">250$</span></p>
 
                             </div>
                             <div className="flex flex-col w-full h-auto items-center justify-center">
@@ -130,8 +132,8 @@ export default function BuySage() {
                         </div>
                     </div>
                     <div className="flex flex-col mt-5 md:mt-0 w-[90%] md:w-full items-center justify-center  ">
-                        <div className="flex flex-col w-full md:w-11/12 h-5/6 bg-zinc-900 bg-opacity-50 border-2 border-emerald-300 rounded-lg p-6 items-center justify-center">
-
+                        <div className="flex relative overflow-hidden flex-col w-full md:w-11/12 h-5/6 bg-zinc-900 bg-opacity-50  rounded-lg p-6 items-center justify-center">
+                            <BorderBeam size={250} duration={6} borderWidth={3} />
                             <div className='flex items-center justify-center  mb-4 relative h-2/3 w-full'>
                                 <DotPattern
                                     className={cn(
