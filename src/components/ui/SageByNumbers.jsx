@@ -86,7 +86,6 @@ export default function SageByNumbers() {
 
           <div className="flex flex-row md:flex-col h-full w-full md:w-1/2 items-center justify-center">
             <div className="flex flex-1 flex-col bg-transparent bg-opacity-15 rounded-xl  items-center justify-center w-full h-1/2 p-6">
-              
               {/* <p className=" text-2xl text-white font-medium ">
                 • <HyperText>LSTM with Proximal Policy & TFT used</HyperText>
               </p> */}
@@ -253,27 +252,27 @@ function AnimatedLineChart() {
       className="w-11/12  bg-white bg-opacity-[10%] max-w-4xl py-6 rounded-xl flex flex-1 items-center justify-center mt-8"
     >
       {/* <MagicCard className="z-10"> */}
-        <ResponsiveContainer
-          className="items-center z-20 justify-center bg-transparent rounded-xl"
-          width="90%"
-          height={300}
-        >
-          <LineChart data={epilepsyData}>
-            {/* <CartesianGrid strokeDasharray="3 3" /> */}
-            <XAxis stroke="#fff" dataKey="year" />
-            <YAxis stroke="#fff" domain={[35, 60]} />
-            <Tooltip content={<CustomTooltip />} />
-            <Line
-              type="monotone"
-              dataKey="prevalence"
-              stroke="#8884d8"
-              strokeWidth={2}
-              dot={true}
-              isAnimationActive={inView}
-              animationDuration={1500}
-            />
-          </LineChart>
-        </ResponsiveContainer>
+      <ResponsiveContainer
+        className="items-center z-20 justify-center bg-transparent rounded-xl"
+        width="90%"
+        height={300}
+      >
+        <LineChart data={epilepsyData}>
+          {/* <CartesianGrid strokeDasharray="3 3" /> */}
+          <XAxis stroke="#fff" dataKey="year" />
+          <YAxis stroke="#fff" domain={[35, 60]} />
+          <Tooltip content={<CustomTooltip />} />
+          <Line
+            type="monotone"
+            dataKey="prevalence"
+            stroke="#8884d8"
+            strokeWidth={2}
+            dot={true}
+            isAnimationActive={inView}
+            animationDuration={1500}
+          />
+        </LineChart>
+      </ResponsiveContainer>
       {/* </MagicCard> */}
     </div>
   );

@@ -99,10 +99,10 @@ export default function Home() {
 
       </div>
 
-      <div className="min-h-screen overflow-y-scroll snap-section snap-start snap-always">
+      <div className="min-h-screen overflow-y-scroll scrollbar-hide snap-section snap-start snap-always">
         <SageIntroTest />
       </div>
-      <div className="min-h-screen overflow-y-scroll snap-section snap-start snap-always">
+      <div className="min-h-screen overflow-y-scroll scrollbar-hide snap-section snap-start snap-always">
         <WhySage />
       </div>
       {/* <div className="h-screen snap-section snap-start snap-always">
