@@ -75,7 +75,7 @@ export default function WhySage() {
       <p className="absolute top-0 mt-32 italic text-lg text-slate-200 text-center">
         Only wearable cap available for seiure prediction under 250$
       </p>
-      <div className="absolute overflow-y-scroll scrollbar-hide bottom-10 md:bottom-0  flex-col md:flex-row flex w-[95%] h-4/6 items-center justify-center">
+      <div className="absolute  scrollbar-hide bottom-10 md:bottom-0  flex-col md:flex-row flex w-[95%] h-4/6 items-center justify-center">
         <div className="flex flex-col w-[95%] md:mr-4 md:w-1/2 h-full  justify-center">
           <motion.div
             className=" w-full"

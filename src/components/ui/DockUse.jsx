@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-
+import Link from "next/link";
 import { Dock, DockIcon } from "@/components/ui/dock";
 import {
   CalendarIcon,
@@ -9,6 +9,11 @@ import {
   BadgeInfoIcon,
   MailIcon,
   PencilIcon,
+  CircleUserRound,
+  ShieldQuestion,
+  MessageSquareDiff,
+  UsersRound,
+  MessageCircleQuestion,
 } from "lucide-react";
 
 // export type IconProps = React.HTMLAttributes<SVGElement>;
@@ -17,19 +22,41 @@ export function DockDemo() {
   return (
     <div className="relative bg-white rounded-xl bg-opacity-10">
       <Dock direction="middle">
-        <DockIcon>
-          {/* <Icons.gitHub className="size-6" /> */}
-          <HomeIcon className=" text-white hover:scale-125 ease-in duration-300" />
-        </DockIcon>
-        <DockIcon>
-          <BadgeInfoIcon className=" text-white hover:scale-125 ease-in duration-300" />
-        </DockIcon>
-        <DockIcon>
-          <MailIcon className=" text-white hover:scale-125 ease-in duration-300" />
-        </DockIcon>
-        <DockIcon>
-          <PencilIcon className=" text-white hover:scale-125 ease-in duration-300" />
-        </DockIcon>
+        <a href="#home">
+          <DockIcon>
+            <HomeIcon className=" text-white hover:scale-125 ease-in duration-300" />
+          </DockIcon>
+        </a>
+        <a href="#sage-intro">
+          <DockIcon>
+            <BadgeInfoIcon className=" text-white hover:scale-125 ease-in duration-300" />
+          </DockIcon>
+        </a>
+        <a href="#why-sage">
+          <DockIcon>
+            <ShieldQuestion className=" text-white hover:scale-125 ease-in duration-300" />
+          </DockIcon>
+        </a>
+        <a href="#customer-review">
+          <DockIcon>
+            <MessageSquareDiff className=" text-white hover:scale-125 ease-in duration-300" />
+          </DockIcon>
+        </a>
+        <a href="#meet-the-team">
+          <DockIcon>
+            <UsersRound className=" text-white hover:scale-125 ease-in duration-300" />
+          </DockIcon>
+        </a>
+        <a href="#faq-section">
+          <DockIcon>
+            <MessageCircleQuestion className=" text-white hover:scale-125 ease-in duration-300" />
+          </DockIcon>
+        </a>
+        <Link href="/login">
+          <DockIcon>
+            <CircleUserRound className=" text-white hover:scale-125 ease-in duration-300" />
+          </DockIcon>
+        </Link>
       </Dock>
     </div>
   );

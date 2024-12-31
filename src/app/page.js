@@ -13,6 +13,8 @@ import SageByNumbers from "@/components/ui/SageByNumbers";
 import FAQSection from "@/components/ui/FAQSection";
 import { DockDemo } from "@/components/ui/DockUse";
 import WhySage from "../../components/WhySage";
+import MeetTheTeam from "../../components/MeetTheTeam";
+import Footer from "../../components/Footer";
 
 import { cn } from "@/lib/utils";
 
@@ -82,7 +84,7 @@ export default function Home() {
       className="relative h-screen items-center justify-center overflow-y-scroll bg-slate-900 scroll-smooth"
       style={{ scrollSnapType: 'y mandatory' }}
     >
-       
+
       <div className="absolute inset-0 ">
         {Array.from({ length: 30 }).map((_, i) => (
           <div
@@ -95,26 +97,30 @@ export default function Home() {
       <div className="md:visible invisible mx-auto w-fit fixed inset-x-0 bottom-3 z-50">
         <DockDemo />
       </div>
-      <div className="h-screen  z-30 snap-section snap-start snap-always">
+      <div id='#home' className="h-screen  z-30 snap-section snap-start snap-always">
         <HeroSection />
 
       </div>
 
-      <div className="min-h-screen overflow-y-scroll scrollbar-hide snap-section snap-start snap-always">
+      <div id="sage-intro" className="min-h-screen overflow-y-scroll scrollbar-hide snap-section snap-start snap-always">
         <SageIntroTest />
       </div>
-      <div className="min-h-screen overflow-y-scroll scrollbar-hide snap-section snap-start snap-always">
+      <div id="why-sage" className="min-h-screen overflow-y-scroll scrollbar-hide snap-section snap-start snap-always">
         <WhySage />
       </div>
       {/* <div className="h-screen snap-section snap-start snap-always">
         <SageByNumbers />
       </div> */}
-      <div className="h-screen snap-section snap-start snap-always">
+      <div id="customer-review" className="min-h-screen snap-section snap-start snap-always">
         <CustomerReview />
       </div>
-      <div className="h-screen snap-section snap-start snap-always">
+      <div id="meet-the-team" className="min-h-screen overflow-y-scroll scrollbar-hide snap-section snap-start snap-always">
+        <MeetTheTeam />
+      </div>
+      <div id="faq-section" className="min-h-screen snap-section snap-start snap-always">
         <FAQSection />
       </div>
+
     </div>
   );
 }

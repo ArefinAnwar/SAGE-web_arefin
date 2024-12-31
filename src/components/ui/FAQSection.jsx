@@ -13,6 +13,7 @@ import { motion } from "framer-motion";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import BorderedHeading from "./BorderedHeading";
 // import BorderedHeading from "./BorderedHeading";
+import Footer from "../../../components/Footer";
 
 export default function FAQSection() {
   const faqs = [
@@ -40,7 +41,7 @@ export default function FAQSection() {
   var text = "Frequently Asked Questions";
   return (
     <div className="relative w-full overflow-hidden min-h-screen mx-auto flex flex-col py-12 px-4 sm:px-6 lg:px-8 bg-transparent items-center justify-center">
-      <h1 className="text-6xl text-center font-bold text-emerald-300" style={{
+      <h1 className=" text-4xl md:text-6xl text-center font-bold text-emerald-300" style={{
           textShadow: "4px 0px 1px #ffffff",
         }}>
         Frequently Asked Questions
@@ -67,6 +68,7 @@ export default function FAQSection() {
           ))}
         </Accordion>
       </motion.div>
+      <Footer/>
     </div>
   );
 }
