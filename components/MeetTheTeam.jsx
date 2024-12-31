@@ -16,28 +16,28 @@ export default function MeetTheTeam() {
         <PeopleCard
           Name="Arefin Anwar"
           image="/arefin_informal.png"
-          Designation="Chief Operations Lead"
+          Designation="Operations Lead"
           Description="Pupil of class 11 at St. Joseph Higher Secondary School, Dhaka, Bangladesh"
           Contact="arefinanwar112@gmail.com"
         />
         <PeopleCard
           Name="Misbah Uddin Inan"
           image="/inan_informal.png"
-          Designation="Chief Research Lead"
+          Designation="Research & Executive Lead"
           Description="Pupil of class 11 at Notre Dame College, Dhaka, Bangladesh"
           Contact="misbahinan@gmail.com"
         />
         <PeopleCard
           Name="Abrar Shahid"
           image="/abrar_informal.png"
-          Designation="Chief Technical Lead"
+          Designation="Technical Lead"
           Description="Pupil of class 11 at Notre Dame College, Dhaka, Bangladesh"
           Contact="abrarshahidrahik@gmail.com"
         />
         <PeopleCard
           Name="Rafid Ahmed"
           image="/rafid_informal.png"
-          Designation="Chief Business Lead"
+          Designation="Finance Lead"
           Description="Pupil of class 11 at Academia School, Dhaka, Bangladesh"
           Contact="steinerstein313@gmail.com"
         />
