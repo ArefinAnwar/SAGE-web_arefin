@@ -31,19 +31,19 @@ export default function EpilepsyAroundTheWorld() {
       <div className="flex flex-col-reverse md:flex-row w-11/12 h-5/6 items-center justify-center mt-4 md:mt-4">
         <div className="flex flex-col mb-24 md:mb-0 md:flex-col w-[95%] md:w-[60%] h-auto -mt-8 z-50 md:mt-0 items-center justify-center">
           <h1 className="text-emerald-400 text-3xl font-semibold text-center">
-            "
+            &quot;
             <span className="text-white">
               Epilepsy Ranks the 4th most appearing neurological diesease
             </span>
-            "
+            &quot;
           </h1>
           <h1 className="text-emerald-400 text-2xl font-semibold text-center mt-6 ">
-            "
+            &quot;
             <span className="text-white">
               Up to 70% of epilepsy cases can be managed with proper medication,
               but many regions face a treatment gap exceeding 75%
             </span>
-            "
+            &quot;
           </h1>
           <h1 className="italic text-white mt-6">with top countries being:</h1>
           <h1 className="text-2xl text-white mt-3 gap-4 font-medium">
