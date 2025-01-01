@@ -70,6 +70,23 @@ export default function BuySage() {
             setError("Failed to send the order. Please try again.");
         }
     };
+    const [selectedColor, setSelectedColor] = useState("black");
+
+    const colorOptions = [
+        { name: "Black", colorCode: "black", image: "/sage-cap.png" },
+        { name: "Pink", colorCode: "pink", image: "/sage-cap-pink.png" },
+        { name: "Brown", colorCode: "brown", image: "/sage-cap-brown.png" },
+        { name: "Yellow", colorCode: "yellow", image: "/sage-cap-yellow.png" },
+        { name: "White", colorCode: "white", image: "/sage-cap-white.png" },
+    ];
+
+    const handleColorChange = (color) => {
+        setSelectedColor(color);
+    };
+
+    const selectedColorOption = colorOptions.find(
+        (option) => option.colorCode === selectedColor
+    );
 
     return (
         <div className="flex flex-col h-fit pb-10 md:pb-0 md:h-screen items-center justify-center overflow-y-scroll bg-slate-900 scroll-smooth">
@@ -93,7 +110,7 @@ export default function BuySage() {
                     <h3 className="text-left text-lg md:text-xl text-white my-2">EEG Analysis: Data for improved medical treatment</h3>
                 </div>
                 <div className="flex flex-col md:flex-row w-[95%] mt-7 md:mt-0  md:w-[55%] items-center justify-center">
-                    <div className="flex flex-col w-[90%] md:w-full  items-center justify-center">
+                    {/* <div className="flex flex-col w-[90%] md:w-full  items-center justify-center">
                         <div className="flex flex-col w-full md:w-11/12 h-5/6 bg-zinc-900 bg-opacity-50 border-2 border-emerald-300 rounded-lg p-6 items-center justify-center">
 
                             <div className='flex items-center justify-center  mb-4 relative h-2/3 w-full'>
@@ -130,6 +147,71 @@ export default function BuySage() {
                             </div>
 
                         </div>
+                    </div> */}
+                    <div className="flex flex-col w-[90%] md:w-full items-center justify-center">
+                        <div className="flex flex-col w-full md:w-11/12 h-5/6 bg-zinc-900 bg-opacity-50 border-2 border-emerald-300 rounded-lg p-6 items-center justify-center">
+                            {/* Image Section */}
+                            <div className="flex items-center justify-center mb-4 relative h-2/3 w-full">
+                                <DotPattern
+                                    className={cn(
+                                        "md:[mask-image:radial-gradient(250px_circle_at_center,white,transparent)]",
+                                        "[mask-image:radial-gradient(200px_circle_at_center,white,transparent)]",
+                                        "z-10"
+                                    )}
+                                />
+                                <Image
+                                    className="z-40"
+                                    src={selectedColorOption.image}
+                                    alt={`SAGE Cap - ${selectedColorOption.name}`}
+                                    sizes="100vw"
+                                    style={{
+                                        width: "80%",
+                                        height: "auto",
+                                    }}
+                                    width={3}
+                                    height={3}
+                                />
+                            </div>
+
+                            {/* Description Section */}
+                            <div className="flex flex-col w-full h-full">
+                                <h1 className="text-white mb-4 font-medium text-4xl underline decoration-emerald-400">
+                                    SAGE CAP
+                                </h1>
+                                <p className="text-slate-200 mb-2 text-sm">
+                                    A smart, portable Cap to predict seizures before they happen. Lightweight, accurate, and user-friendly, it keeps you prepared and connected.
+                                </p>
+                                <p className="text-white font-semibold text-2xl md:text-lg">
+                                    Price: <span className="font-medium text-emerald-300">250$</span>
+                                </p>
+                            </div>
+
+                            {/* Color Options */}
+                            <div className="flex flex-wrap mt-2 gap-2">
+                                {colorOptions.map((option) => (
+                                    <button
+                                        key={option.colorCode}
+                                        className={`w-5 h-5 rounded-full border-2 ${selectedColor === option.colorCode
+                                            ? "border-emerald-400"
+                                            : "border-gray-400"
+                                            }`}
+                                        style={{ backgroundColor: option.colorCode }}
+                                        onClick={() => handleColorChange(option.colorCode)}
+                                        aria-label={`Select ${option.name}`}
+                                    />
+                                ))}
+                            </div>
+
+                            {/* Buy Button */}
+                            <div className="flex flex-col w-full h-auto items-center justify-center">
+                                <ShimmerButton
+                                    onClick={() => alert("Buying the SAGE Cap!")}
+                                    className="font-semibold bg-white text-white text-3xl px-1 w-full mt-4 py-2"
+                                >
+                                    <span className="text-2xl">BUY NOW</span>
+                                </ShimmerButton>
+                            </div>
+                        </div>
                     </div>
                     <div className="flex flex-col mt-5 md:mt-0 w-[90%] md:w-full items-center justify-center  ">
                         <div className="flex relative overflow-hidden flex-col w-full md:w-11/12 h-5/6 bg-zinc-900 bg-opacity-50  rounded-lg p-6 items-center justify-center">
@@ -160,6 +242,20 @@ export default function BuySage() {
                                 <p className="text-slate-200 mb-2 text-sm">Same portable, lightweight, easy cap and notification system as SAGE CAP but with custom fine tuning every 3 months. 24/7 special careline</p>
                                 <p className="text-white font-semibold text-2xl md:text-lg">Price: <span className="font-medium text-emerald-300">250$</span> <span className="font-extralight italic">(per month:</span> <span className=" text-emerald-300">3$)</span> </p>
 
+                            </div>
+                            <div className="flex flex-wrap mt-2 gap-2">
+                                {colorOptions.map((option) => (
+                                    <button
+                                        key={option.colorCode}
+                                        className={`w-5 h-5 rounded-full border-2 ${selectedColor === option.colorCode
+                                            ? "border-emerald-400"
+                                            : "border-gray-400"
+                                            }`}
+                                        style={{ backgroundColor: option.colorCode }}
+                                        onClick={() => handleColorChange(option.colorCode)}
+                                        aria-label={`Select ${option.name}`}
+                                    />
+                                ))}
                             </div>
                             <div className="flex flex-col w-full h-auto items-center justify-center">
                                 <ShimmerButton onClick={() => setModalOpen(true)} className="font-semibold bg-white text-white text-3xl px-1 w-full mt-4 py-2">

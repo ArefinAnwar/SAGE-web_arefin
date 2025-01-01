@@ -73,7 +73,7 @@ const SageIntroTest = () => {
             ref={(el) => (boxRefs.current[index] = el)}
           >
             <h2 className="text-xl font-bold ">
-              <GradualSpacing className="text-xl font-bold" text={title} />
+              <GradualSpacing className="text-xl font-bold tracking-wide" text={title} />
             </h2>
 
             <p className="mt-2">

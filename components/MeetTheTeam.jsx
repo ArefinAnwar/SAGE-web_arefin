@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
+import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
+import { cn } from "@/lib/utils";
 
 export default function MeetTheTeam() {
   return (
-    <div className="flex flex-col scrollbar-hide items-center justify-center min-h-screen w-full mb-16 md:mb-0">
+    <div className="flex relative flex-col scrollbar-hide items-center justify-center min-h-screen w-full mb-16 md:mb-0">
       <h1
         className="mt-8 md:mt-0 text-4xl md:text-6xl font-bold text-emerald-300"
         style={{
@@ -12,6 +14,17 @@ export default function MeetTheTeam() {
       >
         Meet the Team
       </h1>
+      <AnimatedGridPattern
+        numSquares={30}
+        maxOpacity={0.6}
+        duration={3}
+        repeatDelay={1}
+        className={cn(
+          "inset-x-0 inset-y-[-30%] h-[200%]  z-20",
+          "before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:via-black before:to-transparent",
+          "after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:via-white after:to-transparent after:mix-blend-overlay"
+        )}
+      />
       <div className="flex scrollbar-hide flex-col md:flex-row items-center justify-center w-full mt-0 md:mt-10 md:h-[30rem]">
         <PeopleCard
           Name="Arefin Anwar"

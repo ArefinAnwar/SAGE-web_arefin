@@ -5,7 +5,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { Typewriter } from "react-simple-typewriter";
 import ScrollProgress from "@/components/ui/scroll-progress";
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import HeroSection from "../../components/HeroSection";
 import SageIntroTest from "../../components/SageIntroTest";
 import CustomerReview from "@/components/ui/CustomerReview";
@@ -15,6 +15,8 @@ import { DockDemo } from "@/components/ui/DockUse";
 import WhySage from "../../components/WhySage";
 import MeetTheTeam from "../../components/MeetTheTeam";
 import Footer from "../../components/Footer";
+import GlobeVisualization from "@/components/ui/globeMain";
+import EpilepsyAroundTheWorld from "../../components/EpilepsyAroundTheWorld";
 
 import { cn } from "@/lib/utils";
 
@@ -77,6 +79,9 @@ export default function Home() {
       container.removeEventListener('touchmove', handleTouchMove);
     };
   }, []);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => setIsOpen(!isOpen);
 
   return (
     <div
@@ -84,6 +89,91 @@ export default function Home() {
       className="relative h-screen items-center justify-center overflow-y-scroll bg-slate-900 scroll-smooth"
       style={{ scrollSnapType: 'y mandatory' }}
     >
+      <nav className="fixed visible md:invisible top-0 z-50 right-0 w-full bg-gray-900 text-white">
+        <div className="absolute top-0 right-0 flex items-center justify-between px-4 py-3">
+          <div className="text-lg font-bold"></div>
+          {/* Hamburger Icon */}
+          <button
+            onClick={toggleNavbar}
+            className="block lg:hidden focus:outline-none"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {isOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
+          </button>
+        </div>
+
+        {/* Links */}
+        <div
+          className={`lg:flex ${isOpen ? "block" : "hidden"
+            } bg-gray-800 z-50 lg:bg-transparent`}
+        >
+          <div className="flex flex-col lg:flex-row items-center lg:items-center lg:space-x-4 p-4 lg:p-0">
+            <Link
+              href="#sage-intro"
+              className="py-2 lg:py-0 cursor-pointer"
+              onClick={toggleNavbar}
+            >
+              Intro
+            </Link>
+            <Link
+              href="#why-sage"
+              className="py-2 lg:py-0 cursor-pointer"
+              onClick={toggleNavbar}
+            >
+              Why SAGE
+            </Link>
+            <Link
+              href="#customer-review"
+              className="py-2 lg:py-0 cursor-pointer"
+              onClick={toggleNavbar}
+            >
+              Customer Review
+            </Link>
+            <Link
+              href="#meet-the-team"
+              className="py-2 lg:py-0 cursor-pointer"
+              onClick={toggleNavbar}
+            >
+              Meet the Team
+            </Link>
+            <Link
+              href="#faq-section"
+              className="py-2 lg:py-0 cursor-pointer"
+              onClick={toggleNavbar}
+            >
+              FAQ
+            </Link>
+            <Link
+              href="/login"
+              className="py-2 lg:py-0 cursor-pointer"
+              onClick={toggleNavbar}
+            >
+              LOGIN
+            </Link>
+          </div>
+        </div>
+      </nav>
 
       <div className="absolute inset-0 ">
         {Array.from({ length: 30 }).map((_, i) => (
@@ -97,6 +187,7 @@ export default function Home() {
       <div className="md:visible invisible mx-auto w-fit fixed inset-x-0 bottom-3 z-50">
         <DockDemo />
       </div>
+
       <div id='#home' className="h-screen  z-30 snap-section snap-start snap-always">
         <HeroSection />
 
@@ -108,13 +199,16 @@ export default function Home() {
       <div id="why-sage" className="min-h-screen overflow-y-scroll scrollbar-hide snap-section snap-start snap-always">
         <WhySage />
       </div>
-      {/* <div className="h-screen snap-section snap-start snap-always">
+      <div className="min-h-screen overflow-y-scroll scrollbar-hide snap-section snap-start snap-always">
         <SageByNumbers />
-      </div> */}
-      <div id="customer-review" className="min-h-screen snap-section snap-start snap-always">
+      </div>
+      <div className="min-h-screen scrollbar-hide overflow-y-scroll snap-section snap-start snap-always">
+        <EpilepsyAroundTheWorld />
+      </div>
+      <div id="customer-review" className="min-h-screen  snap-section snap-start snap-always">
         <CustomerReview />
       </div>
-      <div id="meet-the-team" className="min-h-screen overflow-y-scroll scrollbar-hide snap-section snap-start snap-always">
+      <div id="meet-the-team" className="min-h-screen  overflow-y-scroll scrollbar-hide snap-section snap-start snap-always">
         <MeetTheTeam />
       </div>
       <div id="faq-section" className="min-h-screen snap-section snap-start snap-always">

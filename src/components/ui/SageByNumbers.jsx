@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { cn } from "@/lib/utils";
 import NumberTicker from "@/components/ui/number-ticker";
 import HyperText from "@/components/ui/hyper-text";
 import { MagicCard } from "@/components/ui/magic-card";
@@ -57,10 +58,10 @@ export default function SageByNumbers() {
   };
 
   return (
-    <div className=" relative overflow-hidden w-full min-h-screen flex flex-col items-center justify-center ">
+    <div className=" relative overflow-y-scroll w-full min-h-screen flex flex-col items-center justify-center ">
       {/* <Meteors number={40} /> */}
       <h1
-        className="text-6xl absolute top-0 mt-4 font-bold text-center text-emerald-300"
+        className="text-4xl md:text-6xl absolute top-0 mt-4 font-bold text-center text-emerald-300"
         style={{
           textShadow: "4px 0px 1px #ffffff",
         }}
@@ -68,14 +69,15 @@ export default function SageByNumbers() {
         SAGE by Numbers
       </h1>
 
-      <div className="absolute bottom-10 grid  grid-cols-1 md:grid-cols-2 gap-8 h-11/12  items-center justify-center w-full px-4">
+      <div className="md:absolute  mt-28 md:mt-0 md:bottom-10 grid  grid-cols-1 md:grid-cols-2 gap-8 md:min-h-screen md:h-11/12  items-center justify-center w-full px-4">
         {/* Info Section */}
-        <div className="flex flex-row md:flex-row h-5/6  items-center justify-center ">
-          <div className="flex flex-col md:flex-row h-full w-full md:w-1/2 items-center justify-center">
+        <div className="flex flex-col md:flex-row md:h-5/6 h-auto items-center justify-center ">
+          <div className="flex flex-col md:flex-col h-full w-full md:w-1/2 items-center justify-center">
             <AnimatedCircularProgress
               percentage={94}
               text="Model accuracy"
               color="teal"
+              className="mb-3"
             />
             <AnimatedCircularProgress
               percentage={80}
@@ -85,16 +87,17 @@ export default function SageByNumbers() {
           </div>
 
           <div className="flex flex-row md:flex-col h-full w-full md:w-1/2 items-center justify-center">
-            <div className="flex flex-1 flex-col bg-transparent bg-opacity-15 rounded-xl  items-center justify-center w-full h-1/2 p-6">
-              {/* <p className=" text-2xl text-white font-medium ">
-                • <HyperText>LSTM with Proximal Policy & TFT used</HyperText>
-              </p> */}
-            </div>
-            <div className="flex flex-1 items-center justify-center  h-1/2">
+            <div className="flex flex-col items-center justify-end h-full ">
               {/* <p className="whitespace-pre-wrap text-2xl text-white font-medium tracking-tighter ">
                 • <HyperText>LSTM with Proximal Policy & TFT used</HyperText>
               </p> */}
-              <MagicCard className="flex flex-1 flex-col bg-slate-200 bg-opacity-15 rounded-xl  items-center justify-center w-full p-6">
+              <AnimatedCircularProgress
+                percentage={94}
+                text="Model accuracy"
+                color="teal"
+                className="mb-2"
+              />
+              <MagicCard className="flex flex-col border-2 h-[50%]  border-emerald-400 bg-slate-200 bg-opacity-15 rounded-xl  items-center justify-center w-full p-6">
                 <p className=" text-xl text-left  text-white font-medium">
                   •{" "}
                   <NumberTicker className="text-white text-left" value={960} />+
@@ -110,8 +113,8 @@ export default function SageByNumbers() {
             </div>
           </div>
         </div>
-        <div className="flex bg-slate-400 flex-col h-1/2 md:h-5/6 items-center justify-center">
-          <div className="h-48 w-full text-center overflow-hidden">
+        <div className="flex flex-col md:mb-0 mb-24 h-auto w-full md:w-auto md:h-5/6 items-center justify-center">
+          <div className="h-24 md:h-48 w-full text-center overflow-hidden">
             <AnimatePresence>
               <motion.p
                 key={currentIndex}
@@ -126,7 +129,7 @@ export default function SageByNumbers() {
               </motion.p>
             </AnimatePresence>
           </div>
-          <div className="w-full  ">
+          <div className="w-full ">
             <AnimatedLineChart width="100%" height={200}>
               <LineChart data={epilepsyData}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -151,7 +154,7 @@ export default function SageByNumbers() {
   );
 }
 
-function AnimatedCircularProgress({ percentage, color, text }) {
+function AnimatedCircularProgress({ percentage, color, text, className }) {
   const [inView, setInView] = useState(false);
   const ref = useRef(null);
 
@@ -179,7 +182,10 @@ function AnimatedCircularProgress({ percentage, color, text }) {
 
   return (
     <div
-      className="relative flex items-center justify-center  flex-1 w-52 h-52"
+      className={cn(
+        "relative  flex items-center justify-center flex-col w-52 h-52",
+        className
+      )}
       ref={ref}
     >
       <svg
@@ -249,7 +255,7 @@ function AnimatedLineChart() {
   return (
     <div
       ref={ref}
-      className="w-11/12  bg-white bg-opacity-[10%] max-w-4xl py-6 rounded-xl flex flex-1 items-center justify-center mt-8"
+      className="w-11/12 border-2 border-emerald-400 bg-white bg-opacity-[10%] max-w-4xl py-6 rounded-xl flex flex-1 items-center justify-center mt-8"
     >
       {/* <MagicCard className="z-10"> */}
       <ResponsiveContainer

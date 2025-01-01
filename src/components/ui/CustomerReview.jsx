@@ -66,7 +66,7 @@ const CustomerReview = () => {
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-transparent md:shadow-xl">
       <h1
-        className="text-4xl md:text-6xl mb-10 font-bold text-emerald-300 z-50"
+        className="text-4xl md:text-6xl mb-10 font-bold text-emerald-300 z-30"
         style={{
           textShadow: "4px 0px 1px #ffffff",
         }}

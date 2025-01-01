@@ -48,6 +48,7 @@ export default function GradualSpacing({ text = "", className = "" }) {
           key={index}
           variants={child}
           style={{ display: 'inline-block' }}
+          className="tracking-wide mr-[.1rem]"
         >
           {char}
         </motion.span>
