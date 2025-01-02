@@ -19,7 +19,7 @@ export default function MeetTheTeam() {
           setIsInView(false);
         }
       },
-      { threshold: 0.3 } // Ensure section is fully visible
+      { threshold: 0.1 } // Ensure section is fully visible
     );
 
     if (sectionRef.current) {
@@ -54,6 +54,7 @@ export default function MeetTheTeam() {
             <motion.h1
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2 }}
               className="mt-8 md:mt-0 text-4xl md:text-6xl font-bold text-emerald-300"
               style={{
                 textShadow: "4px 0px 1px #ffffff",
@@ -107,7 +108,7 @@ function PeopleCard({ Name, Designation, Description, Contact, image }) {
       transition={{ duration: 1.5 }}
       className="flex flex-col w-[85%] md:w-[22%] mt-4 md:mt-0 h-[25rem] md:h-[95%] mx-2 justify-center items-center bg-zinc-800 bg-opacity-50 border-2 border-white outline-2 outline-emerald-400"
     >
-      <motion.div className="flex border-4 border-emerald-400 flex-row mt-5 w-[50%] md:w-[70%] h-[60%] bg-slate-400 items-center justify-center overflow-hidden">
+      <motion.div className="flex border-4 border-emerald-400 flex-row mt-5 w-[50%] md:w-[70%] h-[60%] bg-zinc-800 bg-opacity-50 items-center justify-center overflow-hidden">
         <Image
           className="z-40"
           src={image}

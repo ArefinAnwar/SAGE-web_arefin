@@ -205,7 +205,7 @@ export default function BuySage() {
                             {/* Buy Button */}
                             <div className="flex flex-col w-full h-auto items-center justify-center">
                                 <ShimmerButton
-                                    onClick={() => alert("Buying the SAGE Cap!")}
+                                    onClick={() => setModalOpen(true)}
                                     className="font-semibold bg-white text-white text-3xl px-1 w-full mt-4 py-2"
                                 >
                                     <span className="text-2xl">BUY NOW</span>

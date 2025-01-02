@@ -101,6 +101,8 @@ const CustomerReview = () => {
           <motion.h1
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+
             className="text-4xl md:text-6xl mb-10 font-bold text-emerald-300 z-30"
             style={{
               textShadow: "4px 0px 1px #ffffff",

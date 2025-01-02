@@ -99,6 +99,8 @@ export default function WhySage() {
             <motion.h1
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2 }}
+
               className=" text-4xl md:text-6xl top-0 mt-6 md:mt font-bold text-center text-emerald-300"
               style={{
                 textShadow: "4px 0px 1px #ffffff",

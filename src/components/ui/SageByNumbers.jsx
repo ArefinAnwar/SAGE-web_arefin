@@ -52,7 +52,7 @@ export default function SageByNumbers() {
       ([entry]) => {
         setIsInView(entry.isIntersecting && entry.intersectionRatio === 1);
       },
-      { threshold: .8 } // Ensure section is fully visible
+      { threshold: 0.8 } // Ensure section is fully visible
     );
 
     if (sectionRef.current) {
@@ -80,16 +80,17 @@ export default function SageByNumbers() {
     >
       {/* <Meteors number={40} /> */}
       {/* {isInView && ( */}
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-6xl top-0 mt-6 font-bold text-center text-emerald-300"
-          style={{
-            textShadow: "4px 0px 1px #ffffff",
-          }}
-        >
-          SAGE by Numbers
-        </motion.h1>
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2 }}
+        className="text-4xl md:text-6xl top-0 mt-6 font-bold text-center text-emerald-300"
+        style={{
+          textShadow: "4px 0px 1px #ffffff",
+        }}
+      >
+        SAGE by Numbers
+      </motion.h1>
       {/* )} */}
 
       <div className=" mt-5 md:mt-10 md:bottom-10 grid  scrollbar-hide grid-cols-1 md:grid-cols-2 gap-8  md:h-11/12  items-center justify-center w-full px-4">

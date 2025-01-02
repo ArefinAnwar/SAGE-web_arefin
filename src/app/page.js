@@ -88,8 +88,8 @@ export default function Home() {
   return (
     <div
       ref={containerRef}
-      className="relative h-screen items-center justify-center overflow-y-scroll bg-slate-900 snap-mandatory "
-    style={{ scrollSnapType: 'y proximity' }}
+      className="relative h-screen items-center justify-center overflow-y-scroll bg-slate-900"
+    // style={{ scrollSnapType: 'y mandatory' }}
     >
       <nav className="fixed visible md:invisible top-0 z-50 right-0 w-full bg-gray-900 text-white">
         <div className="absolute top-0 right-0 flex items-center justify-between px-4 py-3">
@@ -190,31 +190,31 @@ export default function Home() {
         <DockDemo />
       </div>
 
-      <div id='#home' className="h-screen snap-start z-30 md:snap-section md:snap-start md:snap-always">
+      <div id='#home' className="h-screen dsnap-start z-30 dmd:snap-section dmd:snap-start md:snap-always">
         <HeroSection />
 
       </div>
 
-      <div id="sage-intro" className="min-h-screen snap-start overflow-y-scroll scrollbar-hide md:snap-section md:snap-start md:snap-always">
+      <div id="sage-intro" className="min-h-screen dsnap-start overflow-y-scroll scrollbar-hide dmd:snap-section mdd:snap-start md:snap-always">
         <SageIntroTest />
       </div>
-      
-      <div id="why-sage" className="min-h-screen snap-start overflow-y-scroll scrollbar-hide md:snap-section md:snap-start md:snap-always">
+
+      <div id="why-sage" className="min-h-screen dsnap-start overflow-y-scroll scrollbar-hide mdd:snap-section mdd:snap-start mdd:snap-always">
         <WhySage />
       </div>
-      <div className="min-h-screen overflow-y-scroll snap-start scrollbar-hide md:snap-section md:snap-start md:snap-always">
+      {/* <div className="min-h-screen overflow-y-scroll dsnap-start scrollbar-hide mdd:snap-section mdd:snap-start mdd:snap-always">
         <SageByNumbers />
-      </div>
-      <div className="min-h-screen scrollbar-hide overflow-y-scroll  snap-start md:snap-section md:snap-start md:snap-always">
+      </div> */}
+      <div className="min-h-screen scrollbar-hide overflow-y-scroll  dsnap-start dmd:snap-section mdd:snap-start mdd:snap-always">
         <EpilepsyAroundTheWorld />
       </div>
-      <div id="customer-review" className="min-h-screen snap-start scrollbar-hide md:snap-section md:snap-start md:snap-always">
+      <div id="customer-review" className="min-h-screen dsnap-start scrollbar-hide dmd:snap-section mdd:snap-start mdd:snap-always">
         <CustomerReview />
       </div>
-      <div id="meet-the-team" className="min-h-screen  overflow-y-scroll snap-start scrollbar-hide md:snap-section md:snap-start md:snap-always">
+      <div id="meet-the-team" className="min-h-screen  overflow-y-scroll dsnap-start scrollbar-hide md:snap-sectiodn mdd:snap-start mdd:snap-always">
         <MeetTheTeam />
       </div>
-      <div id="faq-section" className="min-h-screen snap-start md:snap-section md:snap-start md:snap-always">
+      <div id="faq-section" className="min-h-screen dsnap-start mdd:snap-section mdd:snap-start mdd:snap-always">
         <FAQSection />
       </div>
 

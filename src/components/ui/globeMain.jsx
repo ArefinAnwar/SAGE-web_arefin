@@ -49,7 +49,15 @@ export default function GlobeVisualization() {
   ];
 
   return (
-    <div className="flex touch-none flex-col items-center justify-center w-auto  bg-sky-300 h-auto overflow-hidden">
+    <div
+      className="flex touch-none flex-col items-center justify-center w-auto bg-slate-900 h-auto overflow-hidden"
+      style={{
+        touchAction: "none", // Disables touch gestures like pinch-to-zoom
+      }}
+      onWheel={(e) => e.preventDefault()} // Prevents mouse wheel zooming
+      onTouchMove={(e) => e.preventDefault()} // Prevents touch interactions
+      onTouchStart={(e) => e.preventDefault()} // Disables touch-based zooming
+    >
       <Globe
         ref={globeRef}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg" // Globe texture
@@ -63,6 +71,11 @@ export default function GlobeVisualization() {
         pointRadius={0.1} // Marker size
         width={500}
         height={500}
+        controls={(controls) => {
+          controls.enableZoom = false; // Disable zoom
+          controls.enableDamping = true; // Optional: Smooth movement
+          controls.dampingFactor = 0.1; // Optional: Control damping intensity
+        }}
       />
     </div>
   );

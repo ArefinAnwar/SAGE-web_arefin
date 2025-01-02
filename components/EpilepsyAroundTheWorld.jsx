@@ -42,7 +42,8 @@ export default function EpilepsyAroundTheWorld() {
           <motion.h1
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 1.2 }}
+
             className="text-2xl px-5 md:text-6xl absolute top-0 mt-6 md:mt-6 font-bold text-center text-emerald-300 z-50"
             style={{
               textShadow: "4px 0px 1px #ffffff",
