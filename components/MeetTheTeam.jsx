@@ -2,18 +2,41 @@
 import Image from "next/image";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 
 export default function MeetTheTeam() {
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        console.log("Is intersecting:", entry.isIntersecting); // Debugging log
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        } else {
+          setIsInView(false);
+        }
+      },
+      { threshold: 0.3 } // Ensure section is fully visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
   return (
-    <div className="flex relative flex-col scrollbar-hide items-center justify-center min-h-screen w-full mb-8 md:mb-0">
-      <h1
-        className="mt-8 md:mt-0 text-4xl md:text-6xl font-bold text-emerald-300"
-        style={{
-          textShadow: "4px 0px 1px #ffffff",
-        }}
-      >
-        Meet the Team
-      </h1>
+    <div
+      ref={sectionRef}
+      className="flex relative flex-col scrollbar-hide items-center justify-center min-h-screen w-full mb-8 md:mb-0"
+    >
       <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.6}
@@ -25,44 +48,66 @@ export default function MeetTheTeam() {
           "after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:via-white after:to-transparent after:mix-blend-overlay"
         )}
       />
-      <div className="flex scrollbar-hide flex-col md:flex-row items-center justify-center w-full mt-0 md:mt-10 md:h-[30rem]">
-        <PeopleCard
-          Name="Arefin Anwar"
-          image="/arefin_informal.png"
-          Designation="Operations Lead"
-          Description="Pupil of class 11 at St. Joseph Higher Secondary School, Dhaka, Bangladesh"
-          Contact="arefinanwar112@gmail.com"
-        />
-        <PeopleCard
-          Name="Misbah Uddin Inan"
-          image="/inan_informal.png"
-          Designation="Research & Executive Lead"
-          Description="Pupil of class 11 at Notre Dame College, Dhaka, Bangladesh"
-          Contact="misbahinan@gmail.com"
-        />
-        <PeopleCard
-          Name="Abrar Shahid"
-          image="/abrar_informal.png"
-          Designation="Technical Lead"
-          Description="Pupil of class 11 at Notre Dame College, Dhaka, Bangladesh"
-          Contact="abrarshahidrahik@gmail.com"
-        />
-        <PeopleCard
-          Name="Rafid Ahmed"
-          image="/rafid_informal.png"
-          Designation="Finance Lead"
-          Description="Pupil of class 11 at Academia School, Dhaka, Bangladesh"
-          Contact="steinerstein313@gmail.com"
-        />
-      </div>
+      <AnimatePresence>
+        {isInView && (
+          <>
+            <motion.h1
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-8 md:mt-0 text-4xl md:text-6xl font-bold text-emerald-300"
+              style={{
+                textShadow: "4px 0px 1px #ffffff",
+              }}
+            >
+              Meet the Team
+            </motion.h1>
+
+            <div className="flex scrollbar-hide flex-col md:flex-row items-center justify-center w-full mt-0 md:mt-10 md:h-[30rem]">
+              <PeopleCard
+                Name="Arefin Anwar"
+                image="/arefin_informal.png"
+                Designation="Operations Lead"
+                Description="Pupil of class 11 at St. Joseph Higher Secondary School, Dhaka, Bangladesh"
+                Contact="arefinanwar112@gmail.com"
+              />
+              <PeopleCard
+                Name="Misbah Uddin Inan"
+                image="/inan_informal.png"
+                Designation="Research & Executive Lead"
+                Description="Pupil of class 11 at Notre Dame College, Dhaka, Bangladesh"
+                Contact="misbahinan@gmail.com"
+              />
+              <PeopleCard
+                Name="Abrar Shahid"
+                image="/abrar_informal.png"
+                Designation="Technical Lead"
+                Description="Pupil of class 11 at Notre Dame College, Dhaka, Bangladesh"
+                Contact="abrarshahidrahik@gmail.com"
+              />
+              <PeopleCard
+                Name="Rafid Ahmed"
+                image="/rafid_informal.png"
+                Designation="Finance Lead"
+                Description="Pupil of class 11 at Academia School, Dhaka, Bangladesh"
+                Contact="steinerstein313@gmail.com"
+              />
+            </div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
 
 function PeopleCard({ Name, Designation, Description, Contact, image }) {
   return (
-    <div className="flex flex-col w-[85%] md:w-[22%] mt-4 md:mt-0 h-[25rem] md:h-[95%] mx-2 justify-center items-center bg-zinc-800 bg-opacity-50 border-2 border-white outline-2 outline-emerald-400">
-      <div className="flex border-4 border-emerald-400 flex-row mt-5 w-[50%] md:w-[70%] h-[60%] bg-slate-400 items-center justify-center overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, y: -30, x: 50, scale: 0.8 }}
+      animate={{ opacity: 1, y: 0, x: 0, scale: 1 }}
+      transition={{ duration: 1.5 }}
+      className="flex flex-col w-[85%] md:w-[22%] mt-4 md:mt-0 h-[25rem] md:h-[95%] mx-2 justify-center items-center bg-zinc-800 bg-opacity-50 border-2 border-white outline-2 outline-emerald-400"
+    >
+      <motion.div className="flex border-4 border-emerald-400 flex-row mt-5 w-[50%] md:w-[70%] h-[60%] bg-slate-400 items-center justify-center overflow-hidden">
         <Image
           className="z-40"
           src={image}
@@ -75,7 +120,7 @@ function PeopleCard({ Name, Designation, Description, Contact, image }) {
           width={3}
           height={3}
         />
-      </div>
+      </motion.div>
       <div className="flex flex-col w-full items-center justify-center">
         <span className="text-2xl text-emerald-400 font-semibold mt-4">
           {Name}
@@ -94,6 +139,6 @@ function PeopleCard({ Name, Designation, Description, Contact, image }) {
           {Contact}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }

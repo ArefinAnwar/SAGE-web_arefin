@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 
-const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
+const Globe = dynamic(() => import("react-globe.gl"), { ssr: true });
 
 // import Globe from ;
 
@@ -49,7 +49,7 @@ export default function GlobeVisualization() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center w-auto  bg-sky-300 h-auto overflow-hidden">
+    <div className="flex touch-none flex-col items-center justify-center w-auto  bg-sky-300 h-auto overflow-hidden">
       <Globe
         ref={globeRef}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg" // Globe texture

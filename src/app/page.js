@@ -17,6 +17,8 @@ import MeetTheTeam from "../../components/MeetTheTeam";
 import Footer from "../../components/Footer";
 import GlobeVisualization from "@/components/ui/globeMain";
 import EpilepsyAroundTheWorld from "../../components/EpilepsyAroundTheWorld";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 import { cn } from "@/lib/utils";
 
@@ -196,6 +198,7 @@ export default function Home() {
       <div id="sage-intro" className="min-h-screen snap-start overflow-y-scroll scrollbar-hide md:snap-section md:snap-start md:snap-always">
         <SageIntroTest />
       </div>
+      
       <div id="why-sage" className="min-h-screen snap-start overflow-y-scroll scrollbar-hide md:snap-section md:snap-start md:snap-always">
         <WhySage />
       </div>

@@ -1,9 +1,11 @@
-'use client'
+"use client";
 
 import React from "react";
 import Marquee from "@/components/ui/marquee";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
+import { useRef, useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const reviews = [
   {
@@ -63,38 +65,73 @@ const ReviewCard = ({ img, name, username, body }) => {
 };
 
 const CustomerReview = () => {
-  return (
-    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-transparent md:shadow-xl">
-      <h1
-        className="text-4xl md:text-6xl mb-10 font-bold text-emerald-300 z-30"
-        style={{
-          textShadow: "4px 0px 1px #ffffff",
-        }}
-      >
-        People about SAGE
-      </h1>
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef(null);
 
-      <AnimatedGridPattern
-        numSquares={30}
-        maxOpacity={0.6}
-        duration={3}
-        repeatDelay={1}
-        className={cn(
-          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 z-20",
-          "before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:via-black before:to-transparent",
-          "after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:via-white after:to-transparent after:mix-blend-overlay"
-        )}
-      />
-      <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
-        ))}
-      </Marquee>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        console.log("Is intersecting:", entry.isIntersecting); // Debugging log
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        } else {
+          setIsInView(false);
+        }
+      },
+      { threshold: 0.3 } // Ensure section is fully visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+  return (
+    <div
+      ref={sectionRef}
+      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-transparent md:shadow-xl"
+    >
+      {isInView && (
+        <>
+          <motion.h1
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-6xl mb-10 font-bold text-emerald-300 z-30"
+            style={{
+              textShadow: "4px 0px 1px #ffffff",
+            }}
+          >
+            People about SAGE
+          </motion.h1>
+
+          <AnimatedGridPattern
+            numSquares={30}
+            maxOpacity={0.6}
+            duration={3}
+            repeatDelay={1}
+            className={cn(
+              "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 z-20",
+              "before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:via-black before:to-transparent",
+              "after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:via-white after:to-transparent after:mix-blend-overlay"
+            )}
+          />
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {firstRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </Marquee>
+          <Marquee reverse pauseOnHover className="[--duration:20s]">
+            {secondRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </Marquee>
+        </>
+      )}
     </div>
   );
 };

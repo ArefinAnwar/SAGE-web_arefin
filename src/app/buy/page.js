@@ -149,7 +149,7 @@ export default function BuySage() {
                         </div>
                     </div> */}
                     <div className="flex flex-col w-[90%] md:w-full items-center justify-center">
-                        <div className="flex flex-col w-full md:w-11/12 h-5/6 bg-zinc-900 bg-opacity-50 border-2 border-emerald-300 rounded-lg p-6 items-center justify-center">
+                        <div className="flex flex-col w-full md:w-11/12 md:h-5/6 bg-zinc-900 bg-opacity-50 border-2 border-emerald-300 rounded-lg p-6 items-center justify-center">
                             {/* Image Section */}
                             <div className="flex items-center justify-center mb-4 relative h-2/3 w-full">
                                 <DotPattern
@@ -165,7 +165,7 @@ export default function BuySage() {
                                     alt={`SAGE Cap - ${selectedColorOption.name}`}
                                     sizes="100vw"
                                     style={{
-                                        width: "80%",
+                                        width: "70%",
                                         height: "auto",
                                     }}
                                     width={3}
@@ -175,7 +175,7 @@ export default function BuySage() {
 
                             {/* Description Section */}
                             <div className="flex flex-col w-full h-full">
-                                <h1 className="text-white mb-4 font-medium text-4xl underline decoration-emerald-400">
+                                <h1 className="text-white mb-4 font-medium text-2xl underline decoration-emerald-400">
                                     SAGE CAP
                                 </h1>
                                 <p className="text-slate-200 mb-2 text-sm">
@@ -214,7 +214,7 @@ export default function BuySage() {
                         </div>
                     </div>
                     <div className="flex flex-col mt-5 md:mt-0 w-[90%] md:w-full items-center justify-center  ">
-                        <div className="flex relative overflow-hidden flex-col w-full md:w-11/12 h-5/6 bg-zinc-900 bg-opacity-50  rounded-lg p-6 items-center justify-center">
+                        <div className="flex relative overflow-hidden flex-col w-full md:w-11/12 h-5/6 bg-zinc-900 bg-opacity-50 rounded-lg p-6 items-center justify-center">
                             <BorderBeam size={250} duration={6} borderWidth={3} />
                             <div className='flex items-center justify-center  mb-4 relative h-2/3 w-full'>
                                 <DotPattern
@@ -230,7 +230,7 @@ export default function BuySage() {
                                     alt="SAGE CAP"
                                     sizes="100vw"
                                     style={{
-                                        width: "80%",
+                                        width: "70%",
                                         height: "auto",
                                     }}
                                     width={3}
@@ -238,7 +238,7 @@ export default function BuySage() {
                                 />
                             </div>
                             <div className="flex  flex-col w-full h-full">
-                                <h1 className="text-white mb-4 font-medium text-4xl underline decoration-emerald-400">SAGE CAP PRO</h1>
+                                <h1 className="text-white mb-4 font-medium text-2xl underline decoration-emerald-400">SAGE CAP PRO</h1>
                                 <p className="text-slate-200 mb-2 text-sm">Same portable, lightweight, easy cap and notification system as SAGE CAP but with custom fine tuning every 3 months. 24/7 special careline</p>
                                 <p className="text-white font-semibold text-2xl md:text-lg">Price: <span className="font-medium text-emerald-300">250$</span> <span className="font-extralight italic">(per month:</span> <span className=" text-emerald-300">3$)</span> </p>
 

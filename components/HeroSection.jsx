@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Head from "next/head";
+import { motion } from "framer-motion";
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -38,37 +39,48 @@ export default function HeroSection() {
         </p>
         <div className="flex-col md:flex-row md:mt-5 items-center md:items-center md:justify-between justify-center md:pr-10 flex w-full h-auto">
           <Link className="w-full md:w-64 " href="/buy">
-            <ShimmerButton className="font-semibold mb-4 md:mb-0 text-white text-xl md:text-3xl px-1 w-full md:w-64 py-4 ">
+            <ShimmerButton className="font-semibold mb-4 md:mb-0 text-white text-xl md:text-3xl  w-full md:w-64 py-2 ">
               <span className="">GET SAGE</span>
             </ShimmerButton>
           </Link>
 
-          <button className="bg-[#fff] hover:bg-[#6BBF8B] hover:border-[#186d3e]  duration-300 border-4 font-semibold border-[#6BBF8B] text-[#186d3e] hover:text-white text-xl md:text-3xl px-1 w-full md:w-64 py-4 rounded-2xl hover:border-0 ease-linear">
+          <button className="bg-[#fff] hover:bg-[#6BBF8B] hover:border-[#186d3e]  duration-300 border-4 font-semibold border-[#6BBF8B] text-[#186d3e] hover:text-white text-xl md:text-3xl px-1 w-full md:w-64 py-2 rounded-2xl hover:border-0 ease-linear">
             KNOW MORE
           </button>
         </div>
       </div>
-      <div className="relative flex mb-10  md:mb-0  z-10 flex-col w-full px-4 md:px-0 md:w-1/2  justify-center items-center">
+      <motion.div
+        animate={{
+          y: ["0%", "-5%", "0%"], // Move up, then down
+        }}
+        transition={{
+          duration: 8, // Duration of one bounce
+          ease: "easeInOut", // Smooth easing
+          repeat: Infinity, 
+          repeatType: "loop", // Continuous looping
+        }}
+        className="relative flex mb-10  md:mb-0  z-10 flex-col w-full px-4 md:px-0 md:w-1/2  justify-center items-center"
+      >
         <DotPattern
           className={cn(
             "md:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
-            "[mask-image:radial-gradient(200px_circle_at_center,white,transparent)]",
+            "[mask-image:radial-gradient(140px_circle_at_center,white,transparent)]",
             "z-10"
           )}
         />
         <Image
           className="z-40"
-          src="/muse-2.png"
+          src="/sage-cap.png"
           alt="MUSE-2"
           sizes="100vw"
           style={{
-            width: "100%",
+            width: "65%",
             height: "auto",
           }}
           width={3}
           height={3}
         />
-      </div>
+      </motion.div>
     </div>
   );
 }

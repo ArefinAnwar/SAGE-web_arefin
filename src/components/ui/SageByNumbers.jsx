@@ -42,13 +42,29 @@ const epilepsyData = [
 
 export default function SageByNumbers() {
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef(null);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % epilepsyInfo.length);
     }, 4000); // Change info every 4 seconds
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting && entry.intersectionRatio === 1);
+      },
+      { threshold: .8 } // Ensure section is fully visible
+    );
 
-    return () => clearInterval(interval);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      clearInterval(interval);
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   const textVariants = {
@@ -58,16 +74,23 @@ export default function SageByNumbers() {
   };
 
   return (
-    <div className=" relative overflow-y-scroll scrollbar-hide w-full min-h-screen flex flex-col items-center ">
+    <div
+      ref={sectionRef}
+      className=" relative overflow-y-scroll scrollbar-hide w-full min-h-screen flex flex-col items-center "
+    >
       {/* <Meteors number={40} /> */}
-      <h1
-        className="text-4xl md:text-6xl top-0 mt-6 font-bold text-center text-emerald-300"
-        style={{
-          textShadow: "4px 0px 1px #ffffff",
-        }}
-      >
-        SAGE by Numbers
-      </h1>
+      {/* {isInView && ( */}
+        <motion.h1
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl md:text-6xl top-0 mt-6 font-bold text-center text-emerald-300"
+          style={{
+            textShadow: "4px 0px 1px #ffffff",
+          }}
+        >
+          SAGE by Numbers
+        </motion.h1>
+      {/* )} */}
 
       <div className=" mt-5 md:mt-10 md:bottom-10 grid  scrollbar-hide grid-cols-1 md:grid-cols-2 gap-8  md:h-11/12  items-center justify-center w-full px-4">
         {/* Info Section */}
