@@ -1,8 +1,10 @@
 "use client";
-
+import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 
-import Globe from "react-globe.gl";
+const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
+
+// import Globe from ;
 
 export default function GlobeVisualization() {
   const globeRef = useRef(null);
@@ -55,7 +57,6 @@ export default function GlobeVisualization() {
         // backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png" // Background stars
 
         backgroundColor="#0f172a"
-
         pointsData={pointsdata}
         pointColor={(d) => d.color}
         pointAltitude={(d) => d.size * 0.01} // Marker altitude
