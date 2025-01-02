@@ -58,10 +58,10 @@ export default function SageByNumbers() {
   };
 
   return (
-    <div className=" relative overflow-y-scroll w-full min-h-screen flex flex-col items-center justify-center ">
+    <div className=" relative overflow-y-scroll w-full min-h-screen flex flex-col items-center ">
       {/* <Meteors number={40} /> */}
       <h1
-        className="text-4xl md:text-6xl absolute top-0 mt-4 font-bold text-center text-emerald-300"
+        className="text-4xl md:text-6xl top-0 mt-6 font-bold text-center text-emerald-300"
         style={{
           textShadow: "4px 0px 1px #ffffff",
         }}
@@ -69,15 +69,15 @@ export default function SageByNumbers() {
         SAGE by Numbers
       </h1>
 
-      <div className="md:absolute  mt-28 md:mt-0 md:bottom-10 grid  grid-cols-1 md:grid-cols-2 gap-8 md:min-h-screen md:h-11/12  items-center justify-center w-full px-4">
+      <div className=" mt-5 md:mt-10 md:bottom-10 grid  grid-cols-1 md:grid-cols-2 gap-8  md:h-11/12  items-center justify-center w-full px-4">
         {/* Info Section */}
-        <div className="flex flex-col md:flex-row md:h-5/6 h-auto items-center justify-center ">
-          <div className="flex flex-col md:flex-col h-full w-full md:w-1/2 items-center justify-center">
+        <div className="flex  flex-col md:flex-row md:h-auto h-auto items-center justify-center ">
+          <div className="flex flex-col md:flex-col h-full w-full md:w-1/2 items-center justify-between">
             <AnimatedCircularProgress
               percentage={94}
               text="Model accuracy"
               color="teal"
-              className="mb-3"
+              className=""
             />
             <AnimatedCircularProgress
               percentage={80}
@@ -113,8 +113,8 @@ export default function SageByNumbers() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col md:mb-0 mb-24 h-auto w-full md:w-auto md:h-5/6 items-center justify-center">
-          <div className="h-24 md:h-48 w-full text-center overflow-hidden">
+        <div className="flex flex-col md:mb-0 mb-24 h-auto w-full md:w-auto md:h-auto  items-center justify-center">
+          <div className="h-24 md:h-40 w-full text-center overflow-hidden items-center justify-center">
             <AnimatePresence>
               <motion.p
                 key={currentIndex}
@@ -255,7 +255,7 @@ function AnimatedLineChart() {
   return (
     <div
       ref={ref}
-      className="w-11/12 border-2 border-emerald-400 bg-white bg-opacity-[10%] max-w-4xl py-6 rounded-xl flex flex-1 items-center justify-center mt-8"
+      className="w-full border-2 border-emerald-400 bg-white bg-opacity-[10%] max-w-4xl py-6 rounded-xl flex flex-1 items-center justify-center mt-8"
     >
       {/* <MagicCard className="z-10"> */}
       <ResponsiveContainer

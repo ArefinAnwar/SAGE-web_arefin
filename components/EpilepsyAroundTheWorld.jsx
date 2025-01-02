@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export default function EpilepsyAroundTheWorld() {
   return (
-    <div className="relative flex flex-col w-full min-h-screen items-center justify-center">
+    <div className="relative flex flex-col overflow-x-hidden w-full min-h-screen items-center justify-center">
       {/* <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.6}
@@ -18,7 +18,7 @@ export default function EpilepsyAroundTheWorld() {
         )}
       /> */}
       <h1
-        className="text-xl md:text-6xl absolute top-0 mt-6 md:mt-6 font-bold text-center text-emerald-300 z-50"
+        className="text-2xl px-5 md:text-6xl absolute top-0 mt-6 md:mt-6 font-bold text-center text-emerald-300 z-50"
         style={{
           textShadow: "4px 0px 1px #ffffff",
         }}

@@ -54,7 +54,7 @@ export default function WhySage() {
     },
   ];
   return (
-    <div className="flex relative overflow-hidden flex-col min-h-screen items-center justify-center w-full">
+    <div className="flex relative overflow-x-hidden overflow-hidden flex-col min-h-screen items-center  w-full">
       <h1 className="text-slate-800 text[10rem] md:text-[50rem] absolute right-5 rotate-12 ">
         ?
       </h1>
@@ -65,18 +65,18 @@ export default function WhySage() {
         #
       </h1>
       <h1
-        className=" text-4xl md:text-6xl absolute top-0 mt-10 font-bold text-center text-emerald-300"
+        className=" text-4xl md:text-6xl top-0 mt-6 md:mt font-bold text-center text-emerald-300"
         style={{
           textShadow: "4px 0px 1px #ffffff",
         }}
       >
         Why SAGE?
       </h1>
-      <p className="absolute top-0 mt-32 italic text-lg text-slate-200 text-center">
+      <p className=" top-0 mt-4  italic text-sm px-2 md:text-lg text-slate-200 text-center">
         Only wearable cap available for seiure prediction under 250$
       </p>
-      <div className="absolute  scrollbar-hide bottom-10 md:bottom-0  flex-col md:flex-row flex w-[95%] h-4/6 items-center justify-center">
-        <div className="flex flex-col w-[95%] md:mr-4 md:w-1/2 h-full  justify-center">
+      <div className=" mt-4  md:mt-24  scrollbar-hide top-32 md:bottom-0  flex-col md:flex-row flex w-[95%] h-[120%] items-center justify-center">
+        <div className="flex scrollbar-hide flex-col w-[95%] md:mr-4 md:w-1/2 h-full overflow-y-scroll justify-center">
           <motion.div
             className=" w-full"
             initial={{ opacity: 0 }}
@@ -97,7 +97,7 @@ export default function WhySage() {
             </Accordion>
           </motion.div>
         </div>
-        <div className="flex flex-col w-[95%] md:w-1/2 h-full justify-center ">
+        <div className="flex flex-col w-[95%] scrollbar-hide md:w-1/2 h-[115%] overflow-y-scroll md:h-full justify-center z-50">
           <motion.div
             className="w-full "
             initial={{ opacity: 0 }}
