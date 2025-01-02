@@ -202,10 +202,10 @@ export default function Home() {
       <div className="min-h-screen overflow-y-scroll snap-start scrollbar-hide md:snap-section md:snap-start md:snap-always">
         <SageByNumbers />
       </div>
-      <div className="min-h-screen scrollbar-hide overflow-y-scroll snap-start md:snap-section md:snap-start md:snap-always">
+      <div className="min-h-screen scrollbar-hide overflow-y-scroll  snap-start md:snap-section md:snap-start md:snap-always">
         <EpilepsyAroundTheWorld />
       </div>
-      <div id="customer-review" className="min-h-screen snap-start md:snap-section md:snap-start md:snap-always">
+      <div id="customer-review" className="min-h-screen snap-start scrollbar-hide md:snap-section md:snap-start md:snap-always">
         <CustomerReview />
       </div>
       <div id="meet-the-team" className="min-h-screen  overflow-y-scroll snap-start scrollbar-hide md:snap-section md:snap-start md:snap-always">

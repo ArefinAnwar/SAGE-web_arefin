@@ -58,7 +58,7 @@ export default function SageByNumbers() {
   };
 
   return (
-    <div className=" relative overflow-y-scroll w-full min-h-screen flex flex-col items-center ">
+    <div className=" relative overflow-y-scroll scrollbar-hide w-full min-h-screen flex flex-col items-center ">
       {/* <Meteors number={40} /> */}
       <h1
         className="text-4xl md:text-6xl top-0 mt-6 font-bold text-center text-emerald-300"
@@ -69,7 +69,7 @@ export default function SageByNumbers() {
         SAGE by Numbers
       </h1>
 
-      <div className=" mt-5 md:mt-10 md:bottom-10 grid  grid-cols-1 md:grid-cols-2 gap-8  md:h-11/12  items-center justify-center w-full px-4">
+      <div className=" mt-5 md:mt-10 md:bottom-10 grid  scrollbar-hide grid-cols-1 md:grid-cols-2 gap-8  md:h-11/12  items-center justify-center w-full px-4">
         {/* Info Section */}
         <div className="flex  flex-col md:flex-row md:h-auto h-auto items-center justify-center ">
           <div className="flex flex-col md:flex-col h-full w-full md:w-1/2 items-center justify-between">
@@ -86,7 +86,7 @@ export default function SageByNumbers() {
             />
           </div>
 
-          <div className="flex flex-row md:flex-col h-full w-full md:w-1/2 items-center justify-center">
+          <div className="flex flex-row md:flex-col  scrollbar-hide h-full w-full md:w-1/2 items-center justify-center">
             <div className="flex flex-col items-center justify-end h-full ">
               {/* <p className="whitespace-pre-wrap text-2xl text-white font-medium tracking-tighter ">
                 • <HyperText>LSTM with Proximal Policy & TFT used</HyperText>

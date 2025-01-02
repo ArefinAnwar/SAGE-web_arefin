@@ -54,7 +54,7 @@ export default function WhySage() {
     },
   ];
   return (
-    <div className="flex relative overflow-x-hidden overflow-hidden flex-col min-h-screen items-center  w-full">
+    <div className="flex relative  scrollbar-hide overflow-x-hidden overflow-hidden flex-col min-h-screen items-center  w-full">
       <h1 className="text-slate-800 text[10rem] md:text-[50rem] absolute right-5 rotate-12 ">
         ?
       </h1>
