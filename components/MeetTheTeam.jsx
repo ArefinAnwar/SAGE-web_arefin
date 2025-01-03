@@ -4,6 +4,7 @@ import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
+import GridPattern from "@/components/ui/grid-pattern";
 
 export default function MeetTheTeam() {
   const [isInView, setIsInView] = useState(false);
@@ -35,13 +36,11 @@ export default function MeetTheTeam() {
   return (
     <div
       ref={sectionRef}
-      className="flex relative flex-col scrollbar-hide items-center justify-center min-h-screen w-full mb-8 md:mb-0"
+      className="flex relative flex-col scrollbar-hide items-center justify-center min-h-screen w-full mb-8 md:pb-5"
     >
-      <AnimatedGridPattern
+      <GridPattern
         numSquares={30}
         maxOpacity={0.6}
-        duration={3}
-        repeatDelay={1}
         className={cn(
           "inset-x-0 inset-y-[-30%] h-[130%]  z-20",
           "before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:via-black before:to-transparent",
@@ -55,7 +54,7 @@ export default function MeetTheTeam() {
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2 }}
-              className="mt-8 md:mt-0 text-4xl md:text-6xl font-bold text-emerald-300"
+              className="mt-8 md:mt-10 text-4xl md:text-6xl font-bold text-emerald-300"
               style={{
                 textShadow: "4px 0px 1px #ffffff",
               }}
@@ -63,7 +62,7 @@ export default function MeetTheTeam() {
               Meet the Team
             </motion.h1>
 
-            <div className="flex scrollbar-hide flex-col md:flex-row items-center justify-center w-full mt-0 md:mt-10 md:h-[30rem]">
+            <div className="flex scrollbar-hide flex-col md:flex-row items-center justify-center w-full mt-0 md:mt-4  md:h-[30rem]">
               <PeopleCard
                 Name="Arefin Anwar"
                 image="/arefin_informal.png"
@@ -127,7 +126,19 @@ function PeopleCard({ Name, Designation, Description, Contact, image }) {
           {Name}
         </span>
         <span className="text-md mt-2 text-slate-100 italic">
-          {Designation}
+          <motion.div className="relative " style={{ display: "inline-block" }}>
+            {Designation}
+            <motion.div
+              className="absolute bottom-0 left-0 h-[2px] bg-emerald-400"
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{
+                delay: 2.3,
+                duration: 1.5,
+                ease: "easeInOut",
+              }}
+            />
+          </motion.div>
         </span>
       </div>
 

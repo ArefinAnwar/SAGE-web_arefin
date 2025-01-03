@@ -174,9 +174,46 @@ export default function Home() {
               LOGIN
             </Link>
           </div>
-          s  </div>
+        </div>
       </nav>
-
+      <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[45%] rounded-md inset-x-0 mx-auto items-center justify-center py-3 px-2  flex-row z-50" >
+        <Link
+          href="#sage-intro"
+          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+        >
+          Intro
+        </Link>
+        <Link
+          href="#why-sage"
+          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+        >
+          Why SAGE
+        </Link>
+        <Link
+          href="#customer-review"
+          className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+        >
+          Customer Review
+        </Link>
+        <Link
+          href="#meet-the-team"
+          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+        >
+          Meet the Team
+        </Link>
+        <Link
+          href="#faq-section"
+          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+        >
+          FAQ
+        </Link>
+        <Link
+          href="/login"
+          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+        >
+          LOGIN
+        </Link>
+      </nav>
       <div className="absolute inset-0 ">
         {Array.from({ length: 30 }).map((_, i) => (
           <div
@@ -186,9 +223,9 @@ export default function Home() {
         ))}
       </div>
       {/* <ScrollProgress className="fixed top-0 z-50" /> */}
-      <div className="md:visible invisible mx-auto w-fit fixed inset-x-0 bottom-3 z-50">
+      {/* <div className="md:visible invisible mx-auto w-fit fixed inset-x-0 bottom-3 z-50">
         <DockDemo />
-      </div>
+      </div> */}
 
       <div id='#home' className="h-screen dsnap-start z-30 dmd:snap-section dmd:snap-start md:snap-always">
         <HeroSection />
@@ -199,7 +236,7 @@ export default function Home() {
         <SageIntroTest />
       </div>
 
-      <div id="why-sage" className="min-h-screen dsnap-start overflow-y-scroll scrollbar-hide mdd:snap-section mdd:snap-start mdd:snap-always">
+      <div id="why-sage" className="min-h-screen dsnap-start  mdd:snap-section mdd:snap-start mdd:snap-always">
         <WhySage />
       </div>
       {/* <div className="min-h-screen overflow-y-scroll dsnap-start scrollbar-hide mdd:snap-section mdd:snap-start mdd:snap-always">

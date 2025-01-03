@@ -96,13 +96,23 @@ const CustomerReview = () => {
       ref={sectionRef}
       className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-transparent md:shadow-xl"
     >
+      <AnimatedGridPattern
+        numSquares={30}
+        maxOpacity={0.6}
+        duration={3}
+        repeatDelay={1}
+        className={cn(
+          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 z-20",
+          "before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:via-black before:to-transparent",
+          "after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:via-white after:to-transparent after:mix-blend-overlay"
+        )}
+      />
       {isInView && (
         <>
           <motion.h1
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
-
             className="text-4xl md:text-6xl mb-10 font-bold text-emerald-300 z-30"
             style={{
               textShadow: "4px 0px 1px #ffffff",
@@ -111,17 +121,6 @@ const CustomerReview = () => {
             People about SAGE
           </motion.h1>
 
-          <AnimatedGridPattern
-            numSquares={30}
-            maxOpacity={0.6}
-            duration={3}
-            repeatDelay={1}
-            className={cn(
-              "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 z-20",
-              "before:absolute before:inset-0 before:bg-gradient-to-b before:from-transparent before:via-black before:to-transparent",
-              "after:absolute after:inset-0 after:bg-gradient-to-b after:from-transparent after:via-white after:to-transparent after:mix-blend-overlay"
-            )}
-          />
           <Marquee pauseOnHover className="[--duration:20s]">
             {firstRow.map((review) => (
               <ReviewCard key={review.username} {...review} />

@@ -54,9 +54,10 @@ export default function GlobeVisualization() {
       style={{
         touchAction: "none", // Disables touch gestures like pinch-to-zoom
       }}
-      onWheel={(e) => e.preventDefault()} // Prevents mouse wheel zooming
-      onTouchMove={(e) => e.preventDefault()} // Prevents touch interactions
-      onTouchStart={(e) => e.preventDefault()} // Disables touch-based zooming
+      
+      onWheelCapture={(e) => e.preventDefault()} // Prevents mouse wheel zooming
+      onTouchMoveCapture={(e) => e.preventDefault()} // Prevents touch interactions
+      onTouchStartCapture={(e) => e.preventDefault()} // Disables touch-based zooming
     >
       <Globe
         ref={globeRef}
@@ -76,6 +77,7 @@ export default function GlobeVisualization() {
           controls.enableDamping = true; // Optional: Smooth movement
           controls.dampingFactor = 0.1; // Optional: Control damping intensity
         }}
+        
       />
     </div>
   );

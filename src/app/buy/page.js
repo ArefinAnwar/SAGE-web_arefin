@@ -73,7 +73,7 @@ export default function BuySage() {
     const [selectedColor, setSelectedColor] = useState("black");
 
     const colorOptions = [
-        { name: "Black", colorCode: "black", image: "/sage-cap.png" },
+        { name: "Black", colorCode: "black", image: "/sage-cap.webp" },
         { name: "Pink", colorCode: "pink", image: "/sage-cap-pink.png" },
         { name: "Brown", colorCode: "brown", image: "/sage-cap-brown.png" },
         { name: "Yellow", colorCode: "yellow", image: "/sage-cap-yellow.png" },
