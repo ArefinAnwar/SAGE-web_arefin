@@ -104,7 +104,7 @@ const SageIntroTest = () => {
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   key={index}
-                  transition={{ duration: 1.2, delay: 1 }}
+                  transition={{ duration: 1.2, delay: index + 0.5 }}
                   className={cn(
                     "bg-white bg-opacity-[7%] drop-shadow-2xl border-teal-500 border-2 text-white p-3 py-6 shadow-lg text-center "
                     // "bg-emerald-600 bg-gradient-to-l from-teal-500 to-slate-500 drop-shadow-2xl border-teal-500 border-4 text-white p-3 rounded-lg shadow-lg text-center"
@@ -122,7 +122,7 @@ const SageIntroTest = () => {
                         initial={{ width: 0 }}
                         animate={{ width: "100%" }}
                         transition={{
-                          delay: 2.3,
+                          delay: index + 2.3,
                           duration: 1.2,
                           ease: "easeInOut",
                         }}

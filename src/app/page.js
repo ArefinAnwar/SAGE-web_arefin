@@ -184,30 +184,42 @@ export default function Home() {
         >
           Intro
         </Link>
+        |
         <Link
           href="#why-sage"
           className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
         >
           Why SAGE
         </Link>
+        |
         <Link
           href="#customer-review"
           className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
         >
-          Customer Review
+          Customer Reviews
         </Link>
+        |
+        <Link
+          href="#journey-of-sage"
+          className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+        >
+          Journey
+        </Link>
+        |
         <Link
           href="#meet-the-team"
           className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
         >
-          Meet the Team
+          Team
         </Link>
+        |
         <Link
           href="#faq-section"
           className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
         >
           FAQ
         </Link>
+        |
         <Link
           href="/login"
           className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
@@ -242,9 +254,9 @@ export default function Home() {
       <div id="why-sage" className="min-h-screen dsnap-start  mdd:snap-section mdd:snap-start mdd:snap-always">
         <WhySage />
       </div>
-      <div className="min-h-screen overflow-y-scroll dsnap-start scrollbar-hide mdd:snap-section mdd:snap-start mdd:snap-always">
+      {/* <div className="min-h-screen overflow-y-scroll dsnap-start scrollbar-hide mdd:snap-section mdd:snap-start mdd:snap-always">
         <SageByNumbers />
-      </div>
+      </div> */}
       <div className="min-h-screen scrollbar-hide overflow-y-scroll  dsnap-start dmd:snap-section mdd:snap-start mdd:snap-always">
         <EpilepsyAroundTheWorld />
       </div>

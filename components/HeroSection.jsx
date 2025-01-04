@@ -53,6 +53,7 @@ export default function HeroSection() {
       <motion.div
         animate={{
           y: ["0%", "-5%", "0%"], // Move up, then down
+          scale: [1, .9, 1]
         }}
         transition={{
           duration: 8, // Duration of one bounce
