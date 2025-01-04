@@ -18,6 +18,7 @@ import Footer from "../../components/Footer";
 import GlobeVisualization from "@/components/ui/globeMain";
 import EpilepsyAroundTheWorld from "../../components/EpilepsyAroundTheWorld";
 import { motion, AnimatePresence } from "framer-motion";
+import JourneyOfSage from "../../components/JourneyOfSage";
 
 
 import { cn } from "@/lib/utils";
@@ -235,7 +236,9 @@ export default function Home() {
       <div id="sage-intro" className="min-h-screen dsnap-start overflow-y-scroll scrollbar-hide dmd:snap-section mdd:snap-start md:snap-always">
         <SageIntroTest />
       </div>
-
+      <div id="journey-of-sage" className="min-h-screen ">
+        <JourneyOfSage />
+      </div>
       <div id="why-sage" className="min-h-screen dsnap-start  mdd:snap-section mdd:snap-start mdd:snap-always">
         <WhySage />
       </div>

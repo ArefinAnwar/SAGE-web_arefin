@@ -39,7 +39,6 @@ export default function MeetTheTeam() {
       className="flex relative flex-col scrollbar-hide items-center justify-center min-h-screen w-full mb-8 md:pb-5"
     >
       <GridPattern
-        numSquares={30}
         maxOpacity={0.6}
         className={cn(
           "inset-x-0 inset-y-[-30%] h-[130%]  z-20",
