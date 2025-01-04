@@ -242,9 +242,9 @@ export default function Home() {
       <div id="why-sage" className="min-h-screen dsnap-start  mdd:snap-section mdd:snap-start mdd:snap-always">
         <WhySage />
       </div>
-      {/* <div className="min-h-screen overflow-y-scroll dsnap-start scrollbar-hide mdd:snap-section mdd:snap-start mdd:snap-always">
+      <div className="min-h-screen overflow-y-scroll dsnap-start scrollbar-hide mdd:snap-section mdd:snap-start mdd:snap-always">
         <SageByNumbers />
-      </div> */}
+      </div>
       <div className="min-h-screen scrollbar-hide overflow-y-scroll  dsnap-start dmd:snap-section mdd:snap-start mdd:snap-always">
         <EpilepsyAroundTheWorld />
       </div>
