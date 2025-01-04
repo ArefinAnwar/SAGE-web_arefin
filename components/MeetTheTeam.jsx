@@ -64,28 +64,28 @@ export default function MeetTheTeam() {
             <div className="flex scrollbar-hide flex-col md:flex-row items-center justify-center w-full mt-0 md:mt-4  md:h-[30rem]">
               <PeopleCard
                 Name="Arefin Anwar"
-                image="/arefin_informal.png"
+                image="/arefin_informal.jpg"
                 Designation="Operations Lead"
                 Description="Pupil of class 11 at St. Joseph Higher Secondary School, Dhaka, Bangladesh"
                 Contact="arefinanwar112@gmail.com"
               />
               <PeopleCard
                 Name="Misbah Uddin Inan"
-                image="/inan_informal.png"
+                image="/inan_informal.jpg"
                 Designation="Research & Executive Lead"
                 Description="Pupil of class 11 at Notre Dame College, Dhaka, Bangladesh"
                 Contact="misbahinan@gmail.com"
               />
               <PeopleCard
                 Name="Abrar Shahid"
-                image="/abrar_informal.png"
+                image="/abrar_informal.jpg"
                 Designation="Technical Lead"
                 Description="Pupil of class 11 at Notre Dame College, Dhaka, Bangladesh"
                 Contact="abrarshahidrahik@gmail.com"
               />
               <PeopleCard
                 Name="Rafid Ahmed"
-                image="/rafid_informal.png"
+                image="/rafid_informal.jpg"
                 Designation="Finance Lead"
                 Description="Pupil of class 11 at Academia School, Dhaka, Bangladesh"
                 Contact="steinerstein313@gmail.com"

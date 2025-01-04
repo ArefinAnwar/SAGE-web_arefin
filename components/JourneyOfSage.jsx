@@ -8,6 +8,16 @@ const timelineData = [
     title: "Research Phase",
     description:
       "We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction.",
+    additionalContent: {
+      type: "text",
+      content:
+        "Our research began with analyzing over 10,000 EEG recordings to identify key patterns. The initial findings showed a 78% correlation between specific brainwave patterns and pre-seizure states.",
+      stats: [
+        { label: "Research Duration", value: "18 months" },
+        { label: "Data Points", value: "10,000+" },
+        { label: "Initial Accuracy", value: "78%" },
+      ],
+    },
   },
   {
     title: "Ideation & Scope Expansion",
