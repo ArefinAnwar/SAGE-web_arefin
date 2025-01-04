@@ -110,7 +110,7 @@ const CustomerReview = () => {
     >
       <AnimatedGridPattern
         numSquares={30}
-        maxOpacity={0.6}
+        
         duration={3}
         repeatDelay={1}
         className={cn(

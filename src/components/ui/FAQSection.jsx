@@ -109,7 +109,6 @@ export default function FAQSection() {
                 ))}
               </Accordion>
             </motion.div>
-            <Footer />
           </>
         )}
       </AnimatePresence>
