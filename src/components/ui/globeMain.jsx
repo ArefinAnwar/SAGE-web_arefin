@@ -1,9 +1,9 @@
-// "use client";
+"use client";
 import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 
 // Use dynamic import for Globe with SSR enabled
-const Globe = dynamic(() => import("react-globe.gl"), { ssr: true });
+const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
 
 export default function GlobeVisualization() {
   const globeRef = useRef(null);
