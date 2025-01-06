@@ -110,7 +110,6 @@ const CustomerReview = () => {
     >
       <AnimatedGridPattern
         numSquares={30}
-        
         duration={3}
         repeatDelay={1}
         className={cn(
@@ -125,13 +124,16 @@ const CustomerReview = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
-            className="text-4xl md:text-6xl mb-10 font-bold text-emerald-300 z-30"
+            className="text-4xl md:text-6xl mb-3 font-bold text-emerald-300 z-30"
             style={{
               textShadow: "4px 0px 1px #ffffff",
             }}
           >
             People about SAGE
           </motion.h1>
+          <p className="text-lg px-2 text-center md:text-lg mt-6 md:mt-0 mb-6  text-slate-300 italic">
+            Reviews from the 8 people who willngly partiicpated in testing phase
+          </p>
 
           <Marquee pauseOnHover className="[--duration:20s]">
             {firstRow.map((review) => (

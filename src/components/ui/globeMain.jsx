@@ -1,34 +1,52 @@
+
 "use client";
 import dynamic from "next/dynamic";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-// Use dynamic import for Globe with SSR enabled
-const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
+const Globe = dynamic(() => import("react-globe.gl"), { 
+  ssr: true,
+  loading: () => (
+    <div className="w-[500px] h-[500px] bg-slate-900 flex items-center justify-center">
+      <div className="text-white">Loading Globe...</div>
+    </div>
+  )
+});
 
 export default function GlobeVisualization() {
   const globeRef = useRef(null);
-  const containerRef = useRef(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    if (globeRef.current) {
-      // Enable auto-rotation
-      globeRef.current.controls().autoRotate = true;
-      globeRef.current.controls().autoRotateSpeed = 1;
+    setIsClient(true);
+  }, []);
 
-      // Disable zoom completely
-      globeRef.current.controls().enableZoom = false;
-      globeRef.current.controls().mouseButtons.RIGHT = null;
-      globeRef.current.controls().touches.TWO = null;
+  // Separate useEffect for Globe controls
+  useEffect(() => {
+    // Check if Globe is mounted and has controls
+    if (globeRef.current && globeRef.current.controls()) {
+      const controls = globeRef.current.controls();
+      
+      // Set auto-rotation
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 0.5;
+      
+      // Disable zoom and other interactions
+      controls.enableZoom = false;
+      controls.minDistance = 200;
+      controls.maxDistance = 200;
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.1;
+      controls.enablePan = false;
+      controls.mouseButtons.RIGHT = null;
+      controls.touches.TWO = null;
     }
 
-    // Prevent zoom via gesture events
     const preventZoom = (e) => {
       if (e.ctrlKey || e.metaKey) {
         e.preventDefault();
       }
     };
 
-    // Add event listeners to prevent zoom
     document.addEventListener("keydown", preventZoom);
     document.addEventListener("wheel", preventZoom, { passive: false });
 
@@ -36,7 +54,7 @@ export default function GlobeVisualization() {
       document.removeEventListener("keydown", preventZoom);
       document.removeEventListener("wheel", preventZoom);
     };
-  }, []);
+  }, [isClient]); // Add isClient as dependency
 
   const pointsdata = [
     { lat: 20.5937, lng: 78.9629, size: 3.9, color: "red" }, // India
@@ -73,7 +91,6 @@ export default function GlobeVisualization() {
 
   return (
     <div
-      ref={containerRef}
       className="flex touch-none flex-col items-center justify-center w-auto bg-slate-900 h-auto overflow-hidden"
       style={{
         touchAction: "none",
@@ -88,25 +105,27 @@ export default function GlobeVisualization() {
       onGestureChange={(e) => e.preventDefault()}
       onGestureEnd={(e) => e.preventDefault()}
     >
-      <Globe
-        ref={globeRef}
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg" // Globe texture
-        backgroundColor="#0f172a"
-        pointsData={pointsdata}
-        pointColor={(d) => d.color}
-        pointAltitude={(d) => d.size * 0.01} // Marker altitude
-        pointRadius={0.1} // Marker size
-        width={500}
-        height={500}
-        controls={(controls) => {
-          controls.enableZoom = false;
-          controls.minDistance = 200;
-          controls.maxDistance = 200;
-          controls.enableDamping = true;
-          controls.dampingFactor = 0.1;
-          controls.enablePan = false;
-        }}
-      />
+      {isClient && (
+        <Globe
+          ref={globeRef}
+          globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+          backgroundColor="#0f172a"
+          pointsData={pointsdata}
+          pointColor={(d) => d.color}
+          pointAltitude={(d) => d.size * 0.01}
+          pointRadius={0.1}
+          width={500}
+          height={500}
+          onGlobeReady={() => {
+            // Additional initialization when globe is ready
+            if (globeRef.current) {
+              const controls = globeRef.current.controls();
+              controls.autoRotate = true;
+              controls.autoRotateSpeed = 0.5;
+            }
+          }}
+        />
+      )}
     </div>
   );
 }

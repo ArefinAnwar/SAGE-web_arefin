@@ -24,6 +24,7 @@ const timelineData = [
     title: "Ideation & Scope Expansion",
     description:
       "Realizing its potential to address real-world challenges, we expanded the scope beyond academia.",
+    videoLink: "https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb",
   },
   {
     title: "Hardware Development",
@@ -37,8 +38,7 @@ const timelineData = [
   },
   {
     title: "Testing & Calibration",
-    description:
-      "Conducted extensive tests on simulated and real EEG datasets.",
+    description: "Conducted tests on 8 people low-income-background people.",
   },
   {
     title: "Fine-Tuning & Optimization",
@@ -104,14 +104,15 @@ const TimelineItem = ({ data, index }) => {
           <div className="w-2 h-2 bg-white rounded-full" />
         </div>
       </motion.div>
-
-      <HeroVideoDialog
-        className="mt-8 md:mt-5 block"
-        animationStyle="from-center"
-        videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-        thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
-        thumbnailAlt="Hero Video"
-      />
+      {data.videoLink && (
+        <HeroVideoDialog
+          className="mt-8 md:mt-5 block"
+          animationStyle="from-center"
+          videoSrc={data.videoLink}
+          thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+          thumbnailAlt="Hero Video"
+        />
+      )}
     </motion.div>
   );
 };

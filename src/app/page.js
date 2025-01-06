@@ -248,12 +248,8 @@ export default function Home() {
       <div id="sage-intro" className="min-h-screen dsnap-start  dmd:snap-section mdd:snap-start md:snap-always">
         <SageIntroTest />
       </div>
-      <div id="join-us-section" className="md:min-h-screen h-auto ">
-        <JoinTheRevolution />
-      </div>
-      <div id="journey-of-sage" className="min-h-screen ">
-        <JourneyOfSage />
-      </div>
+
+
       <div id="why-sage" className="min-h-screen dsnap-start  mdd:snap-section mdd:snap-start mdd:snap-always">
         <WhySage />
       </div>
@@ -263,8 +259,14 @@ export default function Home() {
       <div id="EpilepsyAroundTheWorld" className="min-h-screen scrollbar-hide overflow-y-scroll  dsnap-start dmd:snap-section mdd:snap-start mdd:snap-always">
         <EpilepsyAroundTheWorld />
       </div>
+      <div id="journey-of-sage" className="min-h-screen ">
+        <JourneyOfSage />
+      </div>
       <div id="customer-review" className="min-h-screen dsnap-start scrollbar-hide dmd:snap-section mdd:snap-start mdd:snap-always">
         <CustomerReview />
+      </div>
+      <div id="join-us-section" className="md:min-h-screen h-auto ">
+        <JoinTheRevolution />
       </div>
       <div id="meet-the-team" className="min-h-screen  overflow-y-scroll dsnap-start scrollbar-hide md:snap-sectiodn mdd:snap-start mdd:snap-always">
         <MeetTheTeam />

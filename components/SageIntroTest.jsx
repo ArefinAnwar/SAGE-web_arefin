@@ -34,7 +34,7 @@ const SageIntroTest = () => {
   return (
     <div
       ref={sectionRef}
-      className="md:min-h-screen h-[150vh] items-center justify-center flex flex-col w-full relative py-10 overflow-hidden"
+      className="md:min-h-screen  items-center justify-center flex flex-col w-full relative py-10 overflow-hidden"
     >
       <Particles
         className="absolute inset-0"
