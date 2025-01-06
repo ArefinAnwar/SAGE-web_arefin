@@ -11,10 +11,33 @@ export default function GlobeVisualization() {
 
   useEffect(() => {
     if (globeRef.current) {
-      globeRef.current.controls().autoRotate = true; // Auto-rotate the globe
+      // Enable auto-rotation
+      globeRef.current.controls().autoRotate = true;
       globeRef.current.controls().autoRotateSpeed = 1;
+
+      // Disable zoom completely
+      globeRef.current.controls().enableZoom = false;
+      globeRef.current.controls().mouseButtons.RIGHT = null;
+      globeRef.current.controls().touches.TWO = null;
     }
+
+    // Prevent zoom via gesture events
+    const preventZoom = (e) => {
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault();
+      }
+    };
+
+    // Add event listeners to prevent zoom
+    document.addEventListener("keydown", preventZoom);
+    document.addEventListener("wheel", preventZoom, { passive: false });
+
+    return () => {
+      document.removeEventListener("keydown", preventZoom);
+      document.removeEventListener("wheel", preventZoom);
+    };
   }, []);
+
   const pointsdata = [
     { lat: 20.5937, lng: 78.9629, size: 3.9, color: "red" }, // India
     { lat: 37.0902, lng: -95.7129, size: 9.6, color: "red" }, // United States
@@ -52,12 +75,17 @@ export default function GlobeVisualization() {
     <div
       className="flex touch-none flex-col items-center justify-center w-auto bg-slate-900 h-auto overflow-hidden"
       style={{
-        touchAction: "none", // Disables touch gestures like pinch-to-zoom
+        touchAction: "none",
+        WebkitTouchCallout: "none",
+        WebkitUserSelect: "none",
+        userSelect: "none",
       }}
-      
-      onWheelCapture={(e) => e.preventDefault()} // Prevents mouse wheel zooming
-      onTouchMoveCapture={(e) => e.preventDefault()} // Prevents touch interactions
-      onTouchStartCapture={(e) => e.preventDefault()} // Disables touch-based zooming
+      onWheel={(e) => e.preventDefault()}
+      onTouchMove={(e) => e.preventDefault()}
+      onTouchStart={(e) => e.preventDefault()}
+      onGestureStart={(e) => e.preventDefault()}
+      onGestureChange={(e) => e.preventDefault()}
+      onGestureEnd={(e) => e.preventDefault()}
     >
       <Globe
         ref={globeRef}
@@ -73,11 +101,13 @@ export default function GlobeVisualization() {
         width={500}
         height={500}
         controls={(controls) => {
-          controls.enableZoom = false; // Disable zoom
-          controls.enableDamping = true; // Optional: Smooth movement
-          controls.dampingFactor = 0.1; // Optional: Control damping intensity
+          controls.enableZoom = false;
+          controls.minDistance = 200;
+          controls.maxDistance = 200;
+          controls.enableDamping = true;
+          controls.dampingFactor = 0.1;
+          controls.enablePan = false;
         }}
-        
       />
     </div>
   );

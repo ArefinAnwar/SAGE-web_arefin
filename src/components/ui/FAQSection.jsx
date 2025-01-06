@@ -94,7 +94,8 @@ export default function FAQSection() {
             {/* <BorderedHeading text="Frequently Asked Questions" /> */}
             <div className="flex mb-10"></div>
 
-            <motion.div
+            <motion.div                 
+              style={{ willChange: "transform, opacity, scale" }}  
               className="mt-10 w-11/12"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

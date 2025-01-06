@@ -1,13 +1,14 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 
 const timelineData = [
   {
     title: "Research Phase",
     description:
-      "We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction.",
+      "We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction. We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction. We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction.",
     additionalContent: {
       type: "text",
       content:
@@ -51,43 +52,26 @@ const timelineData = [
 
 const TimelineItem = ({ data, index }) => {
   const itemRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-        setScrollProgress(entry.intersectionRatio);
-      },
-      {
-        threshold: Array.from({ length: 100 }, (_, i) => i / 100),
-        rootMargin: "-10% 0px -10% 0px",
-      }
-    );
-
-    if (itemRef.current) {
-      observer.observe(itemRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const isInView = useInView(itemRef, {
+    once: false,
+    margin: "-10% 0px -10% 0px",
+  });
 
   const variants = {
-    hidden: { opacity: 0, y: 120, scale: 0.5 },
+    hidden: { opacity: 0, y: 100, scale: 0.7 },
     visible: { opacity: 1, y: 0, scale: 1 },
   };
 
   return (
     <motion.div
       ref={itemRef}
-      className="relative flex flex-col mb-32 group pl-4 pr-12"
+      className="relative flex flex-col mb-72 md:mb-60 group pl-4 pr-12"
       initial="hidden"
-      animate={isVisible ? "visible" : "hidden"}
+      animate={isInView ? "visible" : "hidden"}
       variants={variants}
-      transition={{ duration: 0.8 }}
-      style={{
-        opacity: scrollProgress,
+      style={{ willChange: "transform, opacity, scale" }}
+      transition={{
+        duration: 0.5,
       }}
     >
       <div
@@ -102,11 +86,14 @@ const TimelineItem = ({ data, index }) => {
 
       <motion.div
         className="absolute right-0 top-1/2 -translate-y-1/2"
+        style={{ willChange: "transform, opacity, scale" }}
         animate={{
-          scale: isVisible ? 1 : 0.5,
-          rotate: isVisible ? 360 : 0,
+          scale: isInView ? 1 : 0.5,
+          rotate: isInView ? 360 : 0,
         }}
-        transition={{ duration: 0.8 }}
+        transition={{
+          duration: 0.5,
+        }}
       >
         <div
           className="w-8 h-8 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500
@@ -117,6 +104,14 @@ const TimelineItem = ({ data, index }) => {
           <div className="w-2 h-2 bg-white rounded-full" />
         </div>
       </motion.div>
+
+      <HeroVideoDialog
+        className="mt-8 md:mt-5 block"
+        animationStyle="from-center"
+        videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
+        thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+        thumbnailAlt="Hero Video"
+      />
     </motion.div>
   );
 };
@@ -124,11 +119,15 @@ const TimelineItem = ({ data, index }) => {
 export default function JourneyOfSage() {
   return (
     <div className="flex flex-col items-center ">
-      <div className=" flex flex-col items-center min-h-screen py-10">
+      <div className="flex flex-col items-center min-h-screen py-5 md:py-10">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
+          transition={{
+            duration: 0.6,
+            delay: 0.8,
+            ease: "easeOut",
+          }}
           className="mt-8 md:mt-0 mb-6 text-4xl mx-auto md:text-6xl font-bold text-emerald-300"
           style={{
             textShadow: "4px 0px 1px #ffffff",
@@ -136,7 +135,10 @@ export default function JourneyOfSage() {
         >
           Journey of SAGE
         </motion.h1>
-        <div className="max-w-2xl h-11/12  mx-auto flex flex-col  px-4">
+        <div
+          className="w-[95%] md:max-w-2xl h-11/12 mx-auto flex flex-col px-4"
+          style={{ willChange: "transform, opacity, scale" }}
+        >
           {timelineData.map((item, index) => (
             <TimelineItem key={index} data={item} index={index} />
           ))}

@@ -61,16 +61,16 @@ export default function HeroSection() {
           repeat: Infinity,
           repeatType: "loop", // Continuous looping
         }}
-        className="relative flex mb-10  md:mb-0  z-10 flex-col w-full px-4 md:px-0 md:w-1/2  justify-center items-center"
+        className="relative flex mb-8  md:mb-0  z-10 flex-col w-full px-4 md:px-0 md:w-1/2  justify-center items-center"
       >
         <DotPattern
           className={cn(
             "md:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
-            "[mask-image:radial-gradient(140px_circle_at_center,white,transparent)]",
+            "[mask-image:radial-gradient(170px_circle_at_center,white,transparent)]",
             "z-10"
           )}
         />
-        <Image
+        {/* <Image
           className="z-40"
           src="/sage-cap.webp"
           alt="SAGE-cap"
@@ -81,6 +81,18 @@ export default function HeroSection() {
           }}
           width={3}
           height={3}
+        /> */}
+        <Image
+          className="z-40 md:w-[65%] w-[90%]"
+          src="/sage-cap.webp"
+          alt="SAGE-cap"
+          sizes="100vw"
+          style={{
+            height: "auto",
+          }}
+          width={3}
+          height={3}
+          priority
         />
       </motion.div>
     </div>
