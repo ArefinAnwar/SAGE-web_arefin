@@ -102,7 +102,7 @@ function PeopleCard({ Name, Designation, Description, Contact, image }) {
       initial={{ opacity: 0, y: -30, x: 50, scale: 0.8 }}
       animate={{ opacity: 1, y: 0, x: 0, scale: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex flex-col w-[85%] md:w-[22%] mt-4 md:mt-0 h-[25rem] md:h-[95%] mx-2 justify-center items-center bg-zinc-800 bg-opacity-50 border-2 border-white outline-2 outline-emerald-400 transform-gpu"
+      className="flex flex-col w-[85%] md:w-[22%] mt-4 md:mt-0 h-[25rem] md:h-[95%] mx-2 justify-center items-center bg-zinc-800 bg-opacity-50 border-2 border-white outline-2 outline-emerald-400 transform-gpu z-50"
     >
       <motion.div
         style={{ willChange: "transform, opacity, scale" }}

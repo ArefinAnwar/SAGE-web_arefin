@@ -179,6 +179,13 @@ export default function Home() {
       </nav>
       <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[45%] rounded-md inset-x-0 mx-auto items-center justify-center py-3 px-2  flex-row z-50" >
         <Link
+          href="#hero-section"
+          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+        >
+          Home
+        </Link>
+        |
+        <Link
           href="#sage-intro"
           className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
         >
@@ -193,18 +200,19 @@ export default function Home() {
         </Link>
         |
         <Link
-          href="#customer-review"
-          className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
-        >
-          Customer Reviews
-        </Link>
-        |
-        <Link
           href="#journey-of-sage"
           className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
         >
           Journey
         </Link>
+        |
+        <Link
+          href="#customer-review"
+          className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+        >
+          Reviews
+        </Link>
+
         |
         <Link
           href="#meet-the-team"
@@ -236,11 +244,8 @@ export default function Home() {
         ))}
       </div>
       {/* <ScrollProgress className="fixed top-0 z-50" /> */}
-      {/* <div className="md:visible invisible mx-auto w-fit fixed inset-x-0 bottom-3 z-50">
-        <DockDemo />
-      </div> */}
 
-      <div id='#home' className="h-screen dsnap-start z-30 dmd:snap-section dmd:snap-start md:snap-always">
+      <div id='#hero-section' className="h-screen dsnap-start z-30 dmd:snap-section dmd:snap-start md:snap-always">
         <HeroSection />
 
       </div>

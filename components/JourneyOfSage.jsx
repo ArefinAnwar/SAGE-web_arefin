@@ -8,28 +8,14 @@ const timelineData = [
   {
     title: "Research Phase",
     description:
-      "We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction. We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction. We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction.",
-    additionalContent: {
-      type: "text",
-      content:
-        "Our research began with analyzing over 10,000 EEG recordings to identify key patterns. The initial findings showed a 78% correlation between specific brainwave patterns and pre-seizure states.",
-      stats: [
-        { label: "Research Duration", value: "18 months" },
-        { label: "Data Points", value: "10,000+" },
-        { label: "Initial Accuracy", value: "78%" },
-      ],
-    },
+      "We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction. Realizing its potential to address real-world challenges, we expanded the scope beyond academia.",
   },
-  {
-    title: "Ideation & Scope Expansion",
-    description:
-      "Realizing its potential to address real-world challenges, we expanded the scope beyond academia.",
-    videoLink: "https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb",
-  },
+
   {
     title: "Hardware Development",
     description:
-      "Designed a portable, low-cost EEG cap using the 10-20 electrode placement system.",
+      "Designed a portable, low-cost EEG cap using the 4 electrode placement system.",
+    videoLink: "https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb",
   },
   {
     title: "Software Development",
@@ -38,7 +24,8 @@ const timelineData = [
   },
   {
     title: "Testing & Calibration",
-    description: "Conducted tests on 8 people low-income-background people.",
+    description:
+      "Conducted tests on 8 people low-income-background people. We then got all useful feedbacks and applied them into our product. ",
   },
   {
     title: "Fine-Tuning & Optimization",

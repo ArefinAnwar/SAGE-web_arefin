@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 export default function JoinTheRevolution() {
   return (
-    <div className="flex flex-col w-full h-auto md:h-screen items-center bg-ste-500 overflow-scroll scrollbar-hide">
+    <div className="flex flex-col w-full h-auto md:h-screen items-center bg-ste-500 overflow-scroll scrollbar-hide md:mb-0 mb-10">
       <motion.h1
         className="mt-8 md:mt-[4.5rem] mb-6 text-4xl mx-auto text-center md:text-6xl font-bold text-emerald-300"
         style={{
@@ -40,10 +40,13 @@ function JoinUsCard({ title, description }) {
   const isInView = useInView(ref, { once: false, margin: "-10% 0px" });
 
   return (
-    <div ref={ref} className="flex flex-col w-full md:w-1/4 px-2 py-4 h-full mx-2">
+    <div
+      ref={ref}
+      className="flex flex-col w-full md:w-1/4 px-2 py-4 h-full mx-2"
+    >
       <motion.div
         style={{ willChange: "transform, opacity, scale" }}
-        className="flex flex-col items-center cursor-pointer justify-center bg-emerald-600 bg-opacity-15 hover:bg-opacity-35 rounded-lg h-28 text-xl py-4 border-2 border-emerald-400"
+        className="flex flex-col items-center cursor-pointer justify-center bg-emerald-600 bg-opacity-10 hover:bg-opacity-35 rounded-lg h-28 text-xl py-4 border-2 border-emerald-400"
         initial={{ opacity: 0, y: -50 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}

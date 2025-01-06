@@ -4,7 +4,8 @@ import Head from "next/head";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import SparklesText from "@/components/ui/sparkles-text";
 import { useState } from "react";
-import Image from "next/image";
+import Image from "next/image"
+import Link from "next/link";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import emailjs from "emailjs-com";
@@ -90,10 +91,68 @@ export default function BuySage() {
 
     return (
         <div className="flex flex-col h-fit pb-10 md:pb-0 md:h-screen items-center justify-center overflow-y-scroll bg-slate-900 scroll-smooth">
+            <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[45%] rounded-md inset-x-0 mx-auto items-center justify-center py-3 px-2  flex-row z-50" >
+                <Link
+                    href="./#hero-section"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                >
+                    Home
+                </Link>
+                |
+                <Link
+                    href="./#sage-intro"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                >
+                    Intro
+                </Link>
+                |
+                <Link
+                    href="./#why-sage"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                >
+                    Why SAGE
+                </Link>
+                |
+                <Link
+                    href="./#journey-of-sage"
+                    className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                >
+                    Journey
+                </Link>
+                |
+                <Link
+                    href="./#customer-review"
+                    className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                >
+                    Reviews
+                </Link>
+
+                |
+                <Link
+                    href="./#meet-the-team"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                >
+                    Team
+                </Link>
+                |
+                <Link
+                    href="./#faq-section"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                >
+                    FAQ
+                </Link>
+                |
+                <Link
+                    href="./login"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                >
+                    LOGIN
+                </Link>
+            </nav>
             <Head>
                 <title>SAGE - A Hope</title>
             </Head> <h1
-                className="text-[3rem] px-2  md:text-6xl mt-4 font-bold text-center text-emerald-300"
+                className="text-[3rem] px-2  md:text-6xl mt-4 md:mt-16 font-bold text-center text-emerald-300"
                 style={{
                     textShadow: "4px 0px 1px #ffffff",
                 }}

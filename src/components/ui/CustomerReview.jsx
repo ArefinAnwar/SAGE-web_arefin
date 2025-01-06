@@ -135,12 +135,12 @@ const CustomerReview = () => {
             Reviews from the 8 people who willngly partiicpated in testing phase
           </p>
 
-          <Marquee pauseOnHover className="[--duration:20s]">
+          <Marquee pauseOnHover className="[--duration:20s] z-40">
             {firstRow.map((review) => (
               <ReviewCard key={review.username} {...review} />
             ))}
           </Marquee>
-          <Marquee reverse pauseOnHover className="[--duration:20s]">
+          <Marquee reverse pauseOnHover className="[--duration:20s] z-40">
             {secondRow.map((review) => (
               <ReviewCard key={review.username} {...review} />
             ))}

@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
 import {
   Accordion,
   AccordionItem,
@@ -45,27 +44,26 @@ export default function FAQSection() {
   }, []);
   const faqs = [
     {
-      question: "What is ShadCN and MagicUI?",
+      question: "What happens if it does not work?",
       answer:
-        "ShadCN provides Tailwind CSS-based components, while MagicUI integrates additional interactive features to enhance UI development.",
+        "Our vision is to make a patients life easy. So, after personal callibration if it doesn't work, we are always wlling to provide 100% refund.",
     },
     {
-      question: "How do I install this component?",
+      question: "How do I make it work?",
       answer:
-        "Simply place the Faq component in your project, import it, and include it in your page.",
+        "You just have to turn the swicth on and the cap on your head, that's it!",
     },
     {
-      question: "Can I customize this FAQ section?",
+      question:
+        "How much time do I have to wait for getting some techincal help?",
       answer:
-        "Yes, you can customize the questions, answers, and even the styling by modifying the component code.",
+        "All technical help requests will be considered under 36 hours by our team!",
     },
     {
-      question: "Is this component mobile-friendly?",
-      answer:
-        "Yes, the component is built with Tailwind CSS, making it responsive and mobile-friendly.",
+      question: "Will it work without Wi-Fi?",
+      answer: "Yes, SAGE works completely offline.",
     },
   ];
-  var text = "Frequently Asked Questions";
   return (
     <div
       ref={sectionRef}
