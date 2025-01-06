@@ -8,32 +8,36 @@ const timelineData = [
   {
     title: "Research Phase",
     description:
-      "We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction. Realizing its potential to address real-world challenges, we expanded the scope beyond academia.",
+      "We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction. Realizing its potential to address real-world challenges, we expanded the scope beyond academia. We took the inititive to gift the worldwide epeilepsy community with a magical device.",
   },
 
   {
     title: "Hardware Development",
     description:
       "Designed a portable, low-cost EEG cap using the 4 electrode placement system.",
-    videoLink: "https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb",
+    videoLink: "https://www.youtube.com/embed/sLCPz3NDtK4",
+    thumbnailSrc:
+      "https://i9.ytimg.com/vi/sLCPz3NDtK4/mqdefault.jpg?sqp=CJyt8LsG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFMgWyhlMA8=&rs=AOn4CLAQyLoArax6KSxUali_ITY497ePTg",
   },
   {
     title: "Software Development",
     description:
-      "Developed an AI-powered software using LSTM models for real-time seizure prediction.",
+      "We developed an AI-powered software using LSTM models for real-time seizure prediction. LSTM model along with proximal policy optimization, temporal fusion transformer showed satisfying results.",
   },
   {
     title: "Testing & Calibration",
     description:
       "Conducted tests on 8 people low-income-background people. We then got all useful feedbacks and applied them into our product. ",
-  },
-  {
-    title: "Fine-Tuning & Optimization",
-    description: "Personalized the system with patient-specific calibrations.",
+    videoLink: "https://www.youtube.com/embed/sykhHvuB-Fw",
+    thumbnailSrc:
+      "https://i9.ytimg.com/vi/sykhHvuB-Fw/mqdefault.jpg?sqp=CMiv8LsG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgXihOMA8=&rs=AOn4CLByb88lFV03dyL7RNOmPnPdoIXTLQ",
   },
   {
     title: "SAGE Launch",
     description: "Finally, SAGE emerged as a revolutionary wearable device.",
+    videoLink: "https://www.youtube.com/embed/-YJh8KfjKIM",
+    thumbnailSrc:
+      "https://i9.ytimg.com/vi/-YJh8KfjKIM/mqdefault.jpg?sqp=CMiv8LsG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGC0gXihyMA8=&rs=AOn4CLCvmWMsVdguYDzn1mPOs7Qx7DdjmQ",
   },
 ];
 
@@ -96,8 +100,8 @@ const TimelineItem = ({ data, index }) => {
           className="mt-8 md:mt-5 block"
           animationStyle="from-center"
           videoSrc={data.videoLink}
-          thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
-          thumbnailAlt="Hero Video"
+          thumbnailSrc={data.thumbnailSrc}
+          thumbnailAlt={data.title}
         />
       )}
     </motion.div>
