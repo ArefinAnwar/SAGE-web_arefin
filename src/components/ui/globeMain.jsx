@@ -2,9 +2,8 @@
 import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 
+// Use dynamic import for Globe with SSR enabled
 const Globe = dynamic(() => import("react-globe.gl"), { ssr: true });
-
-// import Globe from ;
 
 export default function GlobeVisualization() {
   const globeRef = useRef(null);
@@ -92,9 +91,6 @@ export default function GlobeVisualization() {
       <Globe
         ref={globeRef}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg" // Globe texture
-        // bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png" // Optional topology
-        // backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png" // Background stars
-
         backgroundColor="#0f172a"
         pointsData={pointsdata}
         pointColor={(d) => d.color}
