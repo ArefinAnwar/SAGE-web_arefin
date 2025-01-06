@@ -8,6 +8,7 @@ const Globe = dynamic(() => import("react-globe.gl"), { ssr: true });
 
 export default function GlobeVisualization() {
   const globeRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     if (globeRef.current) {
@@ -73,6 +74,7 @@ export default function GlobeVisualization() {
 
   return (
     <div
+      ref={containerRef}
       className="flex touch-none flex-col items-center justify-center w-auto bg-slate-900 h-auto overflow-hidden"
       style={{
         touchAction: "none",
