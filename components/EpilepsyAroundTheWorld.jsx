@@ -43,7 +43,7 @@ export default function EpilepsyAroundTheWorld() {
               >
                 Ranks the 4th
                 <motion.div
-                  className="absolute bottom-0 left-0 h-[2px] bg-emerald-400"
+                  className="absolute bottom-0 left-0 h-[2px] bg-emerald-400 transform-gpu"
                   initial={{ width: 0 }}
                   animate={inView ? { width: "100%" } : {}}
                   transition={{
@@ -61,7 +61,7 @@ export default function EpilepsyAroundTheWorld() {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0 }}
             transition={{ duration: 1, delay: 2 }}
-            className="text-emerald-400 text-lg md:text-2xl font-semibold text-center mt-6 "
+            className="text-emerald-400 text-lg md:text-2xl font-semibold text-center mt-6 transform-gpu"
           >
             &quot;
             <span className="text-white">

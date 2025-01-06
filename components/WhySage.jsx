@@ -111,17 +111,11 @@ export default function WhySage() {
           <p className=" top-0 mt-4  italic text-sm px-2 md:text-lg text-slate-200 text-center">
             Only wearable cap available for seiure prediction under 250$
           </p>
-          <div
-            style={{ willChange: "transform, opacity" }}
-            className=" mt-4  md:mt-16  scrollbar-hide top-32 md:bottom-0  flex-col md:flex-row flex w-[95%] h-[120%] items-center justify-center z-50"
-          >
-            <div
-              style={{ willChange: "transform, opacity" }}
-              className="flex scrollbar-hide flex-col w-[95%] md:mr-4 md:w-1/2 h-full overflow-y-scroll justify-center z-50"
-            >
+          <div className=" mt-4  md:mt-16  scrollbar-hide top-32 md:bottom-0  flex-col md:flex-row flex w-[95%] h-[120%] items-center justify-center z-50">
+            <div className="flex scrollbar-hide flex-col w-[95%] md:mr-4 md:w-1/2 h-full overflow-y-scroll justify-center z-50">
               <motion.div
                 style={{ willChange: "transform, opacity, scale" }}
-                className=" w-full"
+                className=" w-full transform-gpu"
                 initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
@@ -140,13 +134,10 @@ export default function WhySage() {
                 </Accordion>
               </motion.div>
             </div>
-            <div
-              style={{ willChange: "transform, opacity" }}
-              className="flex flex-col  mb-10 md:mb-0 w-[95%] scrollbar-hide md:w-1/2 h-[115%] overflow-y-scroll md:h-full justify-center z-50"
-            >
+            <div className="flex flex-col  mb-10 md:mb-0 w-[95%] scrollbar-hide md:w-1/2 h-[115%] overflow-y-scroll md:h-full justify-center z-50">
               <motion.div
                 style={{ willChange: "transform, opacity, scale" }}
-                className="w-full "
+                className="w-full transform-gpu"
                 initial={{ opacity: 0, x: -60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 2.2, duration: 0.5 }}

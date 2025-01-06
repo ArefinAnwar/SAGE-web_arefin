@@ -102,11 +102,11 @@ function PeopleCard({ Name, Designation, Description, Contact, image }) {
       initial={{ opacity: 0, y: -30, x: 50, scale: 0.8 }}
       animate={{ opacity: 1, y: 0, x: 0, scale: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex flex-col w-[85%] md:w-[22%] mt-4 md:mt-0 h-[25rem] md:h-[95%] mx-2 justify-center items-center bg-zinc-800 bg-opacity-50 border-2 border-white outline-2 outline-emerald-400"
+      className="flex flex-col w-[85%] md:w-[22%] mt-4 md:mt-0 h-[25rem] md:h-[95%] mx-2 justify-center items-center bg-zinc-800 bg-opacity-50 border-2 border-white outline-2 outline-emerald-400 transform-gpu"
     >
       <motion.div
         style={{ willChange: "transform, opacity, scale" }}
-        className="flex border-4 border-emerald-400 flex-row mt-5 w-[50%] md:w-[70%] h-[60%] bg-zinc-800 bg-opacity-50 items-center justify-center overflow-hidden"
+        className="flex border-4 border-emerald-400 flex-row mt-5 w-[50%] md:w-[70%] h-[60%] bg-zinc-800 bg-opacity-50 items-center justify-center overflow-hidden transform-gpu"
       >
         <Image
           className="z-40"
@@ -127,7 +127,7 @@ function PeopleCard({ Name, Designation, Description, Contact, image }) {
         </span>
         <span className="text-md mt-2 text-slate-100 italic">
           <motion.div
-            className="relative "
+            className="relative transform-gpu"
             style={{
               display: "inline-block",
               willChange: "transform, opacity, scale",
@@ -136,7 +136,7 @@ function PeopleCard({ Name, Designation, Description, Contact, image }) {
             {Designation}
             <motion.div
               style={{ willChange: "transform, opacity, scale" }}
-              className="absolute bottom-0 left-0 h-[2px] bg-emerald-400"
+              className="absolute bottom-0 left-0 h-[2px] bg-emerald-400 transform-gpu"
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{

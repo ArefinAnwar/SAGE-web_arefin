@@ -65,7 +65,7 @@ const TimelineItem = ({ data, index }) => {
   return (
     <motion.div
       ref={itemRef}
-      className="relative flex flex-col mb-72 md:mb-60 group pl-4 pr-12"
+      className="w-full md:w-auto relative flex flex-col mb-72 md:mb-60 group pl-2 pr-12 transform-gpu"
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={variants}
@@ -136,7 +136,7 @@ export default function JourneyOfSage() {
           Journey of SAGE
         </motion.h1>
         <div
-          className="w-[95%] md:max-w-2xl h-11/12 mx-auto flex flex-col px-4"
+          className="w-[95%]  md:max-w-2xl h-11/12 mx-auto flex flex-col px-4"
           style={{ willChange: "transform, opacity, scale" }}
         >
           {timelineData.map((item, index) => (
