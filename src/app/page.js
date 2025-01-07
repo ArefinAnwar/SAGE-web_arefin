@@ -180,35 +180,35 @@ export default function Home() {
       <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[45%] rounded-md inset-x-0 mx-auto items-center justify-center py-3 px-2  flex-row z-50" >
         <Link
           href="#hero-section"
-          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
         >
           Home
         </Link>
         |
         <Link
           href="#sage-intro"
-          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
         >
           Intro
         </Link>
         |
         <Link
           href="#why-sage"
-          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
         >
           Why SAGE
         </Link>
         |
         <Link
           href="#journey-of-sage"
-          className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+          className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
         >
           Journey
         </Link>
         |
         <Link
           href="#customer-review"
-          className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+          className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
         >
           Reviews
         </Link>
@@ -216,21 +216,21 @@ export default function Home() {
         |
         <Link
           href="#meet-the-team"
-          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
         >
           Team
         </Link>
         |
         <Link
           href="#faq-section"
-          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
         >
           FAQ
         </Link>
         |
         <Link
           href="/login"
-          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
         >
           LOGIN
         </Link>
@@ -255,7 +255,7 @@ export default function Home() {
       </div>
 
 
-      <div id="why-sage" className="min-h-screen dsnap-start  mdd:snap-section mdd:snap-start mdd:snap-always">
+      <div id="why-sage" className="md:min-h-screen h-[130vh]">
         <WhySage />
       </div>
       {/* <div className="min-h-screen overflow-y-scroll dsnap-start scrollbar-hide mdd:snap-section mdd:snap-start mdd:snap-always">
@@ -273,10 +273,10 @@ export default function Home() {
       <div id="join-us-section" className="md:min-h-screen h-auto ">
         <JoinTheRevolution />
       </div>
-      <div id="meet-the-team" className="min-h-screen  overflow-y-scroll dsnap-start scrollbar-hide md:snap-sectiodn mdd:snap-start mdd:snap-always">
+      <div id="meet-the-team" className="md:min-h-screen h-[250vh]  scrollbar-hide">
         <MeetTheTeam />
       </div>
-      <div id="faq-section" className="min-h-screen dsnap-start mdd:snap-section mdd:snap-start mdd:snap-always">
+      <div id="faq-section" className="md:min-h-screen overflow-y-scroll scrollbar-hide">
         <FAQSection />
       </div>
       <Footer />

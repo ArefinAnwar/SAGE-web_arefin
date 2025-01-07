@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 export default function JoinTheRevolution() {
   return (
-    <div className="flex flex-col w-full h-auto md:h-screen items-center bg-ste-500 overflow-scroll scrollbar-hide md:mb-0 mb-10">
+    <div className="flex flex-col w-full h-auto md:h-screen items-center bg-ste-500 overflow-scroll scrollbar-hide md:pb-0 pb-10 ">
       <motion.h1
         className="mt-8 md:mt-[4.5rem] mb-6 text-4xl mx-auto text-center md:text-6xl font-bold text-emerald-300"
         style={{

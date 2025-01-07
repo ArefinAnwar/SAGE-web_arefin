@@ -80,7 +80,7 @@ const SageIntroTest = () => {
                 key={index}
                 transition={{
                   duration: 0.3,
-                  delay: isMobile ? index * 1 : index + 2,
+                  delay: isMobile ? index * 1 : index + 1,
                 }}
                 className={cn(
                   "bg-white bg-opacity-[7%] border-teal-500 border-2 text-white p-3 py-6 shadow-lg text-center transform-gpu"

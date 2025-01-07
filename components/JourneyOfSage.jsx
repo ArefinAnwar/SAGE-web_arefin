@@ -3,12 +3,15 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
+import Image from "next/image";
+import Link from "next/link";
 
 const timelineData = [
   {
     title: "Research Phase",
     description:
       "We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction. Realizing its potential to address real-world challenges, we expanded the scope beyond academia. We took the inititive to gift the worldwide epeilepsy community with a magical device.",
+    imageLocation: "/research_paper.webp",
   },
 
   {
@@ -22,7 +25,7 @@ const timelineData = [
   {
     title: "Software Development",
     description:
-      "We developed an AI-powered software using LSTM models for real-time seizure prediction. LSTM model along with proximal policy optimization, temporal fusion transformer showed satisfying results.",
+      "We developed an AI-powered software using LSTM models for real-time seizure prediction. LSTM model along with proximal policy optimization, temporal fusion transformer showed satisfying results. 960 hours of EEG data was used on A100 GPU to train.",
   },
   {
     title: "Testing & Calibration",
@@ -103,6 +106,33 @@ const TimelineItem = ({ data, index }) => {
           thumbnailSrc={data.thumbnailSrc}
           thumbnailAlt={data.title}
         />
+      )}
+      {data.imageLocation && (
+        <>
+          <Link
+            href="https://docs.google.com/document/d/1_afRrAkfgFP8gl_aUPqJL_6VpLdL_n4ouxPC1z3V6F4/edit?usp=sharing" // Replace with your desired URL
+            target="_blank"
+            className="inset-x-0 mx-auto md:hidden text-center text-white mt-4 hover:underline "
+          >
+            View extended abstract
+          </Link>
+          <div className="relative group w-full h-64 mt-2 md:mt-4 rounded-lg border-2 border-emerald-400 overflow-hidden block">
+            <Image
+              src={data.imageLocation} // Replace with your image path
+              alt={data.title}
+              layout="fill"
+              objectFit="cover"
+              className="transition-opacity duration-300 group-hover:opacity-70"
+            />
+            <Link
+              href="https://docs.google.com/document/d/1_afRrAkfgFP8gl_aUPqJL_6VpLdL_n4ouxPC1z3V6F4/edit?usp=sharing" // Replace with your desired URL
+              target="_blank"
+              className="absolute inset-0 flex items-center justify-center bg-transparent text-white text-lg font-semibold opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            >
+              View extended abstract
+            </Link>
+          </div>
+        </>
       )}
     </motion.div>
   );
