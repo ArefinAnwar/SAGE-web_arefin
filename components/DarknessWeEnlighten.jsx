@@ -71,9 +71,9 @@ export default function DarknessWeEnlighten() {
                   className="p-6 bg-gray-800 rounded-lg shadow-lg border border-emerald-500 hover:border-emerald-300 transform-gpu"
                 >
                   <p className=" italic text-gray-300 mb-4">
-                    <span className="text-emerald-400 text-2xl">"</span>
+                    <span className="text-emerald-400 text-2xl">&quot;</span>
                     {item.quote}
-                    <span className="text-emerald-400 text-2xl">"</span>
+                    <span className="text-emerald-400 text-2xl">&quot;</span>
                   </p>
                   <a
                     href={item.link}
