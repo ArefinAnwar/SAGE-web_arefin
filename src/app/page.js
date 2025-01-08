@@ -20,6 +20,9 @@ import EpilepsyAroundTheWorld from "../../components/EpilepsyAroundTheWorld";
 import { motion, AnimatePresence } from "framer-motion";
 import JourneyOfSage from "../../components/JourneyOfSage";
 import JoinTheRevolution from "../../components/JoinTheRevolution";
+import HowToUseSage from "../../components/HowToUse";
+import WhatsToCome from "../../components/WhatsToCome";
+import DarknessWeEnlighten from "../../components/DarknessWeEnlighten";
 
 import { cn } from "@/lib/utils";
 
@@ -250,30 +253,43 @@ export default function Home() {
 
       </div>
 
-      <div id="sage-intro" className="min-h-screen dsnap-start  dmd:snap-section mdd:snap-start md:snap-always">
+      <div id="sage-intro" className="h-[150vh] md:h-auto md:min-h-screen  ">
         <SageIntroTest />
       </div>
 
 
+      <div id="EpilepsyAroundTheWorld" className="min-h-screen scrollbar-hide overflow-y-scroll  dsnap-start dmd:snap-section mdd:snap-start mdd:snap-always">
+        <EpilepsyAroundTheWorld />
+      </div>
+      <div id="darkness" className="h-[205vh] md:h-auto md:min-h-screen">
+        <DarknessWeEnlighten />
+      </div>
+      <div id="how-to-use" className="min-h-screen ">
+
+        <HowToUseSage />
+      </div>
       <div id="why-sage" className="md:min-h-screen h-[130vh]">
         <WhySage />
       </div>
       {/* <div className="min-h-screen overflow-y-scroll dsnap-start scrollbar-hide mdd:snap-section mdd:snap-start mdd:snap-always">
         <SageByNumbers />
       </div> */}
-      <div id="EpilepsyAroundTheWorld" className="min-h-screen scrollbar-hide overflow-y-scroll  dsnap-start dmd:snap-section mdd:snap-start mdd:snap-always">
-        <EpilepsyAroundTheWorld />
+      <div id="whats-to-come" className="min-h-screen ">
+        <WhatsToCome />
       </div>
+
       <div id="journey-of-sage" className="min-h-screen ">
         <JourneyOfSage />
+      </div>
+
+      <div id="join-us-section" className="h-[250vh] md:h-auto md:min-h-screen ">
+        <JoinTheRevolution />
       </div>
       <div id="customer-review" className="min-h-screen dsnap-start scrollbar-hide dmd:snap-section mdd:snap-start mdd:snap-always">
         <CustomerReview />
       </div>
-      <div id="join-us-section" className="md:min-h-screen h-auto ">
-        <JoinTheRevolution />
-      </div>
-      <div id="meet-the-team" className="md:min-h-screen h-[250vh]  scrollbar-hide">
+
+      <div id="meet-the-team" className=" h-[250vh] md:h-auto md:min-h-screen ">
         <MeetTheTeam />
       </div>
       <div id="faq-section" className="md:min-h-screen overflow-y-scroll scrollbar-hide">

@@ -13,57 +13,53 @@ export default function MeetTheTeam() {
   return (
     <div
       ref={sectionRef}
-      className="flex relative flex-col  items-center justify-center h-full w-full pb-10 md:pb-10"
+      className="flex relative flex-col  items-center justify-center h-full md:h-auto w-full pb-10 md:pb-10"
     >
       <GridPattern className={cn("h-[100%] z-20")} />
 
-      {isInView && (
-        <>
-          <motion.h1
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1 }}
-            className="mt-8 md:mt-10 text-4xl md:text-6xl font-bold text-emerald-300 transform-gpu"
-            style={{
-              textShadow: "4px 0px 1px #ffffff",
-              display: "inline-block",
-              willChange: "transform, opacity, scale",
-            }}
-          >
-            Meet the Team
-          </motion.h1>
-          <div className="flex scrollbar-hide flex-col md:flex-row items-center justify-center w-full mt-0 md:mt-4 md:h-[30rem]">
-            <PeopleCard
-              Name="Arefin Anwar"
-              image="/arefin_informal.jpg"
-              Designation="Operations Lead"
-              Description="Pupil of class 11 at St. Joseph Higher Secondary School, Dhaka, Bangladesh"
-              Contact="arefinanwar112@gmail.com"
-            />
-            <PeopleCard
-              Name="Misbah Uddin Inan"
-              image="/inan_informal.jpg"
-              Designation="Research & Executive Lead"
-              Description="Pupil of class 11 at Notre Dame College, Dhaka, Bangladesh"
-              Contact="misbahinan@gmail.com"
-            />
-            <PeopleCard
-              Name="Abrar Shahid"
-              image="/abrar_informal.jpg"
-              Designation="Technical Lead"
-              Description="Pupil of class 11 at Notre Dame College, Dhaka, Bangladesh"
-              Contact="abrarshahidrahik@gmail.com"
-            />
-            <PeopleCard
-              Name="Rafid Ahmed"
-              image="/rafid_informal.jpg"
-              Designation="Finance Lead"
-              Description="Pupil of class 11 at Academia School, Dhaka, Bangladesh"
-              Contact="steinerstein313@gmail.com"
-            />
-          </div>
-        </>
-      )}
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="mt-8 md:mt-10 text-4xl md:text-6xl font-bold text-emerald-300 transform-gpu"
+        style={{
+          textShadow: "4px 0px 1px #ffffff",
+          display: "inline-block",
+          willChange: "transform, opacity, scale",
+        }}
+      >
+        Meet the Team
+      </motion.h1>
+      <div className="flex scrollbar-hide flex-col md:flex-row items-center justify-center w-full mt-0 md:mt-4 md:h-[30rem]">
+        <PeopleCard
+          Name="Arefin Anwar"
+          image="/arefin_informal.jpg"
+          Designation="Operations Lead"
+          Description="Pupil of class 11 at St. Joseph Higher Secondary School, Dhaka, Bangladesh"
+          Contact="arefinanwar112@gmail.com"
+        />
+        <PeopleCard
+          Name="Misbah Uddin Inan"
+          image="/inan_informal.jpg"
+          Designation="Research & Executive Lead"
+          Description="Pupil of class 11 at Notre Dame College, Dhaka, Bangladesh"
+          Contact="misbahinan@gmail.com"
+        />
+        <PeopleCard
+          Name="Abrar Shahid"
+          image="/abrar_informal.jpg"
+          Designation="Technical Lead"
+          Description="Pupil of class 11 at Notre Dame College, Dhaka, Bangladesh"
+          Contact="abrarshahidrahik@gmail.com"
+        />
+        <PeopleCard
+          Name="Rafid Ahmed"
+          image="/rafid_informal.jpg"
+          Designation="Finance Lead"
+          Description="Pupil of class 11 at Academia School, Dhaka, Bangladesh"
+          Contact="steinerstein313@gmail.com"
+        />
+      </div>
     </div>
   );
 }

@@ -2,39 +2,20 @@
 import React, { useRef, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import Particles from "@/components/ui/particles";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 
 const SageIntroTest = () => {
+  // const sectionRef = useRef(null);
+  // const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  const isInView = useInView(sectionRef, { once: false, margin: "-10% 0px" });
 
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   return (
     <div
       ref={sectionRef}
-      className="md:min-h-screen  items-center justify-center flex flex-col w-full relative py-10 overflow-hidden"
+      className="md:min-h-screen h-full items-center justify-center flex flex-col w-full relative py-10 overflow-hidden"
     >
       <Particles
         className="absolute inset-0"
@@ -45,13 +26,12 @@ const SageIntroTest = () => {
         motion
         refresh={false}
       />
-
       {isInView && (
         <>
           <div className="text-center mb-4 md:mt-5">
             <motion.h1
               initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.3 }}
               className="text-4xl md:text-6xl font-bold text-emerald-300"
               style={{
@@ -61,7 +41,7 @@ const SageIntroTest = () => {
               What is SAGE?
             </motion.h1>
             <p className="text-lg md:text-lg mt-2 md:mt-4 text-slate-300 italic">
-              Predict seizures ahead of time to preserve moments
+              A wearable cap to predict seizures before they happen!
             </p>
           </div>
 
@@ -76,11 +56,11 @@ const SageIntroTest = () => {
             ].map((title, index) => (
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
                 key={index}
                 transition={{
                   duration: 0.3,
-                  delay: isMobile ? index * 1 : index + 1,
+                  delay: isMobile ? index * 0.5 : index + 1,
                 }}
                 className={cn(
                   "bg-white bg-opacity-[7%] border-teal-500 border-2 text-white p-3 py-6 shadow-lg text-center transform-gpu"
