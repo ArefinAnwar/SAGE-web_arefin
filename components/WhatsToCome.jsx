@@ -22,7 +22,7 @@ export default function WhatsToCome() {
       </motion.h1>
       <div className="flex flex-col md:flex-row h-full w-[95%] md:w-11/12 items-center justify-center mt-4 md:mt-6">
         <div className="flex flex-col w-full h-full md:w-1/2">
-          <h1 className="text-white text-lg pr-0 md:pr-5">
+          <h1 className="text-white text-lg mr-0 md:mr-5 mx-3 md:mx-0">
             Sometimes the seizure may be so strong that the patient may lose his
             control over body. So, we are working on a pneumatic air cushion
             system which will deploy automatically when it detects that the
