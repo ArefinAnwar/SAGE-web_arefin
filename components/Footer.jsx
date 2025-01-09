@@ -15,7 +15,7 @@ export default function Footer() {
           height={3}
         />
         <h1 className="text-white text-xl py-4">
-          the <br /> outlier <br /> project
+          The <br /> SAGE <br /> Team
         </h1>
       </div>
       <div className="flex flex-row w-11/12  justify-center items-center md:w-auto">
