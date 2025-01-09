@@ -53,7 +53,7 @@ export default function EpilepsyAroundTheWorld() {
                   }}
                 />
               </motion.div>{" "}
-              most appearing neurological disease
+              (approx. 65 mil) most appearing neurological disease
             </span>
             &quot;
           </motion.h1>

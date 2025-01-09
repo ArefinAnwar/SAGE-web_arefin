@@ -11,7 +11,7 @@ import { DotPattern } from "@/components/ui/dot-pattern";
 
 export default function HeroSection() {
   return (
-    <div className="flex md:flex-row justify-center md:justify-normal flex-col-reverse z-30  w-full h-screen px-4 md:px-12">
+    <div className="relative flex md:flex-row justify-center  md:justify-normal flex-col-reverse z-30  w-full h-auto min-h-screen px-4 md:px-12">
       <div className="flex flex-col z-10 w-full -mt-14 md:mt-6  md:w-1/2 ">
         <h1
           className="text-[7rem] md:text-[12rem] text-emerald-300 mt-2 font-bold"
@@ -61,7 +61,7 @@ export default function HeroSection() {
           repeat: Infinity,
           repeatType: "loop", // Continuous looping
         }}
-        className="relative flex mb-8  md:mb-0  z-10 flex-col w-full px-4 md:px-0 md:w-1/2  justify-center items-center"
+        className="relative flex mb-8   md:mb-0  z-10 flex-col w-full px-4 md:px-0 md:w-1/2  justify-center items-center"
       >
         <DotPattern
           className={cn(
@@ -70,18 +70,7 @@ export default function HeroSection() {
             "z-10"
           )}
         />
-        {/* <Image
-          className="z-40"
-          src="/sage-cap.webp"
-          alt="SAGE-cap"
-          sizes="100vw"
-          style={{
-            width: "65%",
-            height: "auto",
-          }}
-          width={3}
-          height={3}
-        /> */}
+
         <Image
           className="z-40 md:w-[65%] w-[90%]"
           src="/sage_cap_blackk.webp"

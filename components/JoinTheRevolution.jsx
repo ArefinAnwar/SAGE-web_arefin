@@ -7,6 +7,7 @@ export default function JoinTheRevolution() {
   const [role, setRole] = useState("hospital");
   const [quantity, setQuantity] = useState(0);
   const [savedMoney, setSavedMoney] = useState(0);
+  const [dunitPrice, setdunitPrice] = useState(250);
 
   const handleRoleChange = (selectedRole) => {
     setRole(selectedRole);
@@ -24,13 +25,20 @@ export default function JoinTheRevolution() {
   const calculateSavings = (role, quantity) => {
     let originalPrice = 250;
     let unitPrice = 0;
-
-    if (role === "hospital") {
-      unitPrice = 210;
-    } else if (role === "voluntary") {
-      unitPrice = 230;
-    } else if (role === "influencer") {
-      unitPrice = 240;
+    if (quantity < 5) {
+      unitPrice = 250;
+      setdunitPrice(250);
+    } else {
+      if (role === "hospital") {
+        unitPrice = 240;
+        setdunitPrice(240);
+      } else if (role === "voluntary") {
+        unitPrice = 210;
+        setdunitPrice(210);
+      } else if (role === "influencer") {
+        unitPrice = 230;
+        setdunitPrice(230);
+      }
     }
 
     const totalSaved = (originalPrice - unitPrice) * quantity;
@@ -145,7 +153,7 @@ export default function JoinTheRevolution() {
               value={formData.name}
               onChange={handleInputChange}
               className="w-full px-3 py-2 mt-1 text-white bg-slate-900/50 rounded-md"
-              placeholder="Enter your name"
+              placeholder="Name"
               required
             />
           </div>
@@ -174,7 +182,7 @@ export default function JoinTheRevolution() {
                     : "bg-slate-700"
                 }`}
               >
-                Voluntary Org
+                Non-profit Org
               </button>
               <button
                 type="button"
@@ -193,13 +201,13 @@ export default function JoinTheRevolution() {
           {/* Quantity Field */}
           <div className="mb-4">
             <label htmlFor="quantity" className="block text-sm font-medium">
-              Quantity
+              Quantity (min. 5 to get discount)
             </label>
             <input
               type="number"
               id="quantity"
               className="w-full px-3 py-2 mt-1 text-white bg-slate-900/50 rounded-md"
-              placeholder="Enter quantity"
+              placeholder="Quantity"
               min="0"
               value={formData.quantity}
               onChange={handleQuantityChange}
@@ -211,7 +219,11 @@ export default function JoinTheRevolution() {
           <div className="mb-4">
             <p className="text-sm">
               <span className="font-semibold">You Save:</span>{" "}
-              <span className="text-emerald-400">${savedMoney.toFixed(2)}</span>
+              <span className="text-emerald-400">{savedMoney.toFixed(2)}$</span>
+            </p>
+            <p className="text-sm">
+              <span className="font-semibold">Unit price:</span>{" "}
+              <span className="text-emerald-400">{dunitPrice}$</span>
             </p>
           </div>
 
@@ -226,7 +238,7 @@ export default function JoinTheRevolution() {
               value={formData.location}
               onChange={handleInputChange}
               className="w-full px-3 py-2 mt-1 text-white bg-slate-900/50 rounded-md"
-              placeholder="Enter your address"
+              placeholder="Address"
               required
             />
           </div>
@@ -242,7 +254,7 @@ export default function JoinTheRevolution() {
               value={formData.phone}
               onChange={handleInputChange}
               className="w-full px-3 py-2 mt-1 text-white bg-slate-900/50 rounded-md"
-              placeholder="Enter your phone number"
+              placeholder="Phone number"
               required
             />
           </div>
@@ -258,7 +270,7 @@ export default function JoinTheRevolution() {
               value={formData.country}
               onChange={handleInputChange}
               className="w-full px-3 py-2 mt-1 text-white bg-slate-900/50 rounded-md"
-              placeholder="Enter your country"
+              placeholder="Country"
               required
             />
           </div>
@@ -274,7 +286,7 @@ export default function JoinTheRevolution() {
               value={formData.email}
               onChange={handleInputChange}
               className="w-full px-3 py-2 mt-1 text-white bg-slate-900/50 rounded-md"
-              placeholder="Enter your email"
+              placeholder="Email"
               required
             />
           </div>

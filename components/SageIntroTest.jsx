@@ -15,7 +15,7 @@ const SageIntroTest = () => {
   return (
     <div
       ref={sectionRef}
-      className="md:min-h-screen h-full items-center justify-center flex flex-col w-full relative py-10 overflow-hidden"
+      className="md:min-h-screen h-auto  top-0 min-h-screen items-center justify-center flex flex-col w-full relative py-10 overflow-hidden pt-10 md:pt-0"
     >
       <Particles
         className="absolute inset-0"
@@ -33,7 +33,7 @@ const SageIntroTest = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.3 }}
-              className="text-4xl md:text-6xl font-bold text-emerald-300"
+              className="text-4xl md:text-6xl mt-3 md:mt-0 font-bold text-emerald-300"
               style={{
                 textShadow: "4px 0px 1px #ffffff",
               }}
@@ -84,17 +84,17 @@ const SageIntroTest = () => {
 
                 <p className="mt-2">
                   {title === "Data Collection" &&
-                    "Gather brainwave data from patients in real-time for analysis."}
+                    "Put on cap and it will read real-time brain signals"}
                   {title === "Brainwave Detection" &&
-                    "Advanced sensors capture real-time brainwave patterns seamlessly."}
+                    "Among the brain signals, signals affecting epilepsy will be captured"}
                   {title === "AI Analysis" &&
-                    "Cutting-edge AI deciphers patterns to identify potential seizures."}
+                    "AI will work magically to find patterns from these signals"}
                   {title === "Seizure Prediction" &&
-                    "Predicts seizures 10–15 minutes ahead, providing critical time."}
+                    "Based on pattern, the SAGE CAP will predict seizure before 10-15 mins"}
                   {title === "Notification Delivery" &&
-                    "Alerts caregivers and patients via app notifications instantly."}
+                    "Seizure pattern detected, notification sent to patient's phone."}
                   {title === "Alert System" &&
-                    "Notifies the patient's caregivers about potential seizures."}
+                    "Also, it notify other caregivers of patient given"}
                 </p>
               </motion.div>
             ))}

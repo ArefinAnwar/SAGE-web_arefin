@@ -164,7 +164,7 @@ export default function JourneyOfSage() {
             textShadow: "4px 0px 1px #ffffff",
           }}
         >
-          How we got here?
+          Journey of SAGE
         </motion.h1>
         <div
           className="w-[95%]  md:max-w-2xl h-11/12 mx-auto flex flex-col px-4"

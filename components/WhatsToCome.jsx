@@ -26,7 +26,7 @@ export default function WhatsToCome() {
           textShadow: "4px 0px 1px #ffffff",
         }}
       >
-        Whats to come
+        What's to come?
       </motion.h1>
       <div className="flex flex-col md:flex-row h-full w-[95%] md:w-11/12 items-center justify-center mt-4 md:mt-6">
         <div className="flex flex-col w-full h-full md:w-1/2">
@@ -60,6 +60,9 @@ export default function WhatsToCome() {
             height={3}
             priority
           />
+          <h1 className="text-white text-sm text-center mt-2">
+            Credit: Hovding helmets
+          </h1>
         </div>
       </div>
     </div>
