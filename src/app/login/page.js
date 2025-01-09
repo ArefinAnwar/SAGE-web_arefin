@@ -152,7 +152,7 @@ export default function Login() {
                 >
                     LOGIN
                 </button>
-
+                <p className='text-white text-center'>Note: You need to have a SAGE Cap to login!</p>
             </div>)}
         </div>
     );
