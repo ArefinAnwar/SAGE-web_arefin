@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 export default function WhatsToCome() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, margin: "-10% 0px" });
@@ -45,14 +46,19 @@ export default function WhatsToCome() {
           initial={{ opacity: 0, y: -60 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="h-full w-full md:w-1/2 relative"
+          className="h-full w-full md:w-1/2 relative items-center justify-center flex flex-col"
         >
-          <HeroVideoDialog
-            className="mt-5 md:mt-0 block"
-            animationStyle="from-center"
-            // videoSrc={data.videoLink}
-            thumbnailSrc="/sage_thubnail.webp"
-            // thumbnailAlt={data.title}
+          <Image
+            className="z-40 md:w-[70%] w-[90%] border-2 border-emerald-400 roudned-xl"
+            src="/inflation.gif"
+            alt=""
+            sizes="100vw"
+            style={{
+              height: "auto",
+            }}
+            width={3}
+            height={3}
+            priority
           />
         </div>
       </div>

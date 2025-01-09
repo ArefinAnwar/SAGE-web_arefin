@@ -207,7 +207,7 @@ export default function HowToUseSage() {
             />
           ))}
         </div>
-        <h1 className="text-xl text-white text-center mb-3">
+        {/* <h1 className="text-xl text-white text-center mb-3">
           See the demonstration video!
         </h1>
         <div className="mt-8 md:mt-5 relative flex w-[95%] md:max-w-xl flex-col ">
@@ -218,7 +218,7 @@ export default function HowToUseSage() {
             thumbnailSrc="/sage_thubnail.webp"
             // thumbnailAlt={data.title}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
