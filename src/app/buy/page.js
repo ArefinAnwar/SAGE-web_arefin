@@ -104,41 +104,144 @@ export default function BuySage() {
     const selectedColorOption2 = colorOptions2.find(
         (option) => option.colorCode === selectedColor2
     );
+    const [isOpen, setIsOpen] = useState(false);
 
+    const toggleNavbar = () => setIsOpen(!isOpen);
     return (
         <div className="flex flex-col h-fit pb-10 md:pb-0 md:h-screen items-center justify-center overflow-y-scroll bg-slate-900 scroll-smooth">
-            <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[45%] rounded-md inset-x-0 mx-auto items-center justify-center py-3 px-2  flex-row z-50" >
+            <nav className="fixed visible md:invisible top-0 z-50 right-0 w-full bg-gray-900 text-white">
+                <div className="absolute top-0 right-0 flex items-center justify-between px-4 py-3">
+                    <div className="text-lg font-bold"></div>
+                    {/* Hamburger Icon */}
+                    <button
+                        onClick={toggleNavbar}
+                        className="block lg:hidden focus:outline-none"
+                    >
+                        <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            {isOpen ? (
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            ) : (
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                />
+                            )}
+                        </svg>
+                    </button>
+                </div>
+
+                {/* Links */}
+                <div
+                    className={`lg:flex ${isOpen ? "block" : "hidden"
+                        } bg-gray-800 z-50 lg:bg-transparent`}
+                >
+                    <div className="flex flex-col lg:flex-row items-center lg:items-center lg:space-x-4 p-4 lg:p-0">
+                        <Link
+                            href="./#sage-intro"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            Intro
+                        </Link>
+                        <Link
+                            href="./#why-sage"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            Why SAGE
+                        </Link>
+                        <Link
+                            href="./#customer-review"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            Customer Review
+                        </Link>
+                        <Link
+                            href="./#meet-the-team"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            Team
+                        </Link>
+                        <Link
+                            href="./#faq-section"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            FAQ
+                        </Link>
+                        <Link
+                            href="/buy"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            BUY
+                        </Link>
+                        <Link
+                            href="/login"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            LOGIN
+                        </Link>
+                    </div>
+                </div>
+            </nav>
+            <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[50%] rounded-md inset-x-0 mx-auto items-center justify-center py-2 px-2  flex-row z-50" >
+                <Image
+                    className="z-40 border-[3px] border-emerald-400 rounded-full mr-1"
+                    src="/sage_logo_circle.webp"
+                    alt="SAGE-cap"
+                    sizes="100vw"
+                    width={35}
+                    height={35}
+                    priority
+                />
                 <Link
                     href="./#hero-section"
-                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
                 >
                     Home
                 </Link>
                 |
                 <Link
                     href="./#sage-intro"
-                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
                 >
                     Intro
                 </Link>
                 |
                 <Link
                     href="./#why-sage"
-                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
                 >
-                    Why SAGE
+                    Why
                 </Link>
                 |
                 <Link
                     href="./#journey-of-sage"
-                    className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                    className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
                 >
                     Journey
                 </Link>
                 |
                 <Link
                     href="./#customer-review"
-                    className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                    className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
                 >
                     Reviews
                 </Link>
@@ -146,21 +249,28 @@ export default function BuySage() {
                 |
                 <Link
                     href="./#meet-the-team"
-                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
                 >
                     Team
                 </Link>
                 |
                 <Link
                     href="./#faq-section"
-                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
                 >
                     FAQ
                 </Link>
                 |
                 <Link
-                    href="./login"
-                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-500 hover:scale-110"
+                    href="/buy"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                >
+                    Get it
+                </Link>
+                |
+                <Link
+                    href="/login"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
                 >
                     LOGIN
                 </Link>
@@ -178,11 +288,11 @@ export default function BuySage() {
             </h1>
             <div className="flex flex-col md:flex-row items-center justify-center h-full w-full">
                 <div className="flex flex-col  h-auto mt-6 md:mt-0  md:justify-center w-[85%]  md:w-[40%]">
-                    <h3 className="text-left text-lg md:text-xl text-white my-2">Portability: Lightweight, wearable headband</h3>
-                    <h3 className="text-left text-lg md:text-xl text-white my-2">Affordable Price: Under $250</h3>
-                    <h3 className="text-left text-lg md:text-xl text-white my-2">Model Accuracy: 94% custom-calibrated precision</h3>
-                    <h3 className="text-left text-lg md:text-xl text-white my-2">Proactive Alerts: Advance seizure notifications</h3>
-                    <h3 className="text-left text-lg md:text-xl text-white my-2">EEG Analysis: Data for improved medical treatment</h3>
+                    <h3 className="text-left text-lg md:text-xl text-white my-2"><span className="text-emerald-300">Portability: </span>Lightweight, wearable headband</h3>
+                    <h3 className="text-left text-lg md:text-xl text-white my-2"><span className="text-emerald-300">Affordable Price: </span>Under $250</h3>
+                    <h3 className="text-left text-lg md:text-xl text-white my-2"><span className="text-emerald-300">Model Accuracy: </span>94% custom-calibrated precision</h3>
+                    <h3 className="text-left text-lg md:text-xl text-white my-2"><span className="text-emerald-300">Proactive Alerts: </span>Advance seizure notifications</h3>
+                    <h3 className="text-left text-lg md:text-xl text-white my-2"><span className="text-emerald-300">EEG Analysis: </span>Data for improved medical treatment</h3>
                 </div>
                 <div className="flex flex-col md:flex-row w-[95%] mt-7 md:mt-0  md:w-[55%] items-center justify-center">
                     {/* <div className="flex flex-col w-[90%] md:w-full  items-center justify-center">

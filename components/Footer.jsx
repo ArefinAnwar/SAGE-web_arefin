@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="h-full flex flex-row w-11/12 md:w-1/6 justify-center items-center ml-2">
         <Image
           className="z-40 md:w-[35%] h-[70%] w-[20%] mr-3 rounded-2xl opacity-90"
-          src="/sage_logo.webp"
+          src="/sage_logo_circle.webp"
           alt="SAGE-cap"
           sizes="100vw"
           width={3}

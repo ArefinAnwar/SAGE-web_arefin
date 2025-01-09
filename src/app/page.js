@@ -161,7 +161,7 @@ export default function Home() {
               className="py-2 lg:py-0 cursor-pointer"
               onClick={toggleNavbar}
             >
-              Meet the Team
+              Team
             </Link>
             <Link
               href="#faq-section"
@@ -169,6 +169,13 @@ export default function Home() {
               onClick={toggleNavbar}
             >
               FAQ
+            </Link>
+            <Link
+              href="/buy"
+              className="py-2 lg:py-0 cursor-pointer"
+              onClick={toggleNavbar}
+            >
+              BUY
             </Link>
             <Link
               href="/login"
@@ -180,7 +187,16 @@ export default function Home() {
           </div>
         </div>
       </nav>
-      <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[45%] rounded-md inset-x-0 mx-auto items-center justify-center py-3 px-2  flex-row z-50" >
+      <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[50%] rounded-md inset-x-0 mx-auto items-center justify-center py-2 px-2  flex-row z-50" >
+        <Image
+          className="z-40 border-[3px] border-emerald-400 rounded-full mr-1"
+          src="/sage_logo_circle.webp"
+          alt="SAGE-cap"
+          sizes="100vw"
+          width={35}
+          height={35}
+          priority
+        />
         <Link
           href="#hero-section"
           className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
@@ -199,7 +215,7 @@ export default function Home() {
           href="#why-sage"
           className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
         >
-          Why SAGE
+          Why
         </Link>
         |
         <Link
@@ -232,6 +248,13 @@ export default function Home() {
         </Link>
         |
         <Link
+          href="/buy"
+          className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+        >
+          Get it
+        </Link>
+        |
+        <Link
           href="/login"
           className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
         >
@@ -250,14 +273,10 @@ export default function Home() {
 
       <div id='hero-section' className="h-screen dsnap-start z-30 dmd:snap-section dmd:snap-start md:snap-always">
         <HeroSection />
-
       </div>
-
       <div id="sage-intro" className="h-[150vh] md:h-auto md:min-h-screen  ">
         <SageIntroTest />
       </div>
-
-
       <div id="EpilepsyAroundTheWorld" className="min-h-screen scrollbar-hide overflow-y-scroll  dsnap-start dmd:snap-section mdd:snap-start mdd:snap-always">
         <EpilepsyAroundTheWorld />
       </div>
@@ -265,7 +284,6 @@ export default function Home() {
         <DarknessWeEnlighten />
       </div>
       <div id="how-to-use" className="min-h-screen ">
-
         <HowToUseSage />
       </div>
       <div id="why-sage" className="md:min-h-screen h-[130vh]">
