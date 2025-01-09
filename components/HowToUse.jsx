@@ -2,46 +2,36 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { cn } from "@/lib/utils";
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 import Image from "next/image";
 import Link from "next/link";
 const timelineData = [
   {
-    title: "Step - 1: Take the cap and turn on the button inside the cap",
+    title: "Take the cap and turn on the button inside the cap",
     description:
       "We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction. Realizing its potential to address real-world challenges, we expanded the scope beyond academia. We took the inititive to gift the worldwide epeilepsy community with a magical device.",
-    // imageLocation: "/research_paper.webp",
   },
 
   {
-    title:
-      "Step - 2: After indication light blinks put the cap in your head firmly",
+    title: "After indication light blinks put the cap in your head firmly",
     description:
       "Designed a portable, low-cost EEG cap using the 4 electrode placement system.",
-    // videoLink: "https://www.youtube.com/embed/sLCPz3NDtK4",
-    thumbnailSrc:
-      "https://i9.ytimg.com/vi/sLCPz3NDtK4/mqdefault.jpg?sqp=CJyt8LsG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFMgWyhlMA8=&rs=AOn4CLAQyLoArax6KSxUali_ITY497ePTg",
   },
   {
-    title: "Step - 3: Wait for 3 minutes and you are done",
+    title: "Wait for 3 minutes and you are done",
     description:
       "We developed an AI-powered software using LSTM models for real-time seizure prediction. LSTM model along with proximal policy optimization, temporal fusion transformer showed satisfying results. 960 hours of EEG data was used on A100 GPU to train.",
   },
   {
     title:
-      "Wait for the notification from SAGE in your mobile to knwo about potential seizure",
+      "Wait for the notification from SAGE in your mobile to know about potential seizure",
     description:
       "Conducted tests on 8 people low-income-background people. We then got all useful feedbacks and applied them into our product. ",
-    // videoLink: "https://www.youtube.com/embed/sykhHvuB-Fw",
-    thumbnailSrc:
-      "https://i9.ytimg.com/vi/sykhHvuB-Fw/mqdefault.jpg?sqp=CMiv8LsG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgXihOMA8=&rs=AOn4CLByb88lFV03dyL7RNOmPnPdoIXTLQ",
   },
   {
     title: "LIVE ANXIETY FREE",
     description: "Finally, SAGE emerged as a revolutionary wearable device.",
-    // videoLink: "https://www.youtube.com/embed/-YJh8KfjKIM",
-    thumbnailSrc:
-      "https://i9.ytimg.com/vi/-YJh8KfjKIM/mqdefault.jpg?sqp=CMiv8LsG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGC0gXihyMA8=&rs=AOn4CLCvmWMsVdguYDzn1mPOs7Qx7DdjmQ",
     isLast: true,
   },
 ];
@@ -49,7 +39,7 @@ const timelineData = [
 const TimelineItem = ({ data, index, triggerNextAnimation }) => {
   const itemRef = useRef(null);
   const isInView = useInView(itemRef, {
-    once: false,
+    once: true,
     margin: "-10% 0px -10% 0px",
   });
 
@@ -86,7 +76,10 @@ const TimelineItem = ({ data, index, triggerNextAnimation }) => {
   return (
     <motion.div
       ref={itemRef}
-      className="w-full md:w-auto relative flex flex-col mb-32 md:mb-32 group pl-2 pr-2 transform-gpu"
+      className={cn(
+        "w-full md:w-auto relative flex flex-col mb-36 md:mb-20 group pl-2 pr-2 transform-gpu",
+        data.isLast ? "mb-6" : "mb-36"
+      )}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       variants={variants}
@@ -95,8 +88,13 @@ const TimelineItem = ({ data, index, triggerNextAnimation }) => {
         duration: 0.5,
       }}
     >
-      <div className="bg-gray-800/50 backdrop-blur-sm p-6 rounded-lg border border-emerald-500/20 transition-shadow hover:shadow-lg flex flex-col">
-        <h3 className="text-2xl text-center font-bold text-emerald-500 mb-2">
+      <div className="bg-[#172031] backdrop-blur-sm p-6 rounded-lg border border-emerald-500/20 transition-shadow hover:shadow-lg flex flex-col">
+        <h3 className="text-2xl text-center font-bold text-white mb-2">
+          {index <= 3 ? (
+            <span className="text-emerald-400">Step - {index + 1}: </span>
+          ) : (
+            <></>
+          )}
           {data.title}
         </h3>
       </div>
@@ -116,7 +114,7 @@ const TimelineItem = ({ data, index, triggerNextAnimation }) => {
             className="absolute top-0 right-1/2 left-1/2 w-[2px] bg-emerald-400"
             initial={{ height: 0 }}
             animate={{
-              height: showLine ? 130 : 0,
+              height: showLine ? 150 : 0,
               origin: "top",
             }}
             transition={{
@@ -126,15 +124,18 @@ const TimelineItem = ({ data, index, triggerNextAnimation }) => {
         )}
       </motion.div>
 
-      {data.videoLink && (
-        <HeroVideoDialog
-          className="mt-8 md:mt-5 block"
-          animationStyle="from-center"
-          videoSrc={data.videoLink}
-          thumbnailSrc={data.thumbnailSrc}
-          thumbnailAlt={data.title}
-        />
-      )}
+      {/* {data.videoLink && (
+        <div className="mt-8 md:mt-5 relative flex">
+          <HeroVideoDialog
+            className="mt-8 md:mt-5 "
+            animationStyle="from-center"
+            videoSrc={data.videoLink}
+            // thumbnailSrc={data.thumbnailSrc}
+            thumbnailSrc="/sage_thubnail.webp"
+            thumbnailAlt={data.title}
+          />
+        </div>
+      )} */}
       {data.imageLocation && (
         <>
           <Link
@@ -205,12 +206,16 @@ export default function HowToUseSage() {
               }
             />
           ))}
-          <h1 className="text-xl text-white">See the demonstration video!</h1>
+        </div>
+        <h1 className="text-xl text-white text-center mb-3">
+          See the demonstration video!
+        </h1>
+        <div className="mt-8 md:mt-5 relative flex w-[95%] md:max-w-xl flex-col ">
           <HeroVideoDialog
             className="mt-5 md:mt-0 block"
             animationStyle="from-center"
             // videoSrc={data.videoLink}
-            // thumbnailSrc={data.thumbnailSrc}
+            thumbnailSrc="/sage_thubnail.webp"
             // thumbnailAlt={data.title}
           />
         </div>

@@ -121,13 +121,18 @@ export default function GlobeVisualization() {
               controls.autoRotate = true;
               controls.autoRotateSpeed = 0.5;
               controls.enableZoom = false;
-              // controls.minDistance = 200;
-              // controls.maxDistance = 200;
               controls.enableDamping = true;
               controls.dampingFactor = 0.1;
               controls.enablePan = false;
               controls.mouseButtons.RIGHT = null;
               controls.touches.TWO = null;
+              if (isMobile) {
+                controls.enableRotate = false;
+                controls.mouseButtons.LEFT = null;
+                controls.mouseButtons.MIDDLE = null;
+                controls.touches.ONE = null;
+                controls.touches.THREE = null;
+              }
             }
           }}
         />

@@ -18,7 +18,7 @@ const timelineData = [
     title: "Hardware Development",
     description:
       "Designed a portable, low-cost EEG cap using the 4 electrode placement system.",
-    videoLink: "https://www.youtube.com/embed/sLCPz3NDtK4",
+    videoLink: "https://www.youtube.com/embed/uF-QtMmfezY",
     thumbnailSrc:
       "https://i9.ytimg.com/vi/sLCPz3NDtK4/mqdefault.jpg?sqp=CJyt8LsG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFMgWyhlMA8=&rs=AOn4CLAQyLoArax6KSxUali_ITY497ePTg",
   },
@@ -31,14 +31,14 @@ const timelineData = [
     title: "Testing & Calibration",
     description:
       "Conducted tests on 8 people low-income-background people. We then got all useful feedbacks and applied them into our product. ",
-    videoLink: "https://www.youtube.com/embed/sykhHvuB-Fw",
+    videoLink: "https://www.youtube.com/embed/PHBbiXf3PRU",
     thumbnailSrc:
       "https://i9.ytimg.com/vi/sykhHvuB-Fw/mqdefault.jpg?sqp=CMiv8LsG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgXihOMA8=&rs=AOn4CLByb88lFV03dyL7RNOmPnPdoIXTLQ",
   },
   {
     title: "SAGE Launch",
     description: "Finally, SAGE emerged as a revolutionary wearable device.",
-    videoLink: "https://www.youtube.com/embed/-YJh8KfjKIM",
+    videoLink: "https://www.youtube.com/embed/eaVbmLrPmN4",
     thumbnailSrc:
       "https://i9.ytimg.com/vi/-YJh8KfjKIM/mqdefault.jpg?sqp=CMiv8LsG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGC0gXihyMA8=&rs=AOn4CLCvmWMsVdguYDzn1mPOs7Qx7DdjmQ",
   },
@@ -111,7 +111,8 @@ const TimelineItem = ({ data, index }) => {
           className="mt-8 md:mt-5 block"
           animationStyle="from-center"
           videoSrc={data.videoLink}
-          thumbnailSrc={data.thumbnailSrc}
+          // thumbnailSrc={data.thumbnailSrc}
+          thumbnailSrc="/sage_thubnail.webp"
           thumbnailAlt={data.title}
         />
       )}

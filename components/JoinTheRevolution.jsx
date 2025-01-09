@@ -1,6 +1,7 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import emailjs from "emailjs-com";
 
 export default function JoinTheRevolution() {
   const [role, setRole] = useState("hospital");
@@ -9,6 +10,7 @@ export default function JoinTheRevolution() {
 
   const handleRoleChange = (selectedRole) => {
     setRole(selectedRole);
+    setFormData({ ...formData, role: selectedRole });
     calculateSavings(selectedRole, quantity);
   };
 
@@ -16,6 +18,7 @@ export default function JoinTheRevolution() {
     const qty = parseInt(event.target.value) || 0;
     setQuantity(qty);
     calculateSavings(role, qty);
+    handleInputChange(event);
   };
 
   const calculateSavings = (role, quantity) => {
@@ -32,6 +35,69 @@ export default function JoinTheRevolution() {
 
     const totalSaved = (originalPrice - unitPrice) * quantity;
     setSavedMoney(totalSaved > 0 ? totalSaved : 0);
+  };
+  const [formData, setFormData] = useState({
+    name: "",
+    role: "",
+    quantity: "",
+    location: "",
+    phone: "",
+    country: "",
+    email: "",
+  });
+  const handleInputChange = (event) => {
+    const { id, value } = event.target; // Get input field's id and value
+    setFormData((prevData) => ({
+      ...prevData, // Spread previous data to retain other fields
+      [id]: value, // Update the specific field
+    }));
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const { name, role, quantity, location, phone, country, email } = formData;
+
+    // Gather form data
+    // const formData = new FormData(event.target);
+
+    // Send email using EmailJS
+    const serviceID = "service_tbaaxnp";
+    const templateID = "template_xa1eqfp";
+    const publicKey = "7x6YrslQW2FNEUn-O";
+    // Simulate sending email (Replace this with your actual backend/email API)
+    console.log(formData);
+    try {
+      emailjs.send(serviceID, templateID, formData, publicKey).then(
+        (result) => {
+          alert(
+            "Your order has been received. We will contact you within 24 hours."
+          );
+        },
+        (error) => {
+          console.log("EmailJS Error:", error);
+          alert(
+            "An error occurred while submitting your order. Please try again later."
+          );
+        }
+      );
+      console.log(formData);
+      alert(
+        "Your order has been received, and we will contact you within 24 hours."
+      );
+      setTimeout(() => {
+        setFormData({
+          name: "",
+          role: "",
+          quantity: "",
+          location: "",
+          phone: "",
+          country: "",
+          email: "",
+        });
+      }, 100);
+    } catch (err) {
+      alert("Failed to send the order. Please try again.");
+    }
   };
   return (
     <div className="flex flex-col w-full h-auto md:min-h-screen items-center bg-ste-500 overflow-scroll scrollbar-hide md:pb-10 pb-10 ">
@@ -62,7 +128,10 @@ export default function JoinTheRevolution() {
         />
       </div>
       <div className="bg-slate-900 text-emerald-400 min-h-screen flex items-center justify-center ">
-        <form className="w-11/12 max-w-lg bg-slate-800 rounded-lg p-4 shadow-lg ">
+        <form
+          onSubmit={handleSubmit}
+          className="w-11/12 max-w-lg bg-slate-800 rounded-lg p-4 shadow-lg "
+        >
           <h2 className="text-2xl font-bold text-center mb-4">Join Us!</h2>
 
           {/* Name Field */}
@@ -73,6 +142,8 @@ export default function JoinTheRevolution() {
             <input
               type="text"
               id="name"
+              value={formData.name}
+              onChange={handleInputChange}
               className="w-full px-3 py-2 mt-1 text-white bg-slate-900/50 rounded-md"
               placeholder="Enter your name"
               required
@@ -130,6 +201,7 @@ export default function JoinTheRevolution() {
               className="w-full px-3 py-2 mt-1 text-white bg-slate-900/50 rounded-md"
               placeholder="Enter quantity"
               min="0"
+              value={formData.quantity}
               onChange={handleQuantityChange}
               required
             />
@@ -150,7 +222,9 @@ export default function JoinTheRevolution() {
             </label>
             <input
               type="text"
-              id="address"
+              id="location"
+              value={formData.location}
+              onChange={handleInputChange}
               className="w-full px-3 py-2 mt-1 text-white bg-slate-900/50 rounded-md"
               placeholder="Enter your address"
               required
@@ -165,6 +239,8 @@ export default function JoinTheRevolution() {
             <input
               type="tel"
               id="phone"
+              value={formData.phone}
+              onChange={handleInputChange}
               className="w-full px-3 py-2 mt-1 text-white bg-slate-900/50 rounded-md"
               placeholder="Enter your phone number"
               required
@@ -179,6 +255,8 @@ export default function JoinTheRevolution() {
             <input
               type="text"
               id="country"
+              value={formData.country}
+              onChange={handleInputChange}
               className="w-full px-3 py-2 mt-1 text-white bg-slate-900/50 rounded-md"
               placeholder="Enter your country"
               required
@@ -193,6 +271,8 @@ export default function JoinTheRevolution() {
             <input
               type="email"
               id="email"
+              value={formData.email}
+              onChange={handleInputChange}
               className="w-full px-3 py-2 mt-1 text-white bg-slate-900/50 rounded-md"
               placeholder="Enter your email"
               required
