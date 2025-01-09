@@ -72,21 +72,37 @@ export default function BuySage() {
         }
     };
     const [selectedColor, setSelectedColor] = useState("black");
+    const [selectedColor2, setSelectedColor2] = useState("black");
 
     const colorOptions = [
-        { name: "Black", colorCode: "black", image: "/sage-cap.webp" },
-        { name: "Pink", colorCode: "pink", image: "/sage-cap-pink.png" },
-        { name: "Brown", colorCode: "brown", image: "/sage-cap-brown.png" },
-        { name: "Yellow", colorCode: "yellow", image: "/sage-cap-yellow.png" },
-        { name: "White", colorCode: "white", image: "/sage-cap-white.png" },
+        { name: "Black", colorCode: "black", image: "/sage_cap_black.webp" },
+        { name: "Green", colorCode: "green", image: "/sage_cap_green.webp" },
+        { name: "Yellow", colorCode: "yellow", image: "/sage_cap_brown.webp" },
+        { name: "Gray", colorCode: "gray", image: "/sage_cap_gray.webp" },
+        { name: "Purple", colorCode: "purple", image: "/sage_cap_purple.webp" },
+        { name: "Blue", colorCode: "blue", image: "/sage_cap_blue.webp" },
+    ];
+    const colorOptions2 = [
+        { name: "Black", colorCode: "black", image: "/sage_cap_black.webp" },
+        { name: "Green", colorCode: "green", image: "/sage_cap_green.webp" },
+        { name: "Yellow", colorCode: "yellow", image: "/sage_cap_brown.webp" },
+        { name: "Gray", colorCode: "gray", image: "/sage_cap_gray.webp" },
+        { name: "Purple", colorCode: "purple", image: "/sage_cap_purple.webp" },
+        { name: "Blue", colorCode: "blue", image: "/sage_cap_blue.webp" },
     ];
 
     const handleColorChange = (color) => {
         setSelectedColor(color);
     };
+    const handleColorChange2 = (color) => {
+        setSelectedColor2(color);
+    };
 
     const selectedColorOption = colorOptions.find(
         (option) => option.colorCode === selectedColor
+    );
+    const selectedColorOption2 = colorOptions2.find(
+        (option) => option.colorCode === selectedColor2
     );
 
     return (
@@ -224,7 +240,7 @@ export default function BuySage() {
                                     alt={`SAGE Cap - ${selectedColorOption.name}`}
                                     sizes="100vw"
                                     style={{
-                                        width: "70%",
+                                        width: "60%",
                                         height: "auto",
                                     }}
                                     width={3}
@@ -285,11 +301,11 @@ export default function BuySage() {
                                 />
                                 <Image
                                     className="z-40"
-                                    src="/sage-cap.png"
-                                    alt="SAGE CAP"
+                                    src={selectedColorOption2.image}
+                                    alt={`SAGE Cap - ${selectedColorOption2.name}`}
                                     sizes="100vw"
                                     style={{
-                                        width: "70%",
+                                        width: "60%",
                                         height: "auto",
                                     }}
                                     width={3}
@@ -303,7 +319,7 @@ export default function BuySage() {
 
                             </div>
                             <div className="flex flex-wrap mt-2 gap-2">
-                                {colorOptions.map((option) => (
+                                {colorOptions2.map((option) => (
                                     <button
                                         key={option.colorCode}
                                         className={`w-5 h-5 rounded-full border-2 ${selectedColor === option.colorCode
@@ -311,7 +327,7 @@ export default function BuySage() {
                                             : "border-gray-400"
                                             }`}
                                         style={{ backgroundColor: option.colorCode }}
-                                        onClick={() => handleColorChange(option.colorCode)}
+                                        onClick={() => handleColorChange2(option.colorCode)}
                                         aria-label={`Select ${option.name}`}
                                     />
                                 ))}

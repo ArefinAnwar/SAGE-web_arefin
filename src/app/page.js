@@ -248,7 +248,7 @@ export default function Home() {
       </div>
       {/* <ScrollProgress className="fixed top-0 z-50" /> */}
 
-      <div id='#hero-section' className="h-screen dsnap-start z-30 dmd:snap-section dmd:snap-start md:snap-always">
+      <div id='hero-section' className="h-screen dsnap-start z-30 dmd:snap-section dmd:snap-start md:snap-always">
         <HeroSection />
 
       </div>

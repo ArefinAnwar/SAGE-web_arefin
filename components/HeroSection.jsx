@@ -84,7 +84,7 @@ export default function HeroSection() {
         /> */}
         <Image
           className="z-40 md:w-[65%] w-[90%]"
-          src="/sage-cap.webp"
+          src="/sage_cap_blackk.webp"
           alt="SAGE-cap"
           sizes="100vw"
           style={{
