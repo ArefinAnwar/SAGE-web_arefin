@@ -11,7 +11,7 @@ const timelineData = [
     title: "Idea Generation Phase",
     description:
       "We were doing a colab with a private hospital in Dhaka, where we noticed a patient's epileptic seizure all of a sudden. This sparked a curiosity among us. The present doctors told about the uncertainity of epileptic seizures and the mental state of these patients. We felt from the bottom of hour heart that as youth we should do something.",
-    imageLocation: "/hospital_pic.webp",
+    justImageLocation: "/hospital_pic.webp",
   },
   {
     title: "Research Phase",
@@ -146,6 +146,19 @@ const TimelineItem = ({ data, index }) => {
             >
               View extended abstract
             </Link>
+          </div>
+        </>
+      )}
+      {data.justImageLocation && (
+        <>
+          <div className="relative group w-full h-64 mt-3 md:mt-4 rounded-lg border-2 border-emerald-400 overflow-hidden block">
+            <Image
+              src={data.justImageLocation} // Replace with your image path
+              alt={data.title}
+              layout="fill"
+              objectFit="cover"
+              className="transition-opacity duration-300 group-hover:opacity-80"
+            />
           </div>
         </>
       )}
