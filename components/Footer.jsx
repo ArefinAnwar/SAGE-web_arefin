@@ -34,6 +34,9 @@ export default function Footer() {
           </Link>
         </div>
         <div className="h-full text-xs flex w-11/12  md:w-auto gap-2 flex-col justify-center text-white">
+          <Link className="hover:underline" href="#darkness">
+            Our mission
+          </Link>
           <Link className="hover:underline" href="#faq-section">
             FAQ
           </Link>

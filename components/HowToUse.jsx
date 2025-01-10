@@ -10,31 +10,26 @@ import Link from "next/link";
 const timelineData = [
   {
     title: "Take the cap and turn on the button inside the cap",
-    description:
-      "We started SAGE as a research paper to explore innovative approaches for epilepsy seizure prediction. Realizing its potential to address real-world challenges, we expanded the scope beyond academia. We took the inititive to gift the worldwide epeilepsy community with a magical device.",
+    gifLink:
+      "https://res.cloudinary.com/de6unoan5/image/upload/v1736518731/Untitled_design_3_iprm5o.gif",
   },
 
   {
     title: "After indication light blinks put the cap in your head firmly",
-    description:
-      "Designed a portable, low-cost EEG cap using the 4 electrode placement system.",
+    gifLink:
+      "https://res.cloudinary.com/de6unoan5/image/upload/v1736518954/Untitled_design_4_pkfooa.gif",
   },
-  {
-    title: "Wait for 3 minutes and you are done",
-    description:
-      "We developed an AI-powered software using LSTM models for real-time seizure prediction. LSTM model along with proximal policy optimization, temporal fusion transformer showed satisfying results. 960 hours of EEG data was used on A100 GPU to train.",
-  },
+  // {
+  //   title: "Wait for 3 minutes and you are done",
+  // },
   {
     title:
       "Wait for the notification from SAGE in your mobile to know about potential seizure",
     gifLink:
       "https://res.cloudinary.com/de6unoan5/image/upload/v1736508704/Untitled_design_2_yw9pn8.gif",
-    description:
-      "Conducted tests on 8 people low-income-background people. We then got all useful feedbacks and applied them into our product. ",
   },
   {
     title: "LIVE ANXIETY FREE",
-    description: "Finally, SAGE emerged as a revolutionary wearable device.",
     isLast: true,
   },
 ];
@@ -93,7 +88,7 @@ const TimelineItem = ({ data, index, triggerNextAnimation, gifLink }) => {
     >
       <div className="bg-[#172031] items-center backdrop-blur-sm p-6 rounded-lg border border-emerald-500/20 transition-shadow hover:shadow-lg flex flex-col md:flex-row">
         <h3 className="text-2xl text-center font-bold text-white mb-2 w-auto  ">
-          {index <= 3 ? (
+          {index < 3 ? (
             <span className="text-emerald-400">Step - {index + 1}: </span>
           ) : (
             <></>
@@ -104,8 +99,8 @@ const TimelineItem = ({ data, index, triggerNextAnimation, gifLink }) => {
         {true && !data.isLast && (
           <Image
             className="z-40 ml-4 md:w-[30%] w-[93%] mt-3 md:mt-0 border-2 border-emerald-400 roudned-xl"
-            // src={data.gifLink}
-            src="https://res.cloudinary.com/de6unoan5/image/upload/v1736508704/Untitled_design_2_yw9pn8.gif"
+            src={data.gifLink}
+            // src="https://res.cloudinary.com/de6unoan5/image/upload/v1736508704/Untitled_design_2_yw9pn8.gif"
             alt={data.title}
             sizes="100vw"
             style={{
