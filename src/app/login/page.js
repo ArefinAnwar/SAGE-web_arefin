@@ -188,8 +188,8 @@ export default function Login() {
             </nav>
             <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[50%] rounded-md inset-x-0 mx-auto items-center justify-center py-2 px-2  flex-row z-50" >
                 <Image
-                    className="z-40 border-[3px] border-emerald-400 rounded-full mr-1"
-                    src="/sage_logo_circle.webp"
+                    className="z-40 border-[0px] border-emerald-400 rounded-full mr-1"
+                    src="/sage_logo_transparent.webp"
                     alt="SAGE-cap"
                     sizes="100vw"
                     width={35}

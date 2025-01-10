@@ -46,7 +46,7 @@ const SageIntroTest = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.3 }}
-              className="text-4xl md:text-6xl mt-3 md:mt-0 font-bold text-emerald-400"
+              className="text-4xl md:text-6xl mt-3 md:mt-0 font-bold font-sans text-emerald-400"
               style={
                 isMobile
                   ? { textShadow: "2.5px 1px 1px #fff" }
@@ -55,8 +55,9 @@ const SageIntroTest = () => {
             >
               What is SAGE?
             </motion.h1>
-            <p className="text-lg md:text-lg mt-2 md:mt-4 text-slate-300 italic">
-              A wearable cap to predict seizures before they happen!
+            <p className="text-lg md:text-lg mt-2 md:mt-4 text-slate-300 italic px-1">
+              A portable, cheap cap to shake up the healthcare market predicting
+              epileptic seizures beforehand
             </p>
           </div>
 
@@ -78,7 +79,7 @@ const SageIntroTest = () => {
                   delay: isMobile ? index * 0.5 : index + 1,
                 }}
                 className={cn(
-                  "bg-white bg-opacity-[7%] border-teal-500 border-2 text-white p-3 py-6 shadow-lg text-center transform-gpu"
+                  "bg-white bg-opacity-[7%] border-teal-500 border-2 text-white p-3 py-6 shadow-lg text-center transform-gpu md:h-[9rem]"
                 )}
               >
                 <h2 className="text-xl font-semibold">
@@ -99,17 +100,17 @@ const SageIntroTest = () => {
 
                 <p className="mt-2">
                   {title === "Data Collection" &&
-                    "Put on cap and it will read real-time brain signals"}
+                    "Sage's special gold plated electrodes captures precise and real time brain signals"}
                   {title === "Brainwave Detection" &&
-                    "Among the brain signals, signals affecting epilepsy will be captured"}
+                    "The signals are later filtered to required brain waves for epilepsy prediction"}
                   {title === "AI Analysis" &&
-                    "AI will work magically to find patterns from these signals"}
+                    "With a state-of-the-art algorithm, it finds patterns in brain wave data"}
                   {title === "Seizure Prediction" &&
                     "Based on pattern, the SAGE CAP will predict seizure before 10-15 mins"}
                   {title === "Notification Delivery" &&
-                    "Seizure pattern detected, notification sent to patient's phone."}
+                    "With immediate notification service, users are alerted with upcoming seizures"}
                   {title === "Alert System" &&
-                    "Also, it notify other caregivers of patient given"}
+                    "A SOS option enables to notify other caregivers"}
                 </p>
               </motion.div>
             ))}

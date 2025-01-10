@@ -3,14 +3,13 @@ import ShimmerButton from "@/components/ui/shimmer-button";
 import Head from "next/head";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import SparklesText from "@/components/ui/sparkles-text";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image"
 import Link from "next/link";
 import { DotPattern } from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import emailjs from "emailjs-com";
 import { BorderBeam } from "@/components/ui/border-beam";
-
 
 export default function BuySage() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -105,6 +104,22 @@ export default function BuySage() {
         (option) => option.colorCode === selectedColor2
     );
     const [isOpen, setIsOpen] = useState(false);
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        // Function to check window size
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+        // Initial check
+        checkMobile();
+
+        // Add event listener
+        window.addEventListener("resize", checkMobile);
+
+        // Cleanup event listener
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     const toggleNavbar = () => setIsOpen(!isOpen);
     return (
@@ -203,8 +218,8 @@ export default function BuySage() {
             </nav>
             <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[50%] rounded-md inset-x-0 mx-auto items-center justify-center py-2 px-2  flex-row z-50" >
                 <Image
-                    className="z-40 border-[3px] border-emerald-400 rounded-full mr-1"
-                    src="/sage_logo_circle.webp"
+                    className="z-40 border-[0px] border-emerald-400 rounded-full mr-1"
+                    src="/sage_logo_transparent.webp"
                     alt="SAGE-cap"
                     sizes="100vw"
                     width={35}
@@ -277,7 +292,8 @@ export default function BuySage() {
             </nav>
             <Head>
                 <title>SAGE - A Hope</title>
-            </Head> <h1
+            </Head>
+            {/* <h1
                 className="text-[3rem] px-2  md:text-6xl mt-4 md:mt-16 font-bold text-center text-emerald-300"
                 style={{
                     textShadow: "4px 0px 1px #ffffff",
@@ -285,7 +301,20 @@ export default function BuySage() {
             >
                 What SAGE offers?
 
-            </h1>
+            </h1> */}
+            <motion.h1
+                initial={{ opacity: 0, y: -20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.3 }}
+                className="text-[3rem] md:text-6xl mt-4 md:mt-16 font-bold text-emerald-400"
+                style={
+                    isMobile
+                        ? { textShadow: "2.5px 1px 1px #fff" }
+                        : { textShadow: "4px 0px 1px #ffffff" }
+                }
+            >
+                What is SAGE?
+            </motion.h1>
             <div className="flex flex-col md:flex-row items-center justify-center h-full w-full">
                 <div className="flex flex-col  h-auto mt-6 md:mt-0  md:justify-center w-[85%]  md:w-[40%]">
                     <h3 className="text-left text-lg md:text-xl text-white my-2"><span className="text-emerald-300">Portability: </span>Lightweight, wearable headband</h3>
