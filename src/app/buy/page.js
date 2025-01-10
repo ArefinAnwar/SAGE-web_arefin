@@ -11,6 +11,8 @@ import { cn } from "@/lib/utils";
 import emailjs from "emailjs-com";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { motion } from 'framer-motion'
+import PCNavbar from "../../../components/PCNavbar";
+import MobileNavbar from "../../../components/MobileNavbar";
 
 export default function BuySage() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -314,7 +316,7 @@ export default function BuySage() {
                         : { textShadow: "4px 0px 1px #ffffff" }
                 }
             >
-                What is SAGE?
+                What SAGE offers?
             </motion.h1>
             <div className="flex flex-col md:flex-row items-center justify-center h-full w-full">
                 <div className="flex flex-col  h-auto mt-6 md:mt-0  md:justify-center w-[85%]  md:w-[40%]">

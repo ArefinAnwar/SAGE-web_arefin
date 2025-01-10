@@ -23,6 +23,8 @@ import JoinTheRevolution from "../../components/JoinTheRevolution";
 import HowToUseSage from "../../components/HowToUse";
 import WhatsToCome from "../../components/WhatsToCome";
 import DarknessWeEnlighten from "../../components/DarknessWeEnlighten";
+import PCNavbar from "../../components/PCNavbar";
+import MobileNavbar from "../../components/MobileNavbar";
 
 import { cn } from "@/lib/utils";
 
@@ -95,10 +97,9 @@ export default function Home() {
       className="relative h-screen items-center justify-center overflow-y-scroll bg-slate-900"
     // style={{ scrollSnapType: 'y mandatory' }}
     >
-      <nav className="fixed visible md:invisible top-0 z-50 right-0 w-full bg-gray-900 text-white">
+      {/* <nav className="fixed visible md:invisible top-0 z-50 right-0 w-full bg-gray-900 text-white">
         <div className="absolute top-0 right-0 flex items-center justify-between px-4 py-3">
           <div className="text-lg font-bold"></div>
-          {/* Hamburger Icon */}
           <button
             onClick={toggleNavbar}
             className="block lg:hidden focus:outline-none"
@@ -129,7 +130,6 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Links */}
         <div
           className={`lg:flex ${isOpen ? "block" : "hidden"
             } bg-gray-800 z-50 lg:bg-transparent`}
@@ -186,8 +186,8 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </nav>
-      <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[50%] rounded-md inset-x-0 mx-auto items-center justify-center py-2 px-2  flex-row z-50" >
+      </nav> */}
+      {/* <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[50%] rounded-md inset-x-0 mx-auto items-center justify-center py-2 px-2  flex-row z-50" >
         <Image
           className="z-40 border-[0px] border-emerald-400 rounded-full mr-1"
           src="/sage_logo_transparent.webp"
@@ -260,7 +260,9 @@ export default function Home() {
         >
           LOGIN
         </Link>
-      </nav>
+      </nav> */}
+      <MobileNavbar />
+      <PCNavbar />
       <div className="absolute inset-0 ">
         {Array.from({ length: 30 }).map((_, i) => (
           <div
