@@ -10,6 +10,7 @@ import { DotPattern } from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import emailjs from "emailjs-com";
 import { BorderBeam } from "@/components/ui/border-beam";
+import { motion } from 'framer-motion'
 
 export default function BuySage() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -304,7 +305,7 @@ export default function BuySage() {
             </h1> */}
             <motion.h1
                 initial={{ opacity: 0, y: -20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
                 className="text-[3rem] md:text-6xl mt-4 md:mt-16 font-bold text-emerald-400"
                 style={
