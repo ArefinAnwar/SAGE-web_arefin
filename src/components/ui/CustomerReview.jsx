@@ -139,7 +139,7 @@ const CustomerReview = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
-            className="text-4xl md:text-6xl mb-3 font-bold text-center text-emerald-300 z-30"
+            className="text-4xl md:text-6xl mb-3 font-bold text-center text-emerald-400 z-30"
             style={
               isMobile
                 ? {

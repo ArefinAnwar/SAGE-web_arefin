@@ -67,7 +67,7 @@ export default function FAQSection() {
         initial={{ opacity: 0, y: -50 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1.2 }}
-        className=" text-4xl md:text-6xl text-center font-bold text-emerald-300"
+        className=" text-4xl md:text-6xl text-center font-bold text-emerald-400"
         style={
           isMobile
             ? {

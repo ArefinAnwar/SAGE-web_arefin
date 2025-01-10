@@ -108,24 +108,24 @@ export default function JoinTheRevolution() {
     }
   };
   const [isMobile, setIsMobile] = useState(false);
-  
-    useEffect(() => {
-      // Function to check window size
-      const checkMobile = () => setIsMobile(window.innerWidth < 768);
-  
-      // Initial check
-      checkMobile();
-  
-      // Add event listener
-      window.addEventListener("resize", checkMobile);
-  
-      // Cleanup event listener
-      return () => window.removeEventListener("resize", checkMobile);
-    }, []);
+
+  useEffect(() => {
+    // Function to check window size
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   return (
     <div className="flex flex-col w-full h-auto md:min-h-screen items-center bg-ste-500 overflow-scroll scrollbar-hide md:pb-10 pb-10 ">
       <motion.h1
-        className="mt-8 md:mt-[4.5rem] mb-6 text-4xl mx-auto text-center md:text-6xl font-bold text-emerald-300"
+        className="mt-8 md:mt-[4.5rem] mb-6 text-4xl mx-auto text-center md:text-6xl font-bold text-emerald-400"
         style={
           isMobile
             ? {

@@ -35,7 +35,7 @@ export default function MeetTheTeam() {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1 }}
-        className="mt-8 md:mt-10 text-4xl md:text-6xl font-bold text-emerald-300 transform-gpu"
+        className="mt-8 md:mt-10 text-4xl md:text-6xl font-bold text-emerald-400 transform-gpu"
         style={
           isMobile
             ? {

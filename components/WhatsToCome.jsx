@@ -34,7 +34,7 @@ export default function WhatsToCome() {
           duration: 0.6,
           delay: 1,
         }}
-        className="mt-8 md:mt-0 mb-6 text-4xl mx-auto md:text-6xl font-bold text-emerald-300 text-center "
+        className="mt-8 md:mt-0 mb-6 text-4xl mx-auto md:text-6xl font-bold text-emerald-400 text-center "
         style={
           isMobile
             ? {

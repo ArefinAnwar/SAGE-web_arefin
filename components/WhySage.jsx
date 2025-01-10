@@ -13,20 +13,20 @@ export default function WhySage() {
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
-  
-    useEffect(() => {
-      // Function to check window size
-      const checkMobile = () => setIsMobile(window.innerWidth < 768);
-  
-      // Initial check
-      checkMobile();
-  
-      // Add event listener
-      window.addEventListener("resize", checkMobile);
-  
-      // Cleanup event listener
-      return () => window.removeEventListener("resize", checkMobile);
-    }, []);
+
+  useEffect(() => {
+    // Function to check window size
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -94,7 +94,6 @@ export default function WhySage() {
         "SAGE is just the beginning. With continual AI updates, it could predict seizure triggers, monitor other neurological conditions, or even integrate into smart home systems to automate safety protocols. The possibilities for expanding its impact are limitless.",
     },
   ];
-  
 
   return (
     <div
@@ -117,7 +116,7 @@ export default function WhySage() {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className=" text-4xl md:text-6xl  mt-6 md:mt-20 font-bold text-center text-emerald-300"
+            className=" text-4xl md:text-6xl  mt-6 md:mt-20 font-bold text-center text-emerald-400"
             style={
               isMobile
                 ? {
