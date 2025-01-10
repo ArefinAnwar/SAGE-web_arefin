@@ -22,6 +22,7 @@ export default function WhatsToCome() {
     // Cleanup event listener
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
   return (
     <div
       ref={sectionRef}
@@ -55,10 +56,41 @@ export default function WhatsToCome() {
             transition={{ duration: 0.6 }}
             className="text-white text-lg mr-0 md:mr-5 mx-3 md:mx-0"
           >
-            Sometimes the seizure may be so strong that the patient may lose his
-            control over body. So, we are working on a pneumatic air cushion
-            system which will deploy automatically, when it detects that patient
-            is falling to protect his head.
+            Sometimes the seizure may be{" "}
+            <motion.div
+              className="relative text-white"
+              style={{ display: "inline-block" }}
+            >
+              so strong
+              <motion.div
+                className="absolute bottom-0 left-0 h-[2px] bg-emerald-400 transform-gpu"
+                initial={{ width: 0 }}
+                animate={isInView ? { width: "100%" } : {}}
+                transition={{
+                  delay: 1.5,
+                  duration: 1,
+                }}
+              />
+            </motion.div>{" "}
+            that the patient may lose his control over body. So, we are working
+            on a pneumatic
+            <motion.div
+              className="relative text-white"
+              style={{ display: "inline-block" }}
+            >
+              air cushion system
+              <motion.div
+                className="absolute bottom-0 left-0 h-[2px] bg-emerald-400 transform-gpu"
+                initial={{ width: 0 }}
+                animate={isInView ? { width: "100%" } : {}}
+                transition={{
+                  delay: 3.5,
+                  duration: 1,
+                }}
+              />
+            </motion.div>{" "}
+            which will deploy automatically, when it detects that patient is
+            falling to protect his head.
           </motion.h1>
         </div>
         <div
@@ -80,7 +112,7 @@ export default function WhatsToCome() {
             priority
           />
           <h1 className="text-white text-sm text-center mt-2">
-            Credit: Hovding helmets
+            <span className="text-emerald-400">Credit:</span> Hovding helmets
           </h1>
         </div>
       </div>
