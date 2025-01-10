@@ -10,8 +10,21 @@ const SageIntroTest = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, margin: "-10% 0px" });
 
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
-
+  const [isMobile, setIsMobile] = useState(false);
+  
+    useEffect(() => {
+      // Function to check window size
+      const checkMobile = () => setIsMobile(window.innerWidth < 768);
+  
+      // Initial check
+      checkMobile();
+  
+      // Add event listener
+      window.addEventListener("resize", checkMobile);
+  
+      // Cleanup event listener
+      return () => window.removeEventListener("resize", checkMobile);
+    }, []);
   return (
     <div
       ref={sectionRef}
@@ -34,9 +47,11 @@ const SageIntroTest = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.3 }}
               className="text-4xl md:text-6xl mt-3 md:mt-0 font-bold text-emerald-300"
-              style={{
-                textShadow: "4px 0px 1px #ffffff",
-              }}
+              style={
+                isMobile
+                  ? { textShadow: "2.5px 1px 1px #fff" }
+                  : { textShadow: "4px 0px 1px #ffffff" }
+              }
             >
               What is SAGE?
             </motion.h1>

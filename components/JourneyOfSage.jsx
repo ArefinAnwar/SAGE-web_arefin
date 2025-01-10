@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 import Image from "next/image";
@@ -154,6 +154,21 @@ const TimelineItem = ({ data, index }) => {
 };
 
 export default function JourneyOfSage() {
+  const [isMobile, setIsMobile] = useState(false);
+  
+    useEffect(() => {
+      // Function to check window size
+      const checkMobile = () => setIsMobile(window.innerWidth < 768);
+  
+      // Initial check
+      checkMobile();
+  
+      // Add event listener
+      window.addEventListener("resize", checkMobile);
+  
+      // Cleanup event listener
+      return () => window.removeEventListener("resize", checkMobile);
+    }, []);
   return (
     <div className="flex flex-col items-center ">
       <div className="flex flex-col items-center min-h-screen py-5 md:py-10">
@@ -166,9 +181,15 @@ export default function JourneyOfSage() {
             ease: "easeOut",
           }}
           className="mt-8 md:mt-0 mb-6 text-4xl mx-auto md:text-6xl font-bold text-emerald-300"
-          style={{
-            textShadow: "4px 0px 1px #ffffff",
-          }}
+          style={
+            isMobile
+              ? {
+                  textShadow: "2.5px 1px 1px #ffffff",
+                }
+              : {
+                  textShadow: "4px 0px 1px #ffffff",
+                }
+          }
         >
           Journey of SAGE
         </motion.h1>

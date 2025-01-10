@@ -39,6 +39,21 @@ const problemsData = [
 export default function DarknessWeEnlighten() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, margin: "-10% 0px" });
+ const [isMobile, setIsMobile] = useState(false);
+ 
+   useEffect(() => {
+     // Function to check window size
+     const checkMobile = () => setIsMobile(window.innerWidth < 768);
+ 
+     // Initial check
+     checkMobile();
+ 
+     // Add event listener
+     window.addEventListener("resize", checkMobile);
+ 
+     // Cleanup event listener
+     return () => window.removeEventListener("resize", checkMobile);
+   }, []);
   const sentences = [
     "Epliepsy won't be a curse",
     'The patient can actually "afford" epilepsy aid products',
@@ -64,25 +79,28 @@ export default function DarknessWeEnlighten() {
   useEffect(() => {
     if (currentLine >= sentences.length) return;
 
-    const timer = setTimeout(() => {
-      if (currentChar < sentences[currentLine].length) {
-        setDisplayText((prev) => {
-          const newText = [...prev];
-          newText[currentLine] = sentences[currentLine].slice(
-            0,
-            currentChar + 1
-          );
-          return newText;
-        });
-        setCurrentChar((prev) => prev + 1);
-      } else {
-        if (currentLine < sentences.length - 1) {
-          setCurrentLine((prev) => prev + 1);
-          setCurrentChar(0);
-          setDisplayText((prev) => [...prev, ""]);
+    const timer = setTimeout(
+      () => {
+        if (currentChar < sentences[currentLine].length) {
+          setDisplayText((prev) => {
+            const newText = [...prev];
+            newText[currentLine] = sentences[currentLine].slice(
+              0,
+              currentChar + 1
+            );
+            return newText;
+          });
+          setCurrentChar((prev) => prev + 1);
+        } else {
+          if (currentLine < sentences.length - 1) {
+            setCurrentLine((prev) => prev + 1);
+            setCurrentChar(0);
+            setDisplayText((prev) => [...prev, ""]);
+          }
         }
-      }
-    }, 50);
+      },
+      currentLine === 0 && currentChar === 0 ? 4000 : 50
+    );
 
     return () => clearTimeout(timer);
   }, [currentChar, currentLine]);
@@ -101,9 +119,15 @@ export default function DarknessWeEnlighten() {
           ease: "easeOut",
         }}
         className="mt-8 md:mt-0 mb-6 text-4xl mx-auto md:text-6xl font-bold text-emerald-300 text-center "
-        style={{
-          textShadow: "4px 0px 1px #ffffff",
-        }}
+        style={
+          isMobile
+            ? {
+                textShadow: "2.5px 1px 1px #ffffff",
+              }
+            : {
+                textShadow: "4px 0px 1px #ffffff",
+              }
+        }
       >
         Our Mission
       </motion.h1>
@@ -152,18 +176,27 @@ export default function DarknessWeEnlighten() {
                 </div>
                 <div className="flex flex-col  h-full">
                   {displayText.map((line, index) => (
-                    <div
+                    <motion.div
                       key={index}
-                      className="flex items-start space-x-2 md:min-h-8 h-auto mb-2 space-y-2 text-sm "
+                      className="flex items-center space-x-2 md:min-h-8 h-auto mb-2 space-y-2 text-sm  justify-center"
+                      initial={{ opacity: 0, y: 0 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      transition={
+                        index == 0
+                          ? { duration: 0.5, delay: 4.5 }
+                          : { duration: 0, delay: 0 }
+                      }
                     >
-                      <span className="text-white">&gt;</span>
+                      <span className="text-white block h-auto md:h-5  mt-2">
+                        &gt;
+                      </span>
                       <span className="flex-1 h-auto md:h-5">
                         {line}
                         {index === currentLine && showCursor && (
                           <span className="inline-block w-3 h-1 bg-emerald-400 ml-1"></span>
                         )}
                       </span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>

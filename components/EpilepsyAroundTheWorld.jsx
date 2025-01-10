@@ -1,14 +1,28 @@
 "use client";
 import GlobeVisualization from "@/components/ui/globeMain";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function EpilepsyAroundTheWorld() {
   const sectionRef = useRef(null);
   const inView = useInView(sectionRef, { once: false, margin: "-10% 0px" });
 
   // const { inView, ref } = useInView({ threshold: 0.1 });
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    // Function to check window size
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   return (
     <div
       ref={sectionRef}
@@ -19,10 +33,17 @@ export default function EpilepsyAroundTheWorld() {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1 }}
         className="text-2xl px-5 md:text-6xl top-0 mt-6 md:mt-20 font-bold text-center text-emerald-300 z-40"
-        style={{
-          textShadow: "4px 0px 1px #ffffff",
-          willChange: "transform, opacity",
-        }}
+        style={
+          isMobile
+            ? {
+                textShadow: "2.5px 1px 1px #ffffff",
+                willChange: "transform, opacity",
+              }
+            : {
+                textShadow: "4px 0px 1px #ffffff",
+                willChange: "transform, opacity",
+              }
+        }
       >
         Epilepsy Around The World
       </motion.h1>

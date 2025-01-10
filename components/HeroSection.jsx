@@ -8,16 +8,33 @@ import { cn } from "@/lib/utils";
 import { Typewriter } from "react-simple-typewriter";
 import ShimmerButton from "@/components/ui/shimmer-button";
 import { DotPattern } from "@/components/ui/dot-pattern";
-
+import { useState, useEffect } from "react";
 export default function HeroSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Function to check window size
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   return (
     <div className="relative flex md:flex-row justify-center  md:justify-normal flex-col-reverse z-30  w-full h-auto min-h-screen px-4 md:px-12">
       <div className="flex flex-col z-10 w-full -mt-14 md:mt-6  md:w-1/2 ">
         <h1
-          className="text-[7rem] md:text-[12rem] text-emerald-300 mt-2 font-bold"
-          style={{
-            textShadow: "6px 0px 1px #ffffff",
-          }}
+          className="text-[7rem] md:text-[12rem] text-emerald-400 mt-2 font-bold"
+          style={
+            isMobile
+              ? { textShadow: "1.5px 2px 1px #fff" }
+              : { textShadow: "6px 0px 1px #fff" }
+          }
         >
           SAGE
         </h1>

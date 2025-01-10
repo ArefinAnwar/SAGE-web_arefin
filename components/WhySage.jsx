@@ -12,6 +12,21 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function WhySage() {
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+  
+    useEffect(() => {
+      // Function to check window size
+      const checkMobile = () => setIsMobile(window.innerWidth < 768);
+  
+      // Initial check
+      checkMobile();
+  
+      // Add event listener
+      window.addEventListener("resize", checkMobile);
+  
+      // Cleanup event listener
+      return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -79,6 +94,8 @@ export default function WhySage() {
         "SAGE is just the beginning. With continual AI updates, it could predict seizure triggers, monitor other neurological conditions, or even integrate into smart home systems to automate safety protocols. The possibilities for expanding its impact are limitless.",
     },
   ];
+  
+
   return (
     <div
       style={{ willChange: "transform, opacity" }}
@@ -101,9 +118,15 @@ export default function WhySage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className=" text-4xl md:text-6xl  mt-6 md:mt-20 font-bold text-center text-emerald-300"
-            style={{
-              textShadow: "4px 0px 1px #ffffff",
-            }}
+            style={
+              isMobile
+                ? {
+                    textShadow: "2.5px 1px 1px #ffffff",
+                  }
+                : {
+                    textShadow: "4px 0px 1px #ffffff",
+                  }
+            }
           >
             Why SAGE?
           </motion.h1>

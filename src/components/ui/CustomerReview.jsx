@@ -103,6 +103,21 @@ const CustomerReview = () => {
       }
     };
   }, []);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Function to check window size
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   return (
     <div
       ref={sectionRef}
@@ -125,9 +140,15 @@ const CustomerReview = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
             className="text-4xl md:text-6xl mb-3 font-bold text-center text-emerald-300 z-30"
-            style={{
-              textShadow: "4px 0px 1px #ffffff",
-            }}
+            style={
+              isMobile
+                ? {
+                    textShadow: "2.5px 1px 1px #ffffff",
+                  }
+                : {
+                    textShadow: "4px 0px 1px #ffffff",
+                  }
+            }
           >
             People about SAGE
           </motion.h1>

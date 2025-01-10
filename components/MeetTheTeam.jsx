@@ -4,12 +4,26 @@ import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
 import GridPattern from "@/components/ui/grid-pattern";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function MeetTheTeam() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, margin: "-10% 0px" });
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    // Function to check window size
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   return (
     <div
       ref={sectionRef}
@@ -22,11 +36,19 @@ export default function MeetTheTeam() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1 }}
         className="mt-8 md:mt-10 text-4xl md:text-6xl font-bold text-emerald-300 transform-gpu"
-        style={{
-          textShadow: "4px 0px 1px #ffffff",
-          display: "inline-block",
-          willChange: "transform, opacity, scale",
-        }}
+        style={
+          isMobile
+            ? {
+                textShadow: "2.5px 1px 1px #ffffff",
+                display: "inline-block",
+                willChange: "transform, opacity, scale",
+              }
+            : {
+                textShadow: "4px 0px 1px #ffffff",
+                display: "inline-block",
+                willChange: "transform, opacity, scale",
+              }
+        }
       >
         Meet the Team
       </motion.h1>
@@ -67,6 +89,7 @@ export default function MeetTheTeam() {
 function PeopleCard({ Name, Designation, Description, Contact, image }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: false, margin: "-10% 0px" });
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
 
   return (
     <motion.div

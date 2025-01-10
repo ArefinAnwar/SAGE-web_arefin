@@ -173,7 +173,21 @@ export default function HowToUseSage() {
   const triggerNextAnimation = () => {
     setActiveIndex((prev) => Math.min(prev + 1, timelineData.length - 1));
   };
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    // Function to check window size
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col items-center min-h-screen py-5 md:py-10">
@@ -186,9 +200,11 @@ export default function HowToUseSage() {
             ease: "easeOut",
           }}
           className="mt-8 md:mt-0 mb-6 text-4xl mx-auto md:text-6xl font-bold text-emerald-300"
-          style={{
-            textShadow: "4px 0px 1px #ffffff",
-          }}
+          style={
+            isMobile
+              ? { textShadow: "2.5px 1px 1px #fff" }
+              : { textShadow: "4px 0px 1px #ffffff" }
+          }
         >
           How to use SAGE?
         </motion.h1>

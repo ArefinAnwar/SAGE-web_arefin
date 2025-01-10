@@ -87,7 +87,7 @@ export default function Login() {
     };
 
     return (
-        <div className="flex flex-col w-screen bg-slate-900 h-screen items-center justify-center">
+        <div className="flex flex-col w-screen bg-slate-900 h-screen items-center justify-center overflow-hidden">
             {userLoggedIn && (
                 <div className='flex flex-col w-full h-[90%] items-center justify-center'>
                     <h1 className='text-5xl text-emerald-400 underline'>Arefin, Your Data!</h1>
@@ -131,29 +131,30 @@ export default function Login() {
                 </div>
             )}
 
-            {!userLoggedIn && (<div className="flex flex-col w-[30%] h-5/6 bg-slate-700 bg-opacity-45 rounded-lg items-center justify-center border-2 border-slate-400">
-                <h1 className="text-white text-3xl mb-16">Login to user portal</h1>
-                <input
-                    className="text-xl rounded-lg px-5 py-3 mb-3 bg-slate-400 bg-opacity-50"
-                    placeholder="User ID"
-                    value={userId}
-                    onChange={(e) => setUserId(e.target.value)}
-                />
-                <input
-                    className="text-xl rounded-lg px-5 py-3 bg-slate-400 bg-opacity-50"
-                    placeholder="Password"
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button
-                    className="w-56 h-16 px-5 py-3 bg-emerald-500 text-2xl rounded-lg mt-10 text-white font-semibold"
-                    onClick={handleLogin}
-                >
-                    LOGIN
-                </button>
-                <p className='text-white text-center'>Note: You need to have a SAGE Cap to login!</p>
-            </div>)}
+            {!userLoggedIn && (
+                <div className="flex flex-col w-[90%] md:w-[30%] h-5/6 bg-slate-700 bg-opacity-45 rounded-lg items-center justify-center border-2 border-slate-400">
+                    <h1 className="text-white text-3xl mb-16">Login to user portal</h1>
+                    <input
+                        className="text-xl rounded-lg px-5 py-3 mb-3 bg-slate-400 bg-opacity-50 w-10/12"
+                        placeholder="User ID"
+                        value={userId}
+                        onChange={(e) => setUserId(e.target.value)}
+                    />
+                    <input
+                        className="text-xl rounded-lg px-5 py-3 bg-slate-400 bg-opacity-50 w-10/12"
+                        placeholder="Password"
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <button
+                        className="w-56 h-16 px-5 py-3 bg-emerald-500 text-2xl rounded-lg mt-10 text-white font-semibold"
+                        onClick={handleLogin}
+                    >
+                        LOGIN
+                    </button>
+                    <p className='text-white text-center px-2 mt-4'><span className='text-emerald-400'>Note:{" "}</span>You need to have a SAGE Cap to login!</p>
+                </div>)}
         </div>
     );
 }

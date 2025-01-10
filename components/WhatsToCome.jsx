@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
@@ -7,8 +7,21 @@ export default function WhatsToCome() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, margin: "-10% 0px" });
 
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    // Function to check window size
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   return (
     <div
       ref={sectionRef}
@@ -22,9 +35,15 @@ export default function WhatsToCome() {
           delay: 1,
         }}
         className="mt-8 md:mt-0 mb-6 text-4xl mx-auto md:text-6xl font-bold text-emerald-300 text-center "
-        style={{
-          textShadow: "4px 0px 1px #ffffff",
-        }}
+        style={
+          isMobile
+            ? {
+                textShadow: "2.5px 1px 1px #ffffff",
+              }
+            : {
+                textShadow: "4px 0px 1px #ffffff",
+              }
+        }
       >
         What&apos;s to come?
       </motion.h1>

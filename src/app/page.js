@@ -271,7 +271,7 @@ export default function Home() {
       </div>
       {/* <ScrollProgress className="fixed top-0 z-50" /> */}
 
-      <div id='hero-section' className="h-[45rem] md:h-auto md:min-h-screen scrollbar-hide overflow-y-hidden ">
+      <div id='hero-section' className="h-[48rem] md:h-auto md:min-h-screen scrollbar-hide overflow-y-hidden ">
         <HeroSection />
       </div>
       {/* <div id="EpilepsyAroundTheWorld" className="min-h-screen scrollbar-hide overflow-y-scroll  dsnap-start dmd:snap-section mdd:snap-start mdd:snap-always">
