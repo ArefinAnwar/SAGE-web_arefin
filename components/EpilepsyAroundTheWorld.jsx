@@ -105,8 +105,8 @@ export default function EpilepsyAroundTheWorld() {
             transition={{ delay: 5, duration: 0.5 }}
             className="text-2xl text-white mt-3 font-medium"
           >
-            <span className="text-emerald-400 "> 1. Nigeria</span> (37.0 per
-            1,000 people){" "}
+            <span className="text-emerald-400 "> 1. Nigeria</span> (21 per 1,000
+            people){" "}
           </motion.h1>
           <motion.h1
             initial={{ opacity: 0, x: -100 }}
@@ -114,8 +114,8 @@ export default function EpilepsyAroundTheWorld() {
             transition={{ delay: 6, duration: 0.5 }}
             className="text-2xl text-white mt-3 font-medium"
           >
-            <span className="text-emerald-400"> 2. Ethiopia</span> (29.5 per
-            1,000 people)
+            <span className="text-emerald-400"> 2. Ethiopia</span> (13 per 1,000
+            people)
           </motion.h1>
           <motion.h1
             initial={{ opacity: 0, x: -100 }}
@@ -123,7 +123,7 @@ export default function EpilepsyAroundTheWorld() {
             transition={{ delay: 7, duration: 0.5 }}
             className="text-2xl text-white mt-3 font-medium"
           >
-            <span className="text-emerald-400 ">3. Congo</span> (15.0 per 1,000
+            <span className="text-emerald-400 ">3. Congo</span> (9 per 1,000
             people)
           </motion.h1>
         </div>

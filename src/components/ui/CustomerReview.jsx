@@ -153,7 +153,7 @@ const CustomerReview = () => {
             People about SAGE
           </motion.h1>
           <p className="text-lg px-2 text-center md:text-lg mt-6 md:mt-0 mb-6  text-slate-300 italic">
-            Reviews from the 8 people who willngly partiicpated in testing phase
+            Reviews from the 8 people who willingly participated in testing phase
           </p>
 
           <Marquee pauseOnHover className="[--duration:20s] z-40">
