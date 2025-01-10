@@ -11,20 +11,20 @@ const SageIntroTest = () => {
   const isInView = useInView(sectionRef, { once: false, margin: "-10% 0px" });
 
   const [isMobile, setIsMobile] = useState(false);
-  
-    useEffect(() => {
-      // Function to check window size
-      const checkMobile = () => setIsMobile(window.innerWidth < 768);
-  
-      // Initial check
-      checkMobile();
-  
-      // Add event listener
-      window.addEventListener("resize", checkMobile);
-  
-      // Cleanup event listener
-      return () => window.removeEventListener("resize", checkMobile);
-    }, []);
+
+  useEffect(() => {
+    // Function to check window size
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   return (
     <div
       ref={sectionRef}

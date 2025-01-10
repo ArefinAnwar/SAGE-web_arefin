@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { Line } from 'react-chartjs-2';
 import {
     Chart as ChartJS,
@@ -85,11 +87,181 @@ export default function Login() {
             setMessage('Invalid User ID or Password. Please try again.');
         }
     };
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleNavbar = () => setIsOpen(!isOpen);
+
 
     return (
         <div className="flex flex-col w-screen bg-slate-900 h-screen items-center justify-center overflow-hidden">
+            <nav className="fixed visible md:invisible top-0 z-50 right-0 w-full bg-gray-900 text-white">
+                <div className="absolute top-0 right-0 flex items-center justify-between px-4 py-3">
+                    <div className="text-lg font-bold"></div>
+                    {/* Hamburger Icon */}
+                    <button
+                        onClick={toggleNavbar}
+                        className="block lg:hidden focus:outline-none"
+                    >
+                        <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            {isOpen ? (
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            ) : (
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                />
+                            )}
+                        </svg>
+                    </button>
+                </div>
+
+                {/* Links */}
+                <div
+                    className={`lg:flex ${isOpen ? "block" : "hidden"
+                        } bg-gray-800 z-50 lg:bg-transparent`}
+                >
+                    <div className="flex flex-col lg:flex-row items-center lg:items-center lg:space-x-4 p-4 lg:p-0">
+                        <Link
+                            href="./#sage-intro"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            Intro
+                        </Link>
+                        <Link
+                            href="./#why-sage"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            Why SAGE
+                        </Link>
+                        <Link
+                            href="./#customer-review"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            Customer Review
+                        </Link>
+                        <Link
+                            href="./#meet-the-team"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            Team
+                        </Link>
+                        <Link
+                            href="./#faq-section"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            FAQ
+                        </Link>
+                        <Link
+                            href="/buy"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            BUY
+                        </Link>
+                        <Link
+                            href="/login"
+                            className="py-2 lg:py-0 cursor-pointer"
+                            onClick={toggleNavbar}
+                        >
+                            LOGIN
+                        </Link>
+                    </div>
+                </div>
+            </nav>
+            <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[50%] rounded-md inset-x-0 mx-auto items-center justify-center py-2 px-2  flex-row z-50" >
+                <Image
+                    className="z-40 border-[3px] border-emerald-400 rounded-full mr-1"
+                    src="/sage_logo_circle.webp"
+                    alt="SAGE-cap"
+                    sizes="100vw"
+                    width={35}
+                    height={35}
+                    priority
+                />
+                <Link
+                    href="./#hero-section"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                >
+                    Home
+                </Link>
+                |
+                <Link
+                    href="./#sage-intro"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                >
+                    Intro
+                </Link>
+                |
+                <Link
+                    href="./#why-sage"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                >
+                    Why
+                </Link>
+                |
+                <Link
+                    href="./#journey-of-sage"
+                    className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                >
+                    Journey
+                </Link>
+                |
+                <Link
+                    href="./#customer-review"
+                    className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                >
+                    Reviews
+                </Link>
+
+                |
+                <Link
+                    href="./#meet-the-team"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                >
+                    Team
+                </Link>
+                |
+                <Link
+                    href="./#faq-section"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                >
+                    FAQ
+                </Link>
+                |
+                <Link
+                    href="/buy"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                >
+                    Get it
+                </Link>
+                |
+                <Link
+                    href="/login"
+                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                >
+                    LOGIN
+                </Link>
+            </nav>
             {userLoggedIn && (
-                <div className='flex flex-col w-full h-[90%] items-center justify-center'>
+                <div className='flex flex-col w-full h-[90%] items-center justify-center mt-6 md:mt-10'>
                     <h1 className='text-5xl text-emerald-400 underline'>Arefin, Your Data!</h1>
                     <div className='flex flex-row w-11/12 h-[90%]  items-center justify-center mt-7'>
                         <div className='flex flex-col h-full w-2/3 mr-5  '>
@@ -132,7 +304,8 @@ export default function Login() {
             )}
 
             {!userLoggedIn && (
-                <div className="flex flex-col w-[90%] md:w-[30%] h-5/6 bg-slate-700 bg-opacity-45 rounded-lg items-center justify-center border-2 border-slate-400">
+                <div className="flex flex-col w-[90%] md:w-[30%] h-5/6 bg-slate-700 bg-opacity-45 rounded-lg items-center justify-center border-2 border-slate-400  mt-6 md:mt-10">
+
                     <h1 className="text-white text-3xl mb-16">Login to user portal</h1>
                     <input
                         className="text-xl rounded-lg px-5 py-3 mb-3 bg-slate-400 bg-opacity-50 w-10/12"
