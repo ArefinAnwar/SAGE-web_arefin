@@ -106,7 +106,7 @@ const CustomerReview = () => {
   return (
     <div
       ref={sectionRef}
-      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-transparent md:shadow-xl"
+      className="relative flex h-full md:min-h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-transparent md:shadow-xl"
     >
       <AnimatedGridPattern
         numSquares={30}
@@ -124,7 +124,7 @@ const CustomerReview = () => {
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
-            className="text-4xl md:text-6xl mb-3 font-bold text-emerald-300 z-30"
+            className="text-4xl md:text-6xl mb-3 font-bold text-center text-emerald-300 z-30"
             style={{
               textShadow: "4px 0px 1px #ffffff",
             }}

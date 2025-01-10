@@ -271,49 +271,49 @@ export default function Home() {
       </div>
       {/* <ScrollProgress className="fixed top-0 z-50" /> */}
 
-      <div id='hero-section' className="min-h-screen scrollbar-hide overflow-y-scroll  ">
+      <div id='hero-section' className="h-[45rem] md:h-auto md:min-h-screen scrollbar-hide overflow-y-hidden ">
         <HeroSection />
       </div>
       {/* <div id="EpilepsyAroundTheWorld" className="min-h-screen scrollbar-hide overflow-y-scroll  dsnap-start dmd:snap-section mdd:snap-start mdd:snap-always">
         <EpilepsyAroundTheWorld />
       </div> */}
-      <div id="sage-intro" className="h-[160vh]  md:h-auto overflow-y-scroll scrollbar-hide md:min-h-screen ">
+      <div id="sage-intro" className="h-[67rem]  md:h-auto overflow-y-hide scrollbar-hide md:min-h-screen ">
         <SageIntroTest />
       </div>
-      <div id="EpilepsyAroundTheWorld" className="h-[150vh] md:h-auto md:min-h-screen scrollbar-hide overflow-y-scroll">
+      <div id="EpilepsyAroundTheWorld" className="h-[67rem] md:h-auto md:min-h-screen scrollbar-hide overflow-y-hide">
         <EpilepsyAroundTheWorld />
       </div>
-      <div id="darkness" className="h-[205vh] md:h-auto md:min-h-screen overflow-y-scroll scrollbar-hide">
+      <div id="darkness" className="h-[90rem] md:h-auto md:min-h-screen overflow-y-hide scrollbar-hide">
         <DarknessWeEnlighten />
       </div>
-      <div id="how-to-use" className="h-[230vh] md:h-auto overflow-y-scroll scrollbar-hide md:min-h-screen">
+      <div id="how-to-use" className="h-[105rem]  md:h-auto overflow-y-hidden scrollbar-hide md:min-h-screen">
         <HowToUseSage />
       </div>
-      <div id="why-sage" className="md:min-h-screen md:h-auto h-[140vh] overflow-y-scroll scrollbar-hide">
+      <div id="why-sage" className="md:min-h-screen md:h-auto h-[57rem] overflow-y-hidden scrollbar-hide">
         <WhySage />
       </div>
       {/* <div className="min-h-screen overflow-y-scroll dsnap-start scrollbar-hide mdd:snap-section mdd:snap-start mdd:snap-always">
         <SageByNumbers />
       </div> */}
-      <div id="whats-to-come" className="min-h-screen overflow-y-scroll scrollbar-hide">
+      <div id="whats-to-come" className="min-h-screen h-[35rem]  overflow-y-hidden scrollbar-hide">
         <WhatsToCome />
       </div>
 
-      <div id="journey-of-sage" className="min-h-screen overflow-y-scroll scrollbar-hide">
+      <div id="journey-of-sage" className="min-h-screen overflow-y-hidden scrollbar-hide">
         <JourneyOfSage />
       </div>
 
-      <div id="join-us-section" className="h-[260vh] md:h-auto md:min-h-screen overflow-y-scroll scrollbar-hide">
+      <div id="join-us-section" className="h-[120rem] md:h-auto md:min-h-screen overflow-y-hide scrollbar-hide">
         <JoinTheRevolution />
       </div>
-      <div id="customer-review" className="min-h-screen dsnap-start scrollbar-hide overflow-y-scroll ">
+      <div id="customer-review" className="h-[48rem] md:h-auto md:min-h-screen  scrollbar-hide overflow-y-hide ">
         <CustomerReview />
       </div>
 
-      <div id="meet-the-team" className=" h-[250vh] md:h-auto md:min-h-screen overflow-y-scroll scrollbar-hide">
+      <div id="meet-the-team" className=" h-[120rem] md:h-auto md:min-h-screen overflow-y-hide scrollbar-hide">
         <MeetTheTeam />
       </div>
-      <div id="faq-section" className="md:min-h-screen overflow-y-scroll scrollbar-hide">
+      <div id="faq-section" className="h-[45rem] md:h-auto md:min-h-screen overflow-y-hide scrollbar-hide">
         <FAQSection />
       </div>
       <Footer />

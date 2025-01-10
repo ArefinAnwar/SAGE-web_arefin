@@ -46,7 +46,7 @@ export default function WhatsToCome() {
           initial={{ opacity: 0, y: -60 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="h-full w-full md:w-1/2 relative items-center justify-center flex flex-col"
+          className="h-full w-full md:w-1/2 relative items-center justify-center flex flex-col mt-8 md:mt-0"
         >
           <Image
             className="z-40 md:w-[70%] w-[90%] border-2 border-emerald-400 roudned-xl"

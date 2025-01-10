@@ -40,7 +40,7 @@ export default function FAQSection() {
   return (
     <div
       ref={sectionRef}
-      className="relative w-full overflow-hidden min-h-screen mx-auto flex flex-col py-12 px-4 sm:px-6 lg:px-8 bg-transparent items-center justify-center pt-10"
+      className="relative w-full md:overflow-hidden h-full md:min-h-screen mx-auto flex flex-col py-12 px-4 sm:px-6 lg:px-8 bg-transparent items-center justify-center pt-10"
     >
       <DotPattern
         className={
