@@ -17,12 +17,12 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "What happens if it does not work?",
+      question: "What happens if SAGE Cap does not work?",
       answer:
         "Our vision is to make a patients life easy. So, after personal callibration if SAGE cap doesn't work, we are always wlling to provide 100% refund.",
     },
     {
-      question: "How do I make it work?",
+      question: "How do I make SAGE Cap work?",
       answer:
         "You just have to turn the swicth on and the cap on your head, that's it!",
     },
@@ -34,7 +34,7 @@ export default function FAQSection() {
     },
     {
       question: "Will SAGE cap work without Wi-Fi?",
-      answer: "Yes, SAGE works completely offline.",
+      answer: "Yes, SAGE cap works completely offline.",
     },
   ];
   const [isMobile, setIsMobile] = useState(false);

@@ -46,7 +46,7 @@ const SageIntroTest = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.3 }}
-              className="text-4xl md:text-6xl mt-3 md:mt-0 font-bold font-sans text-emerald-400"
+              className="text-4xl md:text-6xl mt-3 md:mt-0 font-bold text-emerald-400"
               style={
                 isMobile
                   ? { textShadow: "2.5px 1px 1px #fff" }

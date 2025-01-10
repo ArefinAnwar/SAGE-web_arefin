@@ -32,15 +32,15 @@ export default function EpilepsyAroundTheWorld() {
         initial={{ opacity: 0, y: -50 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1 }}
-        className="text-2xl px-5 md:text-6xl top-0 mt-6 md:mt-20 font-bold text-center text-white font-sans z-40"
+        className="text-2xl px-5 md:text-6xl top-0 mt-6 md:mt-20 font-bold text-center text-emerald-400 z-40"
         style={
           isMobile
             ? {
-                textShadow: "2.5px 1px 1px #16b8a8",
+                textShadow: "2.5px 1px 1px #ffffff",
                 willChange: "transform, opacity",
               }
             : {
-                textShadow: "4px 0px 1px #16b8a8",
+                textShadow: "4px 0px 1px #ffffff",
                 willChange: "transform, opacity",
               }
         }

@@ -60,7 +60,7 @@ export default function WhySage() {
     {
       question: "Why should someone use SAGE?",
       answer:
-        "SAGE is more than just a device—it’s peace of mind in a headband. Whether you’re a patient or a caregiver, SAGE keeps you prepared for the unexpected, offering: Seizure alerts in advance to stay safe. Family notifications with real-time location for quick support. Accurate insights for doctors, enabling better treatment plans. With its sleek design and affordable price, SAGE makes advanced seizure prediction accessible to everyone!",
+        "SAGE is more than just a device—it's peace of mind in a headband. Whether you’re a patient or a caregiver, SAGE keeps you prepared for the unexpected, offering: Seizure alerts in advance to stay safe. Family notifications with real-time location for quick support. Accurate insights for doctors, enabling better treatment plans. With its sleek design and affordable price, SAGE makes advanced seizure prediction accessible to everyone!",
     },
     {
       question: "What role does SAGE play in advancing medical research?",
@@ -81,12 +81,12 @@ export default function WhySage() {
     {
       question: "What societal benefits does SAGE create?",
       answer:
-        "Epilepsy often leads to stigma and discrimination, limiting patients’ opportunities. By providing a proactive solution, SAGE reduces the social and emotional impact of the condition. It enables patients to lead more productive lives, participate in their communities, and break free from the isolation epilepsy often causes.",
+        "Epilepsy often leads to stigma and discrimination, limiting patients' opportunities. By providing a proactive solution, SAGE reduces the social and emotional impact of the condition. It enables patients to lead more productive lives, participate in their communities, and break free from the isolation epilepsy often causes.",
     },
     {
       question: "How does SAGE align with global healthcare goals?",
       answer:
-        "SAGE supports WHO’s goal to reduce the epilepsy treatment gap by making advanced care affordable and accessible. Its predictive capabilities reduce emergency visits and hospitalizations, easing the burden on healthcare systems and improving overall quality of care.",
+        "SAGE supports WHO's goal to reduce the epilepsy treatment gap by making advanced care affordable and accessible. Its predictive capabilities reduce emergency visits and hospitalizations, easing the burden on healthcare systems and improving overall quality of care.",
     },
     {
       question: "What future advancements can SAGE enable?",
