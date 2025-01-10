@@ -61,7 +61,7 @@ export default function HeroSection() {
             </ShimmerButton>
           </Link>
           <Link href="#sage-intro " className="cursor-pointer w-full md:w-64">
-            <button className="bg-[#fff] hover:bg-[#6BBF8B] hover:border-[#186d3e]  duration-300 border-4 font-semibold border-[#6BBF8B] text-[#186d3e] hover:text-white text-xl md:text-3xl px-1 w-full md:w-64 py-2 rounded-2xl hover:border-0 ease-linear">
+            <button className="bg-[#fff] hover:bg-[#6BBF8B] hover:border-[#186d3e]  duration-300 border-4 font-semibold border-[#6BBF8B] text-[#186d3e] hover:text-white text-xl md:text-3xl px-1 w-full md:w-64 py-2 rounded-2xl  ease-linear">
               KNOW MORE
             </button>
           </Link>
