@@ -132,7 +132,7 @@ export default function WhySage() {
 
           <p className=" top-0 mt-4  italic text-sm px-2 md:text-lg text-slate-200 text-center">
             How about a patient living happily without disruptions from sudden
-            seizures with a utopian device? That's SAGE!
+            seizures with a utopian device? That&apos;s SAGE!
           </p>
           <div className=" mt-4  md:mt-16  scrollbar-hide top-32 md:bottom-0  flex-col md:flex-row flex w-[95%] h-[120%] items-center justify-center z-50">
             <div className="flex scrollbar-hide flex-col w-[95%] md:mr-4 md:w-1/2 h-full overflow-y-scroll justify-center z-50">
