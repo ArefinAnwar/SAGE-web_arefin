@@ -455,7 +455,7 @@ export default function BuySage() {
                             <div className="flex  flex-col w-full h-full">
                                 <h1 className="text-white mb-4 font-medium text-2xl underline decoration-emerald-400">SAGE CAP PRO</h1>
                                 <p className="text-slate-200 mb-2 text-sm">Same portable, lightweight, easy cap and notification system as SAGE CAP but with custom fine tuning every 3 months. 24/7 special careline</p>
-                                <p className="text-white font-semibold text-2xl md:text-lg">Price: <span className="font-medium text-emerald-300">250$</span> <span className="font-extralight italic">(per month:</span> <span className=" text-emerald-300">3$)</span> </p>
+                                <p className="text-white font-semibold text-2xl md:text-lg">Price: <span className="font-medium text-emerald-300">250$</span> <span className="font-extralight italic">(per month:</span> <span className=" text-emerald-300">2.99$)</span> </p>
 
                             </div>
                             <div className="flex flex-wrap mt-2 gap-2">
