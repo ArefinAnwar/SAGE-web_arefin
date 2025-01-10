@@ -39,21 +39,21 @@ const problemsData = [
 export default function DarknessWeEnlighten() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, margin: "-10% 0px" });
- const [isMobile, setIsMobile] = useState(false);
- 
-   useEffect(() => {
-     // Function to check window size
-     const checkMobile = () => setIsMobile(window.innerWidth < 768);
- 
-     // Initial check
-     checkMobile();
- 
-     // Add event listener
-     window.addEventListener("resize", checkMobile);
- 
-     // Cleanup event listener
-     return () => window.removeEventListener("resize", checkMobile);
-   }, []);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Function to check window size
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   const sentences = [
     "Epliepsy won't be a curse",
     'The patient can actually "afford" epilepsy aid products',
@@ -99,7 +99,7 @@ export default function DarknessWeEnlighten() {
           }
         }
       },
-      currentLine === 0 && currentChar === 0 ? 4000 : 50
+      currentLine === 0 && currentChar === 0 ? 4500 : 50
     );
 
     return () => clearTimeout(timer);
@@ -183,7 +183,7 @@ export default function DarknessWeEnlighten() {
                       animate={isInView ? { opacity: 1, y: 0 } : {}}
                       transition={
                         index == 0
-                          ? { duration: 0.5, delay: 4.5 }
+                          ? { duration: 0, delay: 0 }
                           : { duration: 0, delay: 0 }
                       }
                     >
