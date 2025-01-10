@@ -99,7 +99,7 @@ export default function DarknessWeEnlighten() {
           }
         }
       },
-      currentLine === 0 && currentChar === 0 ? 4500 : 50
+      currentLine === 0 && currentChar === 0 ? 4700 : 50
     );
 
     return () => clearTimeout(timer);
@@ -178,7 +178,7 @@ export default function DarknessWeEnlighten() {
                   {displayText.map((line, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center space-x-2 md:min-h-8 h-auto mb-2 space-y-2 text-sm  justify-center"
+                      className="flex items-start space-x-2 md:min-h-8 h-auto mb-2 space-y-2 text-sm  justify-center"
                       initial={{ opacity: 0, y: 0 }}
                       animate={isInView ? { opacity: 1, y: 0 } : {}}
                       transition={

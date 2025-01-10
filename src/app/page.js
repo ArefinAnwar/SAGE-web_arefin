@@ -286,7 +286,7 @@ export default function Home() {
       <div id="darkness" className="h-[90rem] md:h-auto md:min-h-screen overflow-y-hide scrollbar-hide">
         <DarknessWeEnlighten />
       </div>
-      <div id="how-to-use" className="h-[105rem]  md:h-auto overflow-y-hidden scrollbar-hide md:min-h-screen">
+      <div id="how-to-use" className="h-[140rem]  md:h-auto overflow-y-hidden scrollbar-hide md:min-h-screen">
         <HowToUseSage />
       </div>
       <div id="why-sage" className="md:min-h-screen md:h-auto h-[57rem] overflow-y-hidden scrollbar-hide">

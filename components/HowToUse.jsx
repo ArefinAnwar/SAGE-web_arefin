@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
+
 import HeroVideoDialog from "@/components/ui/hero-video-dialog";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,6 +27,8 @@ const timelineData = [
   {
     title:
       "Wait for the notification from SAGE in your mobile to know about potential seizure",
+    gifLink:
+      "https://res.cloudinary.com/de6unoan5/image/upload/v1736508704/Untitled_design_2_yw9pn8.gif",
     description:
       "Conducted tests on 8 people low-income-background people. We then got all useful feedbacks and applied them into our product. ",
   },
@@ -36,7 +39,7 @@ const timelineData = [
   },
 ];
 
-const TimelineItem = ({ data, index, triggerNextAnimation }) => {
+const TimelineItem = ({ data, index, triggerNextAnimation, gifLink }) => {
   const itemRef = useRef(null);
   const isInView = useInView(itemRef, {
     once: true,
@@ -88,8 +91,8 @@ const TimelineItem = ({ data, index, triggerNextAnimation }) => {
         duration: 0.5,
       }}
     >
-      <div className="bg-[#172031] backdrop-blur-sm p-6 rounded-lg border border-emerald-500/20 transition-shadow hover:shadow-lg flex flex-col">
-        <h3 className="text-2xl text-center font-bold text-white mb-2">
+      <div className="bg-[#172031] items-center backdrop-blur-sm p-6 rounded-lg border border-emerald-500/20 transition-shadow hover:shadow-lg flex flex-col md:flex-row">
+        <h3 className="text-2xl text-center font-bold text-white mb-2 w-auto  ">
           {index <= 3 ? (
             <span className="text-emerald-400">Step - {index + 1}: </span>
           ) : (
@@ -97,6 +100,22 @@ const TimelineItem = ({ data, index, triggerNextAnimation }) => {
           )}
           {data.title}
         </h3>
+        {/* {data.gifLink && ( */}
+        {true && !data.isLast && (
+          <Image
+            className="z-40 ml-4 md:w-[30%] w-[93%] mt-3 md:mt-0 border-2 border-emerald-400 roudned-xl"
+            // src={data.gifLink}
+            src="https://res.cloudinary.com/de6unoan5/image/upload/v1736508704/Untitled_design_2_yw9pn8.gif"
+            alt={data.title}
+            sizes="100vw"
+            style={{
+              height: "auto",
+            }}
+            width={3}
+            height={3}
+            priority
+          />
+        )}
       </div>
 
       <motion.div

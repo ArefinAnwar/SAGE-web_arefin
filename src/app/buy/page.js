@@ -292,7 +292,7 @@ export default function BuySage() {
                 </Link>
             </nav>
             <Head>
-                <title>SAGE - A Hope</title>
+                <title>SAGE</title>
             </Head>
             {/* <h1
                 className="text-[3rem] px-2  md:text-6xl mt-4 md:mt-16 font-bold text-center text-emerald-300"
