@@ -11,7 +11,7 @@ const timelineData = [
     title: "Idea Generation Phase",
     description:
       "We were doing a colab with a private hospital in Dhaka, where we noticed a patient's epileptic seizure all of a sudden. This sparked a curiosity among us. The present doctors told about the uncertainity of epileptic seizures and the mental state of these patients. We felt from the bottom of hour heart that as youth we should do something.",
-    // imageLocation: "/research_paper.webp",
+    imageLocation: "/hospital_pic.webp",
   },
   {
     title: "Research Phase",
@@ -155,20 +155,20 @@ const TimelineItem = ({ data, index }) => {
 
 export default function JourneyOfSage() {
   const [isMobile, setIsMobile] = useState(false);
-  
-    useEffect(() => {
-      // Function to check window size
-      const checkMobile = () => setIsMobile(window.innerWidth < 768);
-  
-      // Initial check
-      checkMobile();
-  
-      // Add event listener
-      window.addEventListener("resize", checkMobile);
-  
-      // Cleanup event listener
-      return () => window.removeEventListener("resize", checkMobile);
-    }, []);
+
+  useEffect(() => {
+    // Function to check window size
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+
+    // Initial check
+    checkMobile();
+
+    // Add event listener
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   return (
     <div className="flex flex-col items-center ">
       <div className="flex flex-col items-center min-h-screen py-5 md:py-10">
