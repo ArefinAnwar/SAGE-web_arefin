@@ -56,6 +56,12 @@ const timelineData = [
     // humbnailSrc:
     // "https://i9.ytimg.com/vi/-YJh8KfjKIM/mqdefault.jpg?sqp=CMiv8LsG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGC0gXihyMA8=&rs=AOn4CLCvmWMsVdguYDzn1mPOs7Qx7DdjmQ",
   },
+  {
+    title: "See an overview of our project!",
+    description:
+      "Let's imagine things visually! See the work in 5 minutes below!",
+    videoLink: "https://www.youtube.com/embed/_Rm12ttrYO8",
+  },
 ];
 
 const TimelineItem = ({ data, index }) => {
@@ -79,7 +85,7 @@ const TimelineItem = ({ data, index }) => {
       variants={variants}
       style={{ willChange: "transform, opacity, scale" }}
       transition={{
-        duration: 0.5,
+        duration: 0.3,
       }}
     >
       <div
@@ -100,7 +106,7 @@ const TimelineItem = ({ data, index }) => {
           rotate: isInView ? 360 : 0,
         }}
         transition={{
-          duration: 0.5,
+          duration: 0.3,
         }}
       >
         <div
