@@ -309,7 +309,7 @@ export default function BuySage() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="text-[3rem] md:text-6xl mt-4 md:mt-16 font-bold text-emerald-400"
+                className="text-[3rem] md:text-6xl mt-4 md:mt-16 font-bold text-emerald-400 text-center"
                 style={
                     isMobile
                         ? { textShadow: "2.5px 1px 1px #fff" }
