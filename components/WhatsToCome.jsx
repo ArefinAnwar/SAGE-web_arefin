@@ -73,7 +73,7 @@ export default function WhatsToCome() {
               />
             </motion.div>{" "}
             that the patient may lose his control over body. So, we are working
-            on a pneumatic
+            on a pneumatic{" "}
             <motion.div
               className="relative text-white"
               style={{ display: "inline-block" }}
