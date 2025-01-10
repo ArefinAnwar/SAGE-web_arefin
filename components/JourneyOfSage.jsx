@@ -10,7 +10,7 @@ const timelineData = [
   {
     title: "Idea Generation Phase",
     description:
-      "We were doing a colab with a private hospital in Dhaka, where we noticed a patient's epileptic seizure all of a sudden. This sparked a curiosity among us. The present doctors told about the uncertainity of epileptic seizures and the mental state of these patients. We felt from the bottom of hour heart that as youth we should do something.",
+      "We were doing a colab with a private hospital in Dhaka, where we noticed a patient's epileptic seizure all of a sudden. This sparked a curiosity among us. The present doctors told about the uncertainity of epileptic seizures and the mental state of these patients. We felt from the bottom of our heart that as youth we should do something.",
     justImageLocation: "/hospital_pic.webp",
   },
   {

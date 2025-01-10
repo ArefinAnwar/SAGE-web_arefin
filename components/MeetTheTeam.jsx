@@ -55,7 +55,7 @@ export default function MeetTheTeam() {
       <div className="flex scrollbar-hide flex-col md:flex-row items-center justify-center w-full mt-0 md:mt-4 md:h-[30rem]">
         <PeopleCard
           Name="Arefin Anwar"
-          image="/arefin_informal.jpg"
+          image="/arefin_informal.webp"
           Designation="Operations Lead"
           Description="Pupil of class 11 at St. Joseph Higher Secondary School, Dhaka, Bangladesh"
           Contact="arefinanwar112@gmail.com"

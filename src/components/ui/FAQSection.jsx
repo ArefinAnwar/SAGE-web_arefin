@@ -19,7 +19,7 @@ export default function FAQSection() {
     {
       question: "What happens if it does not work?",
       answer:
-        "Our vision is to make a patients life easy. So, after personal callibration if it doesn't work, we are always wlling to provide 100% refund.",
+        "Our vision is to make a patients life easy. So, after personal callibration if SAGE cap doesn't work, we are always wlling to provide 100% refund.",
     },
     {
       question: "How do I make it work?",
@@ -33,7 +33,7 @@ export default function FAQSection() {
         "All technical help requests will be considered under 36 hours by our team!",
     },
     {
-      question: "Will it work without Wi-Fi?",
+      question: "Will SAGE cap work without Wi-Fi?",
       answer: "Yes, SAGE works completely offline.",
     },
   ];
