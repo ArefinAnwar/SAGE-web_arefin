@@ -94,7 +94,7 @@ export default function Login() {
 
     return (
         <div className="flex flex-col w-screen bg-slate-900 h-screen items-center justify-center overflow-hidden">
-            <nav className="fixed visible md:invisible top-0 z-50 right-0 w-full bg-gray-900 text-white">
+            <nav className="fixed visible md:invisible top-0 z-50 right-0 w-full bg-slate-900 bg-opacity-80 text-white">
                 <div className="absolute top-0 right-0 flex items-center justify-between px-4 py-3">
                     <div className="text-lg font-bold"></div>
                     {/* Hamburger Icon */}
@@ -131,7 +131,7 @@ export default function Login() {
                 {/* Links */}
                 <div
                     className={`lg:flex ${isOpen ? "block" : "hidden"
-                        } bg-gray-800 z-50 lg:bg-transparent`}
+                        } bg-gray-900 bg-opacity-80 z-50 lg:bg-transparent`}
                 >
                     <div className="flex flex-col lg:flex-row items-center lg:items-center lg:space-x-4 p-4 lg:p-0">
                         <Link
@@ -186,9 +186,9 @@ export default function Login() {
                     </div>
                 </div>
             </nav>
-            <nav className="invisible md:visible border-[1px] fixed top-3 text-white bg-slate-800/90 flex w-[50%] rounded-md inset-x-0 mx-auto items-center justify-center py-2 px-2  flex-row z-50" >
+            <nav className="invisible md:visible border-[0px] fixed top-0 text-white bg-slate-900 bg-opacity-80 flex w-[99%]  items-center justify-between py-3 px-2  flex-row z-50" >
                 <Image
-                    className="z-40 border-[0px] border-emerald-400 rounded-full mr-1"
+                    className="z-40 ml-8 border-[0px] border-emerald-400 rounded-full mr-1"
                     src="/sage_logo_transparent.webp"
                     alt="SAGE-cap"
                     sizes="100vw"
@@ -196,69 +196,71 @@ export default function Login() {
                     height={35}
                     priority
                 />
-                <Link
-                    href="./#hero-section"
-                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
-                >
-                    Home
-                </Link>
-                |
-                <Link
-                    href="./#sage-intro"
-                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
-                >
-                    Intro
-                </Link>
-                |
-                <Link
-                    href="./#why-sage"
-                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
-                >
-                    Why
-                </Link>
-                |
-                <Link
-                    href="./#journey-of-sage"
-                    className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
-                >
-                    Journey
-                </Link>
-                |
-                <Link
-                    href="./#customer-review"
-                    className="px-2  cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
-                >
-                    Reviews
-                </Link>
+                <div className='mr-6'>
+                    <Link
+                        href="./#hero-section"
+                        className="px-3 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                    >
+                        Home
+                    </Link>
+                    |
+                    <Link
+                        href="./#sage-intro"
+                        className="px-3 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                    >
+                        Intro
+                    </Link>
+                    |
+                    <Link
+                        href="./#why-sage"
+                        className="px-3 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                    >
+                        Why
+                    </Link>
+                    |
+                    <Link
+                        href="./#journey-of-sage"
+                        className="px-3  cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                    >
+                        Journey
+                    </Link>
+                    |
+                    <Link
+                        href="./#customer-review"
+                        className="px-3  cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                    >
+                        Reviews
+                    </Link>
 
-                |
-                <Link
-                    href="./#meet-the-team"
-                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
-                >
-                    Team
-                </Link>
-                |
-                <Link
-                    href="./#faq-section"
-                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
-                >
-                    FAQ
-                </Link>
-                |
-                <Link
-                    href="/buy"
-                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
-                >
-                    Get it
-                </Link>
-                |
-                <Link
-                    href="/login"
-                    className="px-2 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
-                >
-                    LOGIN
-                </Link>
+                    |
+                    <Link
+                        href="./#meet-the-team"
+                        className="px-3 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                    >
+                        Team
+                    </Link>
+                    |
+                    <Link
+                        href="./#faq-section"
+                        className="px-3 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                    >
+                        FAQ
+                    </Link>
+                    |
+                    <Link
+                        href="/buy"
+                        className="px-3 break-keep cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                    >
+                        Get it
+                    </Link>
+                    |
+                    <Link
+                        href="/login"
+                        className="px-3 cursor-pointer hover:text-emerald-400 ease-in duration-300 hover:scale-110"
+                    >
+                        LOGIN
+                    </Link>
+                </div>
             </nav>
             {userLoggedIn && (
                 <div className='flex flex-col w-full h-[90%] items-center justify-center mt-6 md:mt-10'>

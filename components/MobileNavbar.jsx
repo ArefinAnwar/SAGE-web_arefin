@@ -11,7 +11,7 @@ export default function MobileNavbar({ className }) {
   return (
     <nav
       className={cn(
-        "fixed visible md:invisible top-0 z-50 right-0 w-full bg-gray-900 text-white",
+        "fixed visible md:invisible top-0 z-50 right-0 w-full bg-gray-900 bg-opacity-50 text-white",
         className
       )}
     >
@@ -52,7 +52,7 @@ export default function MobileNavbar({ className }) {
       <div
         className={`lg:flex ${
           isOpen ? "block" : "hidden"
-        } bg-gray-800 z-50 lg:bg-transparent`}
+        } bg-gray-900 bg-opacity-80 z-50 lg:bg-transparent`}
       >
         <div className="flex flex-col lg:flex-row items-center lg:items-center lg:space-x-4 p-4 lg:p-0">
           <Link

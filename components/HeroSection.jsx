@@ -26,7 +26,7 @@ export default function HeroSection() {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
   return (
-    <div className="relative flex md:flex-row justify-center  md:justify-normal flex-col-reverse z-30  w-full h-auto min-h-screen px-4 md:px-12">
+    <div className="relative flex lg:flex-row justify-center  lg:justify-normal flex-col-reverse z-30  w-full h-auto min-h-screen px-4 md:px-12">
       <div className="flex flex-col z-10 w-full -mt-14 md:mt-6  md:w-1/2 ">
         <h1
           className="text-[7rem] md:text-[12rem] text-emerald-400 mt-2 font-bold"
@@ -54,14 +54,14 @@ export default function HeroSection() {
             delaySpeed={1300}
           />
         </p>
-        <div className="flex-col md:flex-row md:mt-5 items-center md:items-center md:justify-between justify-center md:pr-10 flex w-full md:h-16">
-          <Link className="w-full md:w-64 cursor-pointer" href="/buy">
-            <ShimmerButton className="font-semibold mb-4 md:mb-0 text-white text-xl md:text-3xl   w-full md:w-64 py-2 ">
+        <div className="flex-col lg:flex-row lg:mt-5 items-center lg:items-center lg:justify-between justify-center lg:pr-10 flex w-full lg:h-16">
+          <Link className="w-full lg:w-64 cursor-pointer" href="/buy">
+            <ShimmerButton className="font-semibold mb-4 lg:mb-0 text-white text-xl lg:text-3xl   w-full lg:w-64 py-2 ">
               <span className="">GET SAGE</span>
             </ShimmerButton>
           </Link>
-          <Link href="#sage-intro " className="cursor-pointer w-full md:w-64">
-            <button className="bg-[#fff] hover:bg-[#6BBF8B] hover:border-[#186d3e]  duration-300 border-4 font-semibold border-[#6BBF8B] text-[#186d3e] hover:text-white text-xl md:text-3xl px-1 w-full md:w-64 py-2 rounded-2xl  ease-linear">
+          <Link href="#sage-intro " className="cursor-pointer w-full lg:w-64">
+            <button className="bg-[#fff] hover:bg-[#6BBF8B] hover:border-[#186d3e]  duration-300 border-4 font-semibold border-[#6BBF8B] text-[#186d3e] hover:text-white text-xl lg:text-3xl px-1 w-full lg:w-64 py-2 rounded-2xl  ease-linear">
               KNOW MORE
             </button>
           </Link>
@@ -78,18 +78,18 @@ export default function HeroSection() {
           repeat: Infinity,
           repeatType: "loop", // Continuous looping
         }}
-        className="relative flex mb-8   md:mb-0  z-10 flex-col w-full px-4 md:px-0 md:w-1/2  justify-center items-center"
+        className="relative flex mb-8   lg:mb-0  z-10 flex-col w-full px-4 lg:px-0 lg:w-1/2  justify-center items-center"
       >
         <DotPattern
           className={cn(
-            "md:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+            "lg:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
             "[mask-image:radial-gradient(170px_circle_at_center,white,transparent)]",
             "z-10"
           )}
         />
 
         <Image
-          className="z-40 md:w-[65%] w-[90%]"
+          className="z-40 lg:w-[65%] w-[90%]"
           src="/sage_cap_blackk.webp"
           alt="SAGE-cap"
           sizes="100vw"
