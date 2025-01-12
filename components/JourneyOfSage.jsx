@@ -37,7 +37,7 @@ const timelineData = [
     title: "Testing & Calibration",
     description:
       "Conducted tests on 8 people low-income-background people. We then got all useful feedbacks and applied them into our product. ",
-    videoLink: "https://www.youtube.com/embed/C5WqRiNUVBc",
+    videoLink: "https://www.youtube.com/embed/-DGdNYSiCFA",
     thumbnailSrc:
       "https://i9.ytimg.com/vi/sykhHvuB-Fw/mqdefault.jpg?sqp=CMiv8LsG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgXihOMA8=&rs=AOn4CLByb88lFV03dyL7RNOmPnPdoIXTLQ",
   },
