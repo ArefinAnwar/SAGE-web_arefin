@@ -108,7 +108,7 @@ const SageIntroTest = () => {
                   {title === "Seizure Prediction" &&
                     "Based on pattern, the SAGE CAP will predict seizure before 10-15 mins"}
                   {title === "Notification Delivery" &&
-                    "With immediate notification service, users are alerted with upcoming seizures"}
+                    "With immediate notification service, users are alerted with upcoming seizures with 'Alarming' sound"}
                   {title === "Alert System" &&
                     "A SOS option enables to notify other caregivers"}
                 </p>
